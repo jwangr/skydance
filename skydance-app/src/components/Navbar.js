@@ -38,11 +38,13 @@ const Navbar = () => {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <h4 sx={{ my: 2 }}>Sky Dance Studio</h4>
       <Divider />
-      <List sx={{display: "flex", flexDirection: 'column', alignItems:'center'}}>
+      <List
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+      >
         {navLinks.map((item) => (
           <ListItem key={item.title} disablePadding>
             <ListItemButton>
-              <ListItemText sx={{display: 'flex', justifyContent:'center'}}>
+              <ListItemText sx={{ display: "flex", justifyContent: "center" }}>
                 <Link color="black" underline="none" href={item.link}>
                   {item.title}
                 </Link>
@@ -66,7 +68,7 @@ const Navbar = () => {
           display: "flex",
           flexDirection: { xs: "row", sm: "column", lg: "row" },
           gap: { xs: 2, lg: "auto" },
-          justifyContent: { xs: "space-between", sm: "center", sm: "space-between" },
+          justifyContent: "space-between",
         }}
       >
         <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
@@ -85,19 +87,15 @@ const Navbar = () => {
         </Box>
 
         {/* Non-mobile Navigation links */}
-        <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 3 }}>
+        <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
           {navLinks.map((link) => (
-            <Link
-              key={link.title}
-              href={link.link}
-              sx={{
-                color: "#000",
-                textDecoration: "none",
-                fontFamily: "sans-serif",
-              }}
-            >
-              <p>{link.title} </p>
-            </Link>
+            <ListItemButton>
+              <ListItemText>
+                <Link color="black" underline="none" href={link.link}>
+                  {link.title}
+                </Link>
+              </ListItemText>
+            </ListItemButton>
           ))}
         </Box>
 
