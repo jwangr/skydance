@@ -17,13 +17,14 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <Box sx={{ marginBottom: 5 }}>
         <h1 style={{ margin: "auto", textAlign: "center" }}>
           Sky Dance Studio
         </h1>
       </Box>
 
+      {/* Opening Banner */}
       <Hero overlay="rgba(185, 131, 181, 0.5)">
         <AnimateInView>
           <Box
@@ -46,6 +47,7 @@ export default function Home() {
         </AnimateInView>
       </Hero>
 
+      {/* Link List */}
       <Grid container spacing={1} sx={{ margin: 8 }}>
         {navLinks.map((link) => (
           <Grid
@@ -76,8 +78,31 @@ export default function Home() {
         ))}
       </Grid>
 
-      <h3>Sky dance heading 3</h3>
-      <p>Body text</p>
+      {/* Timetable */}
+      <Box
+        sx={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign:'center' }}
+      >
+        <h2>Class Timetable</h2>
+        <h5>Term 4, 2025 (13/10/25 - 21/12/2025)</h5>
+        <Box
+          sx={{
+            width: "100%", // fill width of container
+            overflowX: "auto", // allow horizontal scroll if needed
+          }}
+        >
+          <Box
+            component="img"
+            src="/Timetable.PNG"
+            alt="Timetable"
+            sx={{
+              width: "100%", // scales to container
+              minWidth: 750, // never shrink below 500px
+              height: "auto",
+              display: "block",
+            }}
+          />
+        </Box>
+      </Box>
     </div>
   );
 }
