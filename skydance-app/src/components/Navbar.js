@@ -89,7 +89,7 @@ const Navbar = () => {
         {/* Non-mobile Navigation links */}
         <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
           {navLinks.map((link) => (
-            <ListItemButton>
+            <ListItemButton key={link.title}>
               <ListItemText>
                 <Link color="black" underline="none" href={link.link}>
                   {link.title}
