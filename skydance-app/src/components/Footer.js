@@ -22,9 +22,9 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Footer = () => {
   const navLinks = [
-    { title: "Instagram", link: "/", icon: <InstagramIcon /> },
-    { title: "Facebook", link: "/class", icon: <FacebookIcon /> },
-    { title: "X", link: "/x", icon: <TwitterIcon /> },
+    { title: "Instagram", link: "https://www.instagram.com/skydancestudio2020/", icon: <InstagramIcon /> },
+    { title: "Facebook", link: "https://www.facebook.com/SkyDanceStudioSydney", icon: <FacebookIcon /> },
+    { title: "X", link: "https://twitter.com/SkyDance2020", icon: <TwitterIcon /> },
   ];
 
   //   dynamically get year
@@ -35,7 +35,7 @@ const Footer = () => {
       <Toolbar
         sx={{
           display: "flex",
-          flexDirection: { xs: "row", sm: "column", lg: "row" },
+          flexDirection: { xs: "column", md: "row" },
           gap: { xs: 2, lg: "auto" },
           justifyContent: "space-between",
         }}
@@ -50,7 +50,7 @@ const Footer = () => {
               filter: "brightness(200%)",
             }}
           />
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box>
             <h6>Sky Dance Studio</h6>
           </Box>
         </Box>
@@ -61,7 +61,7 @@ const Footer = () => {
         {/* Social Media Links */}
         <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 1 }}>
           {navLinks.map((link) => (
-            <Link>
+            <Link href={link.link}>
               <IconButton aria-label="link.title">{link.icon}</IconButton>
             </Link>
           ))}
