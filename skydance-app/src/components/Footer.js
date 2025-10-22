@@ -31,7 +31,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Box color="default" sx={{ backgroundColor: "var(--bg5)" }}>
+    <Box color="default" sx={{ backgroundColor: "var(--bg5)", paddingY: 3 }}>
       <Toolbar
         sx={{
           display: "flex",
