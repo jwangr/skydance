@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 export default function Hero({
   children,
   borderRadius = 0,
+  minHeight = 0,
   backgroundImage = "url('/HeroImage.png')",
   overlay = "rgba(0, 0, 0, 0.2)",
 }) {
@@ -12,11 +13,11 @@ export default function Hero({
         position: "relative",
         width: "100%",
         paddingY: 5,
-        minHeight: 500,
+        minHeight: minHeight,
         height: "fit content", // fixed height
         backgroundImage: backgroundImage,
         backgroundSize: "cover",
-        backgroundPosition: "top",
+        backgroundPosition: "center",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
