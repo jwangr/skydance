@@ -1,6 +1,11 @@
 import { Box } from "@mui/material";
 
-export default function Hero({ children }) {
+export default function Hero({
+  children,
+  borderRadius = 0,
+  backgroundImage = "url('/HeroImage.png')",
+  overlay = "rgba(0, 0, 0, 0.2)",
+}) {
   return (
     <Box
       sx={{
@@ -9,12 +14,13 @@ export default function Hero({ children }) {
         paddingY: 5,
         minHeight: 500,
         height: "fit content", // fixed height
-        backgroundImage: "url('/HeroImage.png')",
+        backgroundImage: backgroundImage,
         backgroundSize: "cover",
         backgroundPosition: "top",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        borderRadius: borderRadius,
       }}
     >
       {/* Black Overlay */}
@@ -22,8 +28,9 @@ export default function Hero({ children }) {
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundColor: "rgba(185, 131, 181, 0.5)", // semi-transparent black
+          backgroundColor: overlay, // semi-transparent black
           zIndex: 1,
+          borderRadius: borderRadius,
         }}
       />
 

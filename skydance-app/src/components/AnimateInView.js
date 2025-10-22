@@ -5,7 +5,7 @@ export default function AnimateInView({
   children,
   variants,
   delay = 0,
-  once = true,
+  once = false,
   style = {},
 }) {
   // Default animation variants
@@ -24,7 +24,7 @@ export default function AnimateInView({
       initial="hidden"
       whileInView="visible"
       variants={variants || defaultVariants}
-      viewport={{ once: false, amount: 0.2 }} // amount = 20% visible, animates every time element enters viewport
+      viewport={{ once: once, amount: 0.2 }} // amount = 20% visible, animates every time element enters viewport
     >
       {children}
     </motion.div>
