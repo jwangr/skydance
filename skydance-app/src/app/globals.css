@@ -1,28 +1,70 @@
 @import "tailwindcss";
 
+/* Global color variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Background colors */
+  --bg1: #FFFFFF;
+  --bg2: #4A5759;
+  --bg3: #B0C4B1;
+  --bg4: #DEDBD2;
+  --bg5: #F7E1D7;
+  --bg6: #EDAFB8cc;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Paragraph colors */
+  --paragraph-1: #000000;
+  --paragraph-2: #FFFFFF;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Accent colors */
+  --accent-1: #BA8C93;
+  --accent-2: #F2F0F1;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg1);
+  color: var(--paragraph-1);
+  font-family: "EB Garamond", serif;
 }
 
-/* Headings */
+h1 {
+  font-family: "Aboreto", serif;
+  font-size: 144px; /* optional, can match Tailwind scale */
+  line-height: 110px; /* optional */
+  font-weight: 700;
+}
+
+h2 {
+  font-family: "Aboreto", cursive;
+  font-size: 50px;
+  line-height: 120px;
+  font-weight: 400;
+}
+
+/* H3 - Aboreto */
+h3 {
+  font-family: "Aboreto", cursive;
+  font-size: 32px;
+  line-height: 120px;
+  font-weight: 400;
+}
+
+/* H4 - Aboreto */
+h4 {
+  font-family: "Aboreto", cursive;
+  font-size: 32px;
+  line-height: 110px;
+  font-weight: 400;
+}
+
+/* H5 - Aboreto */
+h5 {
+  font-family: "Aboreto", cursive;
+  font-size: 28px;
+  /* line-height: 110px; */
+  font-weight: 600;
+}
+
+h6 {
+  font-family: "Aboreto", cursive;
+  font-size: 24px;
+  font-weight: 500;
+}
