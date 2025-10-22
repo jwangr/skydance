@@ -1,12 +1,29 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { Link } from "@mui/material";
+import {
+  Divider,
+  Drawer,
+  IconButton,
+  Link,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
 
 const Navbar = () => {
+  // Drawer states
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
+
   const navLinks = [
     { title: "HOME", link: "/" },
     { title: "ABOUT US", link: "/about" },
@@ -16,13 +33,42 @@ const Navbar = () => {
     { title: "CONTACT US", link: "/contact" },
   ];
 
+  //   Mobile Drawer Contents
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <h4 sx={{ my: 2 }}>Sky Dance Studio</h4>
+      <Divider />
+      <List sx={{display: "flex", flexDirection: 'column', alignItems:'center'}}>
+        {navLinks.map((item) => (
+          <ListItem key={item.title} disablePadding>
+            <ListItemButton>
+              <ListItemText sx={{display: 'flex', justifyContent:'center'}}>
+                <Link color="black" underline="none" href={item.link}>
+                  {item.title}
+                </Link>
+              </ListItemText>
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      <Divider sx={{ color: "white" }} />
+    </Box>
+  );
+
   return (
     <AppBar
       position="fixed"
       color="default"
-      sx={{ boxShadow: "none", backgroundColor: "#F7E1D7" }}
+      sx={{ boxShadow: "none", backgroundColor: "var(--bg5)" }}
     >
-      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Toolbar
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "row", sm: "column", lg: "row" },
+          gap: { xs: 2, lg: "auto" },
+          justifyContent: { xs: "space-between", sm: "center", sm: "space-between" },
+        }}
+      >
         <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
           <img
             src="logo.webp"
@@ -31,23 +77,58 @@ const Navbar = () => {
               height: 40,
               width: "auto",
               filter: "brightness(200%)",
-            }} 
+            }}
           />
-          <h6>Sky Dance Studio</h6>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            <h6>Sky Dance Studio</h6>
+          </Box>
         </Box>
 
-        {/* Navigation links */}
-        <Box sx={{ display: "flex", gap: 3 }}>
+        {/* Non-mobile Navigation links */}
+        <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 3 }}>
           {navLinks.map((link) => (
             <Link
               key={link.title}
               href={link.link}
-              sx={{ color: "#000", textDecoration: "none", fontFamily: 'sans-serif' }}
+              sx={{
+                color: "#000",
+                textDecoration: "none",
+                fontFamily: "sans-serif",
+              }}
             >
               <p>{link.title} </p>
             </Link>
           ))}
         </Box>
+
+        {/* Mobile Drawer */}
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          sx={{ mr: 2, display: { sm: "none" } }}
+        >
+          Menu
+        </IconButton>
+        <Drawer
+          variant="temporary"
+          anchor="top"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              backgroundColor: "var(--bg5)",
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
       </Toolbar>
     </AppBar>
   );
