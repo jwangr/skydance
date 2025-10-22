@@ -5,7 +5,7 @@ export default function Hero({
   borderRadius = 0,
   minHeight = 0,
   backgroundImage = "url('/HeroImage.png')",
-  overlay = "rgba(0, 0, 0, 0.2)",
+  overlay = "rgba(0, 0, 0, 0.3)",
 }) {
   return (
     <Box
