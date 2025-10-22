@@ -2,6 +2,7 @@ import { Aboreto, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Toolbar } from "@mui/material";
+import Footer from "@/components/Footer";
 
 const aboreto = Aboreto({
   weight: "400",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <Toolbar />
         {children}
       </body>
+      <Footer />
     </html>
   );
 }
