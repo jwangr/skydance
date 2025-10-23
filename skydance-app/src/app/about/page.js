@@ -8,11 +8,11 @@ import staffData from "@/lib/data/staff.json";
 export default function AboutPage() {
   return (
     <>
-      <AnimateInView>
-        <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={500}>
+      <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={500}>
+        <AnimateInView>
           <h1>About us</h1>
-        </Hero>
-      </AnimateInView>
+        </AnimateInView>
+      </Hero>
 
       {/* Our Story */}
       <AnimateInView>
@@ -60,7 +60,7 @@ export default function AboutPage() {
         sx={{ paddingY: 10, paddingX: { xs: 0, md: 10 }, textAlign: "center" }}
       >
         <h1 className="text-5xl md:text-6xl lg:text-7xl">Meet Our Team</h1>
-        <Box sx={{ px: 2 }}>
+        <Box sx={{ px: 2, width: { sm: "75%", md: "100%" }, marginX: "auto" }}>
           {staffData.map((staff) => (
             <TeamCard staff={staff} key={staff.title} />
           ))}
