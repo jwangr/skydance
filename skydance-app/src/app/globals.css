@@ -27,8 +27,8 @@ body {
 
 h1 {
   font-family: "Aboreto", serif;
-  font-size: 144px; /* optional, can match Tailwind scale */
-  line-height: 120px;
+  font-size: clamp(1.75rem, 5vw + 1rem, 16rem);
+  /* line-height: 120px; */
   font-weight: 700;
 }
 
