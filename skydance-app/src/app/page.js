@@ -1,6 +1,6 @@
 import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
-import { Box, Grid, Link, ListItemButton } from "@mui/material";
+import { Box, Grid, Link, ListItemButton, Toolbar } from "@mui/material";
 
 export default function Home() {
   const navLinks = [
@@ -18,8 +18,9 @@ export default function Home() {
 
   return (
     <div style={{ overflowX: "hidden" }}>
+      <Toolbar />
       <Box sx={{ marginBottom: 5 }}>
-        <h1 style={{ margin: "auto", textAlign: "center" }}>
+        <h1 style={{ marginX: "auto", textAlign: "center" }}>
           Sky Dance Studio
         </h1>
       </Box>
@@ -48,7 +49,11 @@ export default function Home() {
       </Hero>
 
       {/* Link List */}
-      <Grid container spacing={1} sx={{ marginX: "auto", maxWidth:1200, marginY: 8 }}>
+      <Grid
+        container
+        spacing={1}
+        sx={{ marginX: "auto", maxWidth: 1200, marginY: 8 }}
+      >
         {navLinks.map((link) => (
           <Grid
             size={{ xs: 12, md: 6 }}
@@ -57,7 +62,11 @@ export default function Home() {
           >
             <AnimateInView>
               <ListItemButton>
-                <Hero borderRadius={5} backgroundImage={link.img} minHeight={{xs: 0, md: 400}}>
+                <Hero
+                  borderRadius={5}
+                  backgroundImage={link.img}
+                  minHeight={{ xs: 0, md: 400 }}
+                >
                   <Box
                     sx={{
                       display: "column",
@@ -80,7 +89,12 @@ export default function Home() {
 
       {/* Timetable */}
       <Box
-        sx={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign:'center' }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+        }}
       >
         <h2>Class Timetable</h2>
         <h5>Term 4, 2025 (13/10/25 - 21/12/2025)</h5>

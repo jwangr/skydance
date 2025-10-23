@@ -1,8 +1,8 @@
 import { Aboreto, EB_Garamond } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { Toolbar } from "@mui/material";
 import Footer from "@/components/Footer";
+import { Toolbar } from "@mui/material";
 
 const aboreto = Aboreto({
   weight: "400",
@@ -25,8 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${aboreto.variable} ${ebGaramond.variable}`}>
       <body className="font-body">
         <Navbar />
-        <Toolbar />
-        <Toolbar />
+        <Toolbar sx={{ display: { xs: "none", sm: "block" } }} />
         {children}
       </body>
       <Footer />
