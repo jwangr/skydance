@@ -3,20 +3,20 @@
 /* Global color variables */
 :root {
   /* Background colors */
-  --bg1: #FFFFFF;
-  --bg2: #4A5759;
-  --bg3: #B0C4B1;
-  --bg4: #DEDBD2;
-  --bg5: #F7E1D7;
-  --bg6: #EDAFB8cc;
+  --bg1: #ffffff;
+  --bg2: #4a5759;
+  --bg3: #b0c4b1;
+  --bg4: #dedbd2;
+  --bg5: #f7e1d7;
+  --bg6: #edafb8cc;
 
   /* Paragraph colors */
   --paragraph-1: #000000;
-  --paragraph-2: #FFFFFF;
+  --paragraph-2: #ffffff;
 
   /* Accent colors */
-  --accent-1: #BA8C93;
-  --accent-2: #F2F0F1;
+  --accent-1: #ba8c93;
+  --accent-2: #f2f0f1;
 }
 
 body {
@@ -41,7 +41,8 @@ h2 {
 
 /* H3 - Aboreto */
 h3 {
-  font-family: "Aboreto", cursive;
+  font-family: "EB Garamond", serif;
+  text-transform: uppercase;
   font-size: 32px;
   /* line-height: 120px; */
   font-weight: 400;
@@ -57,19 +58,31 @@ h4 {
 
 /* H5 - Aboreto */
 h5 {
-  font-family: "Aboreto", cursive;
+  font-family: "EB Garamond", serif;
   font-size: 28px;
   /* line-height: 110px; */
   font-weight: 600;
 }
 
 h6 {
-  font-family: "Aboreto", cursive;
+  font-family: "EB Garamond", serif;
   font-size: 24px;
   font-weight: 500;
 }
 
 p {
-  font-family: "EB Garamond", cursive;
+  font-family: "EB Garamond", serif;
   font-size: 32px;
+}
+
+/* Stylised Buttons */
+.button1 {
+  background-color: var(--bg5);
+  padding: 25px;
+  font-family: "Geist", sans-serif;
+  font-size: 16;
+}
+
+.button1:hover {
+  background-color: var(--bg4);
 }
