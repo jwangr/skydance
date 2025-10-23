@@ -8,7 +8,7 @@ import staffData from "@/lib/data/staff.json";
 export default function AboutPage() {
   return (
     <>
-      <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={500}>
+      <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={'100vh'}>
         <AnimateInView>
           <h1>About us</h1>
         </AnimateInView>

@@ -30,7 +30,7 @@ export default function TeamCard({ staff = staffData[0] }) {
             flex: 2.5,
           }}
         >
-          <h2 className="bold">{staff.title}</h2>
+          <h2>{staff.title}</h2>
           <h3>{staff.role}</h3>
           <ul
             style={{ listStyle: "disc", textAlign: "left", fontSize: "32px" }}
