@@ -91,7 +91,12 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <ListItemButton key={link.title}>
               <ListItemText>
-                <Link color="black" underline="none" href={link.link}>
+                <Link
+                  color="black"
+                  underline="none"
+                  href={link.link}
+                  sx={{ fontFamily: '"EB Garamond", serif' }}
+                >
                   {link.title}
                 </Link>
               </ListItemText>
