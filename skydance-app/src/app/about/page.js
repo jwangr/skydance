@@ -4,11 +4,12 @@ import TeamCard from "@/components/TeamCard";
 import { Box, Button } from "@mui/material";
 import Link from "next/link";
 import staffData from "@/lib/data/staff.json";
+import ParallaxSection from "@/components/ParallaxSection";
 
 export default function AboutPage() {
   return (
     <>
-      <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={'100vh'}>
+      <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={"100vh"}>
         <AnimateInView>
           <h1>About us</h1>
         </AnimateInView>
@@ -16,7 +17,7 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <AnimateInView>
-        <Box sx={{ paddingY: 10, paddingX: { xs: 0, md: 10 } }}>
+        <Box sx={{ paddingTop: 10, paddingX: { xs: 0, md: 10 } }}>
           <Box
             sx={{
               borderRadius: 4,
@@ -59,7 +60,7 @@ export default function AboutPage() {
       <Box
         sx={{ paddingY: 10, paddingX: { xs: 0, md: 10 }, textAlign: "center" }}
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl">Meet Our Team</h1>
+        <h2>Meet Our Team</h2>
         <Box sx={{ px: 2, width: { sm: "75%", md: "100%" }, marginX: "auto" }}>
           {staffData.map((staff) => (
             <TeamCard staff={staff} key={staff.title} />

@@ -1,5 +1,6 @@
 import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
+import ParallaxSection from "@/components/ParallaxSection";
 import { Box, Grid, Link, ListItemButton, Toolbar } from "@mui/material";
 
 export default function Home() {
@@ -109,10 +110,12 @@ export default function Home() {
             src="/Timetable.PNG"
             alt="Timetable"
             sx={{
-              width: "100%", // scales to container
+              maxWidth: "100%", // scales to container
               minWidth: 750, // never shrink below 500px
               height: "auto",
+              maxHeight: "80vh",
               display: "block",
+              margin: {md: 'auto'}
             }}
           />
         </Box>

@@ -45,7 +45,12 @@ const Navbar = () => {
           <ListItem key={item.title} disablePadding>
             <ListItemButton>
               <ListItemText sx={{ display: "flex", justifyContent: "center" }}>
-                <Link color="black" underline="none" href={item.link}>
+                <Link
+                  color="black"
+                  underline="none"
+                  href={item.link}
+                  sx={{ fontFamily: "EB-Garamond, serif" }}
+                >
                   {item.title}
                 </Link>
               </ListItemText>

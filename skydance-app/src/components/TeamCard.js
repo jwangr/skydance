@@ -31,7 +31,7 @@ export default function TeamCard({ staff = staffData[0] }) {
           }}
         >
           <h2>{staff.title}</h2>
-          <h3>{staff.role}</h3>
+          <p><b>{staff.role}</b></p>
           <ul
             style={{ listStyle: "disc", textAlign: "left", fontSize: "32px" }}
           >
@@ -53,7 +53,7 @@ export default function TeamCard({ staff = staffData[0] }) {
           }}
         >
           <Image
-            src={staff.src}
+            src={staff.src ?? 'logo.webp'}
             fill
             style={{ objectFit: "cover", objectPosition: "top" }}
             alt={staff.title}
