@@ -1,10 +1,9 @@
 import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
 import TeamCard from "@/components/TeamCard";
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import Link from "next/link";
 import staffData from "@/lib/data/staff.json";
-import ParallaxSection from "@/components/ParallaxSection";
 
 export default function AboutPage() {
   return (

@@ -1,0 +1,35 @@
+[
+  {
+    "title": "Ballet",
+    "description": "Students build strong technique, musicality, and performance skills while working toward internationally recognized RAD certificates, accepted in 83 countries. These classes provide a solid foundation for all dance styles, inspiring confidence and a lifelong foundation of dance in every dancer.",
+    "images": ["ballet1.png, ballet2.png, ballet3.png"]
+  },
+  {
+    "title": "Lyrical / Contemporary",
+    "description": "Lyrical is a form of ballet without all the rules! Lyrical dance combines the grace of ballet with storytelling, encouraging students to feel the music and express emotions."
+  },
+  {
+    "title": "Contemporary",
+    "description": "Contemporary dance is an expressive, versatile style that blends ballet, modern, and jazz while embracing unconventional movements from around the world. Together with Lyrical, these classes inspire creativity, musicality, and emotional expression, helping dancers develop confidence and a deeper connection to the art of movement."
+  },
+  {
+    "title": "Jazz",
+    "description": "Jazz is an exciting class with a funky feel, dancing to the latest music. Classes include a floor warm-up, stretch and limber session, followed by corner steps including kicks, leaps and turns, finishing with a routine. Technique is encouraged in this class and all steps are broken down and explained in detail."
+  },
+  {
+    "title": "Hip Hop",
+    "description": "Hip Hop is a free urban style of dance. This is not a technical class and students are encouraged to find their own groove and own style. Some break dancing is taught."
+  },
+  {
+    "title": "K-pop",
+    "description": "K-pop dance refers to the style of dance that is popular in the Korean music industry. This style of dance has gained immense popularity worldwide, with K-pop groups and their dance routines becoming viral sensations on social media platforms like YouTube and TikTok. K-pop dance continues to inspire millions of fans all around the world. Whether you are a seasoned dancer or a casual enthusiast, K-pop dance offers a fun and exciting way to express yourself and immerse yourself in the colorful world of Korean culture."
+  },
+  {
+    "title": "Chinese Dance",
+    "description": "Train the perfect combination of body, dance, and music. Starting from the basic skills of dance, physical training, combined with Chinese classical dance, elegant posture, manners! Enjoy the dance and love the dance!"
+  },
+  {
+    "title": "Acrobatics",
+    "description": "Welcome to our Acrobatics Class! In this fun and exciting class, you'll learn amazing tricks, flips, and balance moves. It's like gymnastics with a touch of circus-style excitement. Get ready to tumble, twist, and soar through the air while building strength and flexibility. Whether you're a beginner or have some experience, our instructors will help you master the art of acrobatics while having a great time!"
+  }
+]
