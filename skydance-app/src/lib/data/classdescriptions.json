@@ -6,7 +6,12 @@
   },
   {
     "title": "Lyrical / Contemporary",
-    "description": "Lyrical is a form of ballet without all the rules! Lyrical dance combines the grace of ballet with storytelling, encouraging students to feel the music and express emotions."
+    "description": "Lyrical is a form of ballet without all the rules! Lyrical dance combines the grace of ballet with storytelling, encouraging students to feel the music and express emotions.",
+    "images": [
+      "lyrical/image.png",
+      "lyrical/image copy.png",
+      "lyrical/image copy 2.png"
+    ]
   },
   {
     "title": "Contemporary",
