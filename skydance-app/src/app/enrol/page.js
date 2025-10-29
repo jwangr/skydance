@@ -2,13 +2,28 @@
 
 import { useState } from "react";
 import classes from "@/lib/data/classdescriptions.json";
-import { Box, IconButton, Paper } from "@mui/material";
+import { Box, FormLabel, IconButton, Paper, Stack } from "@mui/material";
 import Link from "next/link";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import socialLinks from "@/lib/data/socialLinks.json";
 
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  Checkbox,
+  ListItemText,
+  Chip,
+  RadioGroup,
+  FormControlLabel,
+  Radio,
+  TextField,
+  Button,
+  Alert,
+} from "@mui/material";
 
 const danceClasses = classes.map((x) => x.title);
 const iconMap = {
@@ -37,11 +52,7 @@ export default function EnrolPage() {
     if (formType === "trial") {
       setSelectedClasses([value]);
     } else {
-      const options = Array.from(
-        e.target.selectedOptions,
-        (option) => option.value
-      );
-      setSelectedClasses(options);
+      setSelectedClasses(typeof value === "string" ? value.split(",") : value);
     }
   };
 
@@ -267,364 +278,204 @@ export default function EnrolPage() {
               gridColumn: "span 2",
             }}
           >
-            <div onSubmit={handleSubmit}>
-              <div style={{ marginBottom: "1.5rem" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "0.5rem",
-                    fontWeight: "600",
-                  }}
-                >
+            <Box component="form" onSubmit={handleSubmit}>
+              <FormControl component="fieldset" sx={{ mb: 3 }}>
+                <FormLabel component="legend" sx={{ mb: 1, fontWeight: 600 }}>
                   I want to...
-                </label>
-                <div style={{ display: "flex", gap: "2rem" }}>
-                  <label
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <input
-                      type="radio"
-                      value="trial"
-                      checked={formType === "trial"}
-                      onChange={(e) => {
-                        setFormType(e.target.value);
-                        setSelectedClasses([]);
-                      }}
-                      style={{
-                        width: "18px",
-                        height: "18px",
-                        accentColor: "var(--accent-1)",
-                      }}
-                    />
-                    Trial a Class
-                  </label>
-                  <label
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.5rem",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <input
-                      type="radio"
-                      value="enrol"
-                      checked={formType === "enrol"}
-                      onChange={(e) => {
-                        setFormType(e.target.value);
-                        setSelectedClasses([]);
-                      }}
-                      style={{
-                        width: "18px",
-                        height: "18px",
-                        accentColor: "var(--accent-1)",
-                      }}
-                    />
-                    Enrol
-                  </label>
-                </div>
-              </div>
-
-              <div style={{ marginBottom: "1.5rem" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "0.5rem",
-                    fontWeight: "600",
+                </FormLabel>
+                <RadioGroup
+                  row
+                  value={formType}
+                  onChange={(e) => {
+                    setFormType(e.target.value);
+                    setSelectedClasses([]);
                   }}
+                  sx={{ gap: 2 }}
                 >
-                  Select Dance Class{formType === "enrol" ? "es" : ""} *
-                </label>
-                <select
+                  <FormControlLabel
+                    value="trial"
+                    control={<Radio />}
+                    label="Trial a Class"
+                  />
+                  <FormControlLabel
+                    value="enrol"
+                    control={<Radio />}
+                    label="Enrol"
+                  />
+                </RadioGroup>
+              </FormControl>
+
+              <FormControl fullWidth required sx={{ mb: 3 }}>
+                <InputLabel id="dance-class-label">
+                  Select Dance Class{formType === "enrol" ? "es" : ""}
+                </InputLabel>
+                <Select
+                  labelId="dance-class-label"
+                  id="dance-class-select"
+                  multiple={formType === "enrol"}
                   value={
-                    formType === "trial" ? selectedClasses[0] || "" : undefined
+                    formType === "trial"
+                      ? selectedClasses[0] || ""
+                      : selectedClasses
                   }
                   onChange={handleClassChange}
-                  multiple={formType === "enrol"}
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    border: "1px solid #ccc",
-                    borderRadius: "8px",
-                    fontSize: "1rem",
-                    minHeight: formType === "enrol" ? "120px" : "auto",
+                  label={`Select Dance Class${
+                    formType === "enrol" ? "es" : ""
+                  }`}
+                  renderValue={
+                    formType === "enrol"
+                      ? (selected) => (
+                          <Box
+                            sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}
+                          >
+                            {selected.map((value) => (
+                              <Chip key={value} label={value} size="small" />
+                            ))}
+                          </Box>
+                        )
+                      : undefined
+                  }
+                  sx={{
+                    minHeight: formType === "enrol" ? "56px" : "auto",
                   }}
                 >
                   {formType === "trial" && (
-                    <option value="">Select a class</option>
+                    <MenuItem value="">
+                      <em>Select a class</em>
+                    </MenuItem>
                   )}
                   {danceClasses.map((cls) => (
-                    <option key={cls} value={cls}>
-                      {cls}
-                    </option>
+                    <MenuItem key={cls} value={cls}>
+                      {formType === "enrol" && (
+                        <Checkbox checked={selectedClasses.indexOf(cls) > -1} />
+                      )}
+                      <ListItemText primary={cls} />
+                    </MenuItem>
                   ))}
-                </select>
-                {formType === "enrol" && (
-                  <small
-                    style={{
-                      display: "block",
-                      marginTop: "0.25rem",
-                      color: "#666",
-                    }}
-                  >
-                    Hold Ctrl/Cmd to select multiple classes
-                  </small>
-                )}
-              </div>
+                </Select>
+              </FormControl>
 
-              <div style={{ marginBottom: "1.5rem" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "0.5rem",
-                    fontWeight: "600",
-                  }}
-                >
-                  Student Name *
-                </label>
-                <input
-                  type="text"
-                  name="studentName"
-                  value={formData.studentName}
-                  onChange={handleInputChange}
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    border: "1px solid #ccc",
-                    borderRadius: "8px",
-                    fontSize: "1rem",
-                  }}
-                />
-              </div>
+              <TextField
+                fullWidth
+                required
+                label="Student Name"
+                name="studentName"
+                value={formData.studentName}
+                onChange={handleInputChange}
+                sx={{ mb: 3 }}
+              />
 
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "1rem",
-                  marginBottom: "1.5rem",
-                }}
+              <Stack
+                direction={{ xs: "column", sm: "row" }}
+                spacing={{ xs: 1, sm: 2, md: 4 }}
+                sx={{ mb: 3 }}
               >
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      marginBottom: "0.5rem",
-                      fontWeight: "600",
-                    }}
-                  >
-                    Date of Birth *
-                  </label>
-                  <input
+                  <TextField
+                    fullWidth
+                    required
                     type="date"
+                    label="Date of Birth"
                     name="dob"
                     value={formData.dob}
                     onChange={handleInputChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "0.75rem",
-                      border: "1px solid #ccc",
-                      borderRadius: "8px",
-                      fontSize: "1rem",
-                    }}
+                    InputLabelProps={{ shrink: true }}
                   />
-                </div>
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      marginBottom: "0.5rem",
-                      fontWeight: "600",
-                    }}
-                  >
-                    Gender *
-                  </label>
-                  <select
-                    name="gender"
-                    value={formData.gender}
-                    onChange={handleInputChange}
+                  <FormControl fullWidth required>
+                    <InputLabel id="gender-label">Gender</InputLabel>
+                    <Select
+                      labelId="gender-label"
+                      name="gender"
+                      value={formData.gender}
+                      onChange={handleInputChange}
+                      label="Gender"
+                    >
+                      <MenuItem value="">
+                        <em>Select gender</em>
+                      </MenuItem>
+                      <MenuItem value="female">Female</MenuItem>
+                      <MenuItem value="male">Male</MenuItem>
+                      <MenuItem value="other">Other</MenuItem>
+                      <MenuItem value="prefer-not-to-say">
+                        Prefer not to say
+                      </MenuItem>
+                    </Select>
+                  </FormControl>
+              </Stack>
+
+              <TextField
+                fullWidth
+                required
+                label="Address"
+                name="address"
+                value={formData.address}
+                onChange={handleInputChange}
+                sx={{ mb: 3 }}
+              />
+
+                  <TextField
+                    fullWidth
                     required
-                    style={{
-                      width: "100%",
-                      padding: "0.75rem",
-                      border: "1px solid #ccc",
-                      borderRadius: "8px",
-                      fontSize: "1rem",
-                    }}
-                  >
-                    <option value="">Select gender</option>
-                    <option value="female">Female</option>
-                    <option value="male">Male</option>
-                    <option value="other">Other</option>
-                    <option value="prefer-not-to-say">Prefer not to say</option>
-                  </select>
-                </div>
-              </div>
-
-              <div style={{ marginBottom: "1.5rem" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "0.5rem",
-                    fontWeight: "600",
-                  }}
-                >
-                  Address *
-                </label>
-                <input
-                  type="text"
-                  name="address"
-                  value={formData.address}
-                  onChange={handleInputChange}
-                  required
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    border: "1px solid #ccc",
-                    borderRadius: "8px",
-                    fontSize: "1rem",
-                  }}
-                />
-              </div>
-
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  gap: "1rem",
-                  marginBottom: "1.5rem",
-                }}
-              >
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      marginBottom: "0.5rem",
-                      fontWeight: "600",
-                    }}
-                  >
-                    Phone Number *
-                  </label>
-                  <input
                     type="tel"
+                    label="Phone Number"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "0.75rem",
-                      border: "1px solid #ccc",
-                      borderRadius: "8px",
-                      fontSize: "1rem",
-                    }}
                   />
-                </div>
-                <div>
-                  <label
-                    style={{
-                      display: "block",
-                      marginBottom: "0.5rem",
-                      fontWeight: "600",
-                    }}
-                  >
-                    Email *
-                  </label>
-                  <input
+                  <TextField
+                    fullWidth
+                    required
                     type="email"
+                    label="Email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "0.75rem",
-                      border: "1px solid #ccc",
-                      borderRadius: "8px",
-                      fontSize: "1rem",
-                    }}
                   />
-                </div>
-              </div>
 
-              <div style={{ marginBottom: "1.5rem" }}>
-                <label
-                  style={{
-                    display: "block",
-                    marginBottom: "0.5rem",
-                    fontWeight: "600",
-                  }}
-                >
-                  Additional Notes
-                </label>
-                <textarea
-                  name="notes"
-                  value={formData.notes}
-                  onChange={handleInputChange}
-                  rows={4}
-                  placeholder="Any medical conditions, special requirements, or questions..."
-                  style={{
-                    width: "100%",
-                    padding: "0.75rem",
-                    border: "1px solid #ccc",
-                    borderRadius: "8px",
-                    fontSize: "1rem",
-                    fontFamily: "inherit",
-                    resize: "vertical",
-                  }}
-                />
-              </div>
+              <TextField
+                fullWidth
+                multiline
+                rows={4}
+                label="Additional Notes"
+                name="notes"
+                value={formData.notes}
+                onChange={handleInputChange}
+                placeholder="Any medical conditions, preferred times, or questions..."
+                sx={{ mb: 3 }}
+              />
 
-              <button
+              <Button
                 type="submit"
-                onClick={handleSubmit}
+                fullWidth
+                variant="contained"
+                size="large"
                 disabled={isSubmitting}
-                style={{
-                  width: "100%",
-                  padding: "1rem",
-                  backgroundColor: isSubmitting ? "#ccc" : "#b983b5",
-                  color: "white",
-                  border: "none",
-                  borderRadius: "8px",
+                sx={{
+                  py: 1.5,
                   fontSize: "1.1rem",
-                  fontWeight: "600",
-                  cursor: isSubmitting ? "not-allowed" : "pointer",
-                  transition: "background-color 0.2s",
-                }}
-                onMouseOver={(e) => {
-                  if (!isSubmitting) e.target.style.backgroundColor = "#a070a0";
-                }}
-                onMouseOut={(e) => {
-                  if (!isSubmitting) e.target.style.backgroundColor = "#b983b5";
+                  fontWeight: 600,
+                  backgroundColor: "var(--bg6)",
+                  "&:hover": {
+                    backgroundColor: "#a070a0",
+                  },
+                  "&:disabled": {
+                    backgroundColor: "#ccc",
+                  },
                 }}
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
-              </button>
+              </Button>
 
               {submitMessage && (
-                <div
-                  style={{
-                    marginTop: "1rem",
-                    padding: "1rem",
-                    borderRadius: "8px",
-                    backgroundColor: submitMessage.includes("error")
-                      ? "#fee"
-                      : "#efe",
-                    color: submitMessage.includes("error") ? "#c33" : "#363",
-                  }}
+                <Alert
+                  severity={
+                    submitMessage.includes("error") ? "error" : "success"
+                  }
+                  sx={{ mt: 2 }}
                 >
                   {submitMessage}
-                </div>
+                </Alert>
               )}
-            </div>
+            </Box>
           </div>
         </div>
       </div>
