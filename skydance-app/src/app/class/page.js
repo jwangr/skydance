@@ -19,10 +19,10 @@ export default function ClassPage() {
       </Hero>
 
       {/* Dance Styles  */}
-      <SnapScrollSection>
+      <SnapScrollSection visibility={1}>
         <Box
           sx={{
-            paddingY: 10,
+            marginY: 10,
             paddingX: { xs: 0, md: 10 },
             textAlign: "center",
           }}
@@ -45,38 +45,37 @@ export default function ClassPage() {
 
       {/* Timetable */}
       <SnapScrollSection>
-        {/* <AnimateInView> */}
-        <Toolbar />
         <Timetable />
-        {/* </AnimateInView> */}
       </SnapScrollSection>
 
       {/* Enrol or Trial Class */}
-      <Hero
-        backgroundImage="url('studio.webp')"
-        minHeight={500}
-        overlay="rgba(4, 11, 9, 0.5)"
-      >
-        <Box
-          sx={{
-            mx: 10,
-            my: 5,
-          }}
+      <SnapScrollSection>
+        <Hero
+          backgroundImage="url('studio.webp')"
+          minHeight={'100vh'}
+          overlay="rgba(4, 11, 9, 0.5)"
         >
-          <h4>Enrol or Trial a Class</h4>
-          <p>
-            Discover the joy of dance! From Ballet and Lyrical to Hip Hop and
-            Contemporary, our classes inspire creativity, build confidence, and
-            let you move your way. Whether you’re a beginner or experienced,
-            join us and unleash your passion for dance today!
-          </p>
-          <Box sx={{ my: 5 }}>
-            <Link href="/enrol">
-              <button className="button1">Apply Now</button>
-            </Link>
+          <Box
+            sx={{
+              my: 5,
+              paddingX: { xs: 2, md: 10 },
+            }}
+          >
+            <h4>Join a class</h4>
+            <p>
+              Discover the joy of dance! From Ballet and Lyrical to Hip Hop and
+              Contemporary, our classes inspire creativity, build confidence,
+              and let you move your way. Whether you’re a beginner or
+              experienced, join us and unleash your passion for dance today!
+            </p>
+            <Box sx={{ my: 5 }}>
+              <Link href="/enrol">
+                <button className="button1">Apply Now</button>
+              </Link>
+            </Box>
           </Box>
-        </Box>
-      </Hero>
+        </Hero>
+      </SnapScrollSection>
     </>
   );
 }

@@ -16,7 +16,7 @@ export default function AboutPage() {
       </Hero>
 
       {/* Our Story */}
-      <SnapScrollSection visibility={0.8}>
+      <SnapScrollSection visibility={1.0}>
         <AnimateInView>
           <Box sx={{marginTop: 10, paddingX: { xs: 0, md: 10 } }}>
             <Box
