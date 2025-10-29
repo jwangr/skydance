@@ -2,7 +2,7 @@
   {
     "title": "Ballet",
     "description": "Students build strong technique, musicality, and performance skills while working toward internationally recognized RAD certificates, accepted in 83 countries. These classes provide a solid foundation for all dance styles, inspiring confidence and a lifelong foundation of dance in every dancer.",
-    "images": ["ballet1.png, ballet2.png, ballet3.png"]
+    "images": ["ballet/ballet1.png", "ballet/ballet2.png", "ballet/ballet3.png"]
   },
   {
     "title": "Lyrical / Contemporary",

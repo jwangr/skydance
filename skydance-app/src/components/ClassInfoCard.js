@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 // import required modules
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from "swiper/modules";
 
 // Sample props structure:
 const example = {
@@ -26,7 +26,7 @@ export default function ClassInfoCard({ danceClass = example }) {
         p: 3,
         my: 4,
         borderRadius: 3,
-        backgroundColor: "var(--bg1)",
+        backgroundColor: "#fbfbfb",
       }}
     >
       {/* Decorative Title */}
@@ -88,23 +88,37 @@ export default function ClassInfoCard({ danceClass = example }) {
             spaceBetween={10}
             slidesPerView={1}
             loop={true}
-            autoplay={{ delay: 2000 }}
+            autoplay={{ delay: 3000 }}
             modules={[Autoplay]}
           >
-            {danceClass.images.map((img, index) => (
-              <SwiperSlide key={index}>
-                <img
-                  src={img}
-                  alt={`${danceClass.title} ${index + 1}`}
-                  style={{
-                    width: "100%",
-                    height: "250px",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                  }}
-                />
-              </SwiperSlide>
-            ))}
+            {danceClass.images &&
+              danceClass.images.map((img, index) => (
+                <SwiperSlide key={index}>
+                  <img
+                    src={img}
+                    alt={`${danceClass.title} ${index + 1}`}
+                    style={{
+                      width: "100%",
+                      height: "250px",
+                      objectFit: "cover",
+                      borderRadius: "8px",
+                    }}
+                  />
+                </SwiperSlide>
+              ))}
+
+            {!danceClass.images && (
+              <img
+                src={'logo.webp'}
+                alt={`no image`}
+                style={{
+                  width: "100%",
+                  height: "250px",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                }}
+              />
+            )}
           </Swiper>
         </Box>
       </Box>

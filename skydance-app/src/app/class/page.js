@@ -24,7 +24,7 @@ export default function ClassPage() {
         </p>
         <Box sx={{ px: 2, width: { sm: "75%", md: "100%" }, marginX: "auto" }}>
           {classData.map((c) => (
-            <ClassInfoCard key={c.title}/>
+            <ClassInfoCard key={c.title} danceClass={c}/>
           ))}
         </Box>
       </Box>
