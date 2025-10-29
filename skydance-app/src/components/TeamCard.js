@@ -5,7 +5,7 @@ import AnimateInView from "./AnimateInView";
 
 export default function TeamCard({ staff = staffData[0] }) {
   return (
-    <AnimateInView>
+    <AnimateInView once={true}>
       <Box
         sx={{
           borderRadius: 4,
