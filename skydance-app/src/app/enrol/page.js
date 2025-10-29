@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import classes from "@/lib/data/classdescriptions.json";
+import contacts from "@/lib/data/contact.json";
 import { Box, FormLabel, IconButton, Paper, Stack } from "@mui/material";
 import Link from "next/link";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -24,6 +25,8 @@ import {
   Button,
   Alert,
 } from "@mui/material";
+import GetInTouchDescriptors from "@/components/GetInTouchDescriptors";
+import EmbeddedMap from "@/components/EmbeddedMap";
 
 const danceClasses = classes.map((x) => x.title);
 const iconMap = {
@@ -119,26 +122,32 @@ export default function EnrolPage() {
       style={{
         minHeight: "100vh",
         padding: "4rem 2rem",
-        backgroundColor: "var(--bg1)",
+        background: "linear-gradient(to bottom right, var(--bg1), var(--bg5))",
       }}
     >
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <div
+        style={{
+          maxWidth: "1200px",
+          margin: "0 auto",
+          backgroundColor: "var(--bg1)",
+          backdropFilter: "blur(10px)",
+          borderRadius: "20px",
+          boxShadow: "0 8px 30px rgba(0, 0, 0, 0.1)",
+          padding: "4rem 3rem",
+          textAlign: "center",
+        }}
+      >
+        {/* Headings */}
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <h1 style={{ fontSize: "5.5rem", marginBottom: "1rem" }}>
             Enrol or Trial a Class
           </h1>
-          <p>Join our dance community today</p>
+          <p>Join the Sky Dance community today</p>
         </div>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "2rem",
-          }}
-        >
+        <Stack direction={{ xs: "column", md: "row" }} gap={3}>
           {/* Contact Information */}
-          <div
+          <Box
             style={{
               backgroundColor: "white",
               borderRadius: "12px",
@@ -156,117 +165,18 @@ export default function EnrolPage() {
               Get In Touch
             </h2>
 
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1.5rem",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  gap: "1rem",
-                  alignItems: "flex-start",
-                }}
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--bg6)"
-                  strokeWidth="2"
-                >
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <div>
-                  <strong>Address</strong>
-                  <p
-                    style={{
-                      margin: "0.5rem 0 0 0",
-                      color: "#666",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    Shop 8/219 Parramatta Rd (Level 1),
-                    <br />
-                    Auburn, NSW 2144
-                    <br />
-                    Australia
-                  </p>
-                </div>
-              </div>
+            {contacts.map(({ title, description, link }) => (
+              <GetInTouchDescriptors
+                title={title}
+                description={description}
+                link={link}
+                key={title}
+              />
+            ))}
 
-              <div
-                style={{
-                  display: "flex",
-                  gap: "1rem",
-                  alignItems: "flex-start",
-                }}
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--bg6)"
-                  strokeWidth="2"
-                >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <div>
-                  <strong>Phone</strong>
-                  <p style={{ margin: "0.5rem 0 0 0", color: "#666" }}>
-                    (02) 1234 5678
-                  </p>
-                </div>
-              </div>
-
-              <div
-                style={{
-                  display: "flex",
-                  gap: "1rem",
-                  alignItems: "flex-start",
-                }}
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--bg6)"
-                  strokeWidth="2"
-                >
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
-                <div>
-                  <strong>Email</strong>
-                  <p style={{ margin: "0.5rem 0 0 0", color: "#666" }}>
-                    info@skydance.com.au
-                  </p>
-                </div>
-              </div>
-
-              <div style={{ marginTop: "1rem" }}>
-                <strong style={{ display: "block", marginBottom: "1rem" }}>
-                  Follow Us
-                </strong>
-                {/* Social Media Links */}
-                <Box sx={{ display: "flex", gap: 1 }}>
-                  {socialLinks.map((link) => (
-                    <Link href={link.link}>
-                      <IconButton aria-label="link.title">
-                        {iconMap[link.icon]}
-                      </IconButton>
-                    </Link>
-                  ))}
-                </Box>
-              </div>
-            </div>
-          </div>
+            {/* Embedded map */}
+            <EmbeddedMap />
+          </Box>
 
           {/* Enrolment Form */}
           <div
@@ -370,36 +280,36 @@ export default function EnrolPage() {
                 spacing={{ xs: 1, sm: 2, md: 4 }}
                 sx={{ mb: 3 }}
               >
-                  <TextField
-                    fullWidth
-                    required
-                    type="date"
-                    label="Date of Birth"
-                    name="dob"
-                    value={formData.dob}
+                <TextField
+                  fullWidth
+                  required
+                  type="date"
+                  label="Date of Birth"
+                  name="dob"
+                  value={formData.dob}
+                  onChange={handleInputChange}
+                  InputLabelProps={{ shrink: true }}
+                />
+                <FormControl fullWidth required>
+                  <InputLabel id="gender-label">Gender</InputLabel>
+                  <Select
+                    labelId="gender-label"
+                    name="gender"
+                    value={formData.gender}
                     onChange={handleInputChange}
-                    InputLabelProps={{ shrink: true }}
-                  />
-                  <FormControl fullWidth required>
-                    <InputLabel id="gender-label">Gender</InputLabel>
-                    <Select
-                      labelId="gender-label"
-                      name="gender"
-                      value={formData.gender}
-                      onChange={handleInputChange}
-                      label="Gender"
-                    >
-                      <MenuItem value="">
-                        <em>Select gender</em>
-                      </MenuItem>
-                      <MenuItem value="female">Female</MenuItem>
-                      <MenuItem value="male">Male</MenuItem>
-                      <MenuItem value="other">Other</MenuItem>
-                      <MenuItem value="prefer-not-to-say">
-                        Prefer not to say
-                      </MenuItem>
-                    </Select>
-                  </FormControl>
+                    label="Gender"
+                  >
+                    <MenuItem value="">
+                      <em>Select gender</em>
+                    </MenuItem>
+                    <MenuItem value="female">Female</MenuItem>
+                    <MenuItem value="male">Male</MenuItem>
+                    <MenuItem value="other">Other</MenuItem>
+                    <MenuItem value="prefer-not-to-say">
+                      Prefer not to say
+                    </MenuItem>
+                  </Select>
+                </FormControl>
               </Stack>
 
               <TextField
@@ -412,24 +322,24 @@ export default function EnrolPage() {
                 sx={{ mb: 3 }}
               />
 
-                  <TextField
-                    fullWidth
-                    required
-                    type="tel"
-                    label="Phone Number"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                  />
-                  <TextField
-                    fullWidth
-                    required
-                    type="email"
-                    label="Email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                  />
+              <TextField
+                fullWidth
+                required
+                type="tel"
+                label="Phone Number"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+              />
+              <TextField
+                fullWidth
+                required
+                type="email"
+                label="Email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
 
               <TextField
                 fullWidth
@@ -477,7 +387,7 @@ export default function EnrolPage() {
               )}
             </Box>
           </div>
-        </div>
+        </Stack>
       </div>
     </div>
   );
