@@ -169,7 +169,6 @@ export default function EnrolPage() {
               />
             ))}
 
-            {/* Embedded map */}
             <EmbeddedMap />
           </Box>
 
@@ -180,6 +179,7 @@ export default function EnrolPage() {
               borderRadius: "12px",
               padding: "2rem",
               boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              width: "100%",
             }}
           >
             <Box component="form" onSubmit={handleSubmit}>
@@ -280,6 +280,7 @@ export default function EnrolPage() {
                 <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
                   <TextField
                     required
+                    fullWidth
                     type="date"
                     label="Date of Birth"
                     name="dob"
@@ -287,7 +288,7 @@ export default function EnrolPage() {
                     onChange={handleInputChange}
                     InputLabelProps={{ shrink: true }}
                   />
-                  <FormControl required>
+                  <FormControl required fullWidth>
                     <InputLabel id="gender-label">Gender</InputLabel>
                     <Select
                       labelId="gender-label"

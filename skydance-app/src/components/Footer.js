@@ -1,33 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import {
   Divider,
-  Drawer,
-  IconButton,
-  Link,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
 } from "@mui/material";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import socialLinks from "@/lib/data/socialLinks.json";
+import SocialLinks from "./SocialLinks";
 
 const Footer = () => {
-  const iconMap = {
-    Instagram: <InstagramIcon />,
-    Facebook: <FacebookIcon />,
-    Twitter: <TwitterIcon />,
-  };
-
   //   dynamically get year
   const currentYear = new Date().getFullYear();
 
@@ -61,13 +41,7 @@ const Footer = () => {
         </Box>
 
         {/* Social Media Links */}
-        <Box sx={{ display: "flex", gap: 1 }}>
-          {socialLinks.map((link) => (
-            <Link href={link.link}>
-              <IconButton aria-label="link.title">{iconMap[link.icon]}</IconButton>
-            </Link>
-          ))}
-        </Box>
+        <SocialLinks />
       </Toolbar>
       <Divider />
       {/* Copyright */}

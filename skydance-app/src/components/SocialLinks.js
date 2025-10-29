@@ -14,7 +14,7 @@ export default function SocialLinks() {
   return (
     <Stack direction={"row"} gap={3} justifyContent={"center"}>
       {socialLinks.map(({ title, link, icon }) => (
-        <a href={link}>{iconMap[icon]}</a>
+        <a key={title} href={link}>{iconMap[icon]}</a>
       ))}
     </Stack>
   );
