@@ -2,7 +2,7 @@ import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
 import { Box } from "@mui/material";
 import React from "react";
-import classData from "@/lib/data/classdescriptions.json"
+import classData from "@/lib/data/classdescriptions.json";
 import ClassInfoCard from "@/components/ClassInfoCard";
 
 export default function ClassPage() {
@@ -24,7 +24,9 @@ export default function ClassPage() {
         </p>
         <Box sx={{ px: 2, width: { sm: "75%", md: "100%" }, marginX: "auto" }}>
           {classData.map((c) => (
-            <ClassInfoCard key={c.title} danceClass={c}/>
+            <AnimateInView key={c.title}>
+              <ClassInfoCard danceClass={c} />
+            </AnimateInView>
           ))}
         </Box>
       </Box>
