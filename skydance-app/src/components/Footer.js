@@ -56,7 +56,7 @@ const Footer = () => {
         </Box>
 
         {/* Copyright */}
-        <Box>© {currentYear} Sky Dance Studio</Box>
+        <Box>© {currentYear} Sky Dance Studio. All rights reserved. </Box>
 
         {/* Social Media Links */}
         <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 1 }}>
