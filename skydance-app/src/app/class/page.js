@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import React from "react";
 import classData from "@/lib/data/classdescriptions.json";
 import ClassInfoCard from "@/components/ClassInfoCard";
+import Timetable from "@/components/Timetable";
 
 export default function ClassPage() {
   return (
@@ -30,6 +31,9 @@ export default function ClassPage() {
           ))}
         </Box>
       </Box>
+
+      {/* Timetable */}
+      <Timetable />
     </>
   );
 }
