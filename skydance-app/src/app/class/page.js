@@ -44,15 +44,15 @@ export default function ClassPage() {
       </SnapScrollSection>
 
       {/* Timetable */}
-      <SnapScrollSection>
+      <AnimateInView>
         <Timetable />
-      </SnapScrollSection>
+      </AnimateInView>
 
       {/* Enrol or Trial Class */}
       <SnapScrollSection>
         <Hero
           backgroundImage="url('studio.webp')"
-          minHeight={'100vh'}
+          minHeight={"100vh"}
           overlay="rgba(4, 11, 9, 0.5)"
         >
           <Box
