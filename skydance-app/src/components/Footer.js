@@ -21,10 +21,22 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 const Footer = () => {
-  const navLinks = [
-    { title: "Instagram", link: "https://www.instagram.com/skydancestudio2020/", icon: <InstagramIcon /> },
-    { title: "Facebook", link: "https://www.facebook.com/SkyDanceStudioSydney", icon: <FacebookIcon /> },
-    { title: "X", link: "https://twitter.com/SkyDance2020", icon: <TwitterIcon /> },
+  const socialLinks = [
+    {
+      title: "Instagram",
+      link: "https://www.instagram.com/skydancestudio2020/",
+      icon: <InstagramIcon />,
+    },
+    {
+      title: "Facebook",
+      link: "https://www.facebook.com/SkyDanceStudioSydney",
+      icon: <FacebookIcon />,
+    },
+    {
+      title: "X",
+      link: "https://twitter.com/SkyDance2020",
+      icon: <TwitterIcon />,
+    },
   ];
 
   //   dynamically get year
@@ -55,18 +67,20 @@ const Footer = () => {
           </Box>
         </Box>
 
-        {/* Copyright */}
-        <Box>© {currentYear} Sky Dance Studio. All rights reserved. </Box>
+        <Box sx={{textAlign:'center'}}>Shop 8/219 Parramatta Rd, Auburn, NSW 2144 (Level 1)</Box>
 
         {/* Social Media Links */}
-        <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 1 }}>
-          {navLinks.map((link) => (
+        <Box sx={{ display: "flex", gap: 1 }}>
+          {socialLinks.map((link) => (
             <Link href={link.link}>
               <IconButton aria-label="link.title">{link.icon}</IconButton>
             </Link>
           ))}
         </Box>
       </Toolbar>
+      <Divider />
+      {/* Copyright */}
+      <Box sx={{textAlign:"center", color: 'grey'}}>© {currentYear} Sky Dance Studio. All rights reserved.</Box>
     </Box>
   );
 };
