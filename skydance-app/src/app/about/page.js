@@ -5,10 +5,12 @@ import { Box, Toolbar } from "@mui/material";
 import Link from "next/link";
 import staffData from "@/lib/data/staff.json";
 import SnapScrollSection from "@/components/SnapScrollSection";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function AboutPage() {
   return (
     <>
+      {/* <ScrollToTopButton /> */}
       <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={"100vh"}>
         <AnimateInView>
           <h1>About us</h1>
@@ -16,9 +18,9 @@ export default function AboutPage() {
       </Hero>
 
       {/* Our Story */}
-      <SnapScrollSection visibility={1.0}>
+      <SnapScrollSection visibility={0.99}>
         <AnimateInView>
-          <Box sx={{marginTop: 10, paddingX: { xs: 0, md: 10 } }}>
+          <Box sx={{ marginTop: 10, paddingX: { xs: 0, md: 10 } }}>
             <Box
               sx={{
                 borderRadius: 4,
@@ -31,7 +33,7 @@ export default function AboutPage() {
                 alignItems: "center",
                 textAlign: "center",
                 gap: 3,
-                minHeight: '100vh'
+                minHeight: "100vh",
               }}
             >
               <h3>Our story began over one decade ago...</h3>
@@ -61,7 +63,7 @@ export default function AboutPage() {
       </SnapScrollSection>
 
       {/* Meet Our Team   */}
-      <SnapScrollSection visibility={0.95} >
+      <SnapScrollSection visibility={0.95}>
         <Box
           sx={{
             my: 10,
