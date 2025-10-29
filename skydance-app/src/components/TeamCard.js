@@ -53,7 +53,7 @@ export default function TeamCard({ staff = staffData[0] }) {
           }}
         >
           <Image
-            src={`staff/${staff.src}` ?? 'logo.webp'}
+            src={`/staff${staff.src}` ?? 'logo.webp'}
             fill
             style={{ objectFit: "cover", objectPosition: "top" }}
             alt={staff.title}

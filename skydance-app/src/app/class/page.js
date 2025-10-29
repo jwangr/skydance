@@ -5,6 +5,7 @@ import React from "react";
 import classData from "@/lib/data/classdescriptions.json";
 import ClassInfoCard from "@/components/ClassInfoCard";
 import Timetable from "@/components/Timetable";
+import Link from "next/link";
 
 export default function ClassPage() {
   return (
@@ -33,7 +34,36 @@ export default function ClassPage() {
       </Box>
 
       {/* Timetable */}
-      <Timetable />
+      <AnimateInView>
+        <Timetable />
+      </AnimateInView>
+
+      {/* Enrol or Trial Class */}
+      <Hero
+        backgroundImage="url('studio.webp')"
+        minHeight={500}
+        overlay="rgba(4, 11, 9, 0.5)"
+      >
+        <Box
+          sx={{
+            mx: 10,
+            my: 5,
+          }}
+        >
+          <h4>Enrol or Trial a Class</h4>
+          <p>
+            Discover the joy of dance! From Ballet and Lyrical to Hip Hop and
+            Contemporary, our classes inspire creativity, build confidence, and
+            let you move your way. Whether you’re a beginner or experienced,
+            join us and unleash your passion for dance today!
+          </p>
+          <Box sx={{ my: 5 }}>
+            <Link href="/enrol">
+              <button className="button1">Apply Now</button>
+            </Link>
+          </Box>
+        </Box>
+      </Hero>
     </>
   );
 }
