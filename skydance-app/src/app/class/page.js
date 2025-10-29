@@ -1,11 +1,13 @@
 import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
-import { Box } from "@mui/material";
+import { Box, Toolbar } from "@mui/material";
 import React from "react";
 import classData from "@/lib/data/classdescriptions.json";
 import ClassInfoCard from "@/components/ClassInfoCard";
 import Timetable from "@/components/Timetable";
 import Link from "next/link";
+import Parallax from "@/components/ParallaxSection";
+import SnapScrollSection from "@/components/SnapScrollSection";
 
 export default function ClassPage() {
   return (
@@ -17,26 +19,37 @@ export default function ClassPage() {
       </Hero>
 
       {/* Dance Styles  */}
-      <Box
-        sx={{ paddingY: 10, paddingX: { xs: 0, md: 10 }, textAlign: "center" }}
-      >
-        <p>
-          Discover our classes at Sky Dance Studio — designed to inspire every
-          dancer’s passion and growth.
-        </p>
-        <Box sx={{ px: 2, width: { sm: "75%", md: "100%" }, marginX: "auto" }}>
-          {classData.map((c) => (
-            <AnimateInView key={c.title}>
-              <ClassInfoCard danceClass={c} />
-            </AnimateInView>
-          ))}
+      <SnapScrollSection>
+        <Box
+          sx={{
+            paddingY: 10,
+            paddingX: { xs: 0, md: 10 },
+            textAlign: "center",
+          }}
+        >
+          <p>
+            Discover our classes at Sky Dance Studio — designed to inspire every
+            dancer’s passion and growth.
+          </p>
+          <Box
+            sx={{ px: 2, width: { sm: "75%", md: "100%" }, marginX: "auto" }}
+          >
+            {classData.map((c) => (
+              <AnimateInView key={c.title}>
+                <ClassInfoCard danceClass={c} />
+              </AnimateInView>
+            ))}
+          </Box>
         </Box>
-      </Box>
+      </SnapScrollSection>
 
       {/* Timetable */}
-      <AnimateInView>
+      <SnapScrollSection>
+        {/* <AnimateInView> */}
+        <Toolbar />
         <Timetable />
-      </AnimateInView>
+        {/* </AnimateInView> */}
+      </SnapScrollSection>
 
       {/* Enrol or Trial Class */}
       <Hero

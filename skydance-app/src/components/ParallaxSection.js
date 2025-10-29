@@ -1,41 +1,34 @@
 "use client";
+import { useRef, useEffect, useState } from "react";
 
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
-
-export default function ParallaxSection({
-  children,
-  distance = 500,
-  className = "",
-  style = {},
-}) {
+export default function ScrollInSection({ children }) {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
+  const [visible, setVisible] = useState(false);
 
-  const y = useTransform(scrollYProgress, [0, 1], [-distance, distance]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect(); // only animate once
+        }
+      },
+      { threshold: 0.2 } // triggers when 20% visible
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden ${className}`}
-      style={{
-        willChange: "transform",
-        zIndex: 100,
-        ...style,
-      }}
+      className={`transition-all duration-700 ease-out transform
+        ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+        sticky top-0 z-10 bg-white
+      `}
     >
-      <motion.div
-        style={{
-          y,
-          zIndex: 200,
-          willChange: "transform",
-        }}
-      >
-        {children}
-      </motion.div>
+      {children}
     </section>
   );
 }
