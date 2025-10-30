@@ -24,6 +24,8 @@ import {
 import GetInTouchDescriptors from "@/components/GetInTouchDescriptors";
 import EmbeddedMap from "@/components/EmbeddedMap";
 import SocialLinks from "@/components/SocialLinks";
+import Hero from "@/components/HeroImage";
+import SnapScrollSection from "@/components/SnapScrollSection";
 
 const danceClasses = classes.map((x) => x.title);
 
@@ -110,34 +112,22 @@ export default function EnrolPage() {
   };
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         minHeight: "100vh",
-        padding: "4rem 2rem",
+        // padding: { xs: 0, md: "0rem 2rem" },
         background: "linear-gradient(to bottom right, var(--bg1), var(--bg5))",
       }}
     >
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          backgroundColor: "var(--bg1)",
-          backdropFilter: "blur(10px)",
-          borderRadius: "20px",
-          boxShadow: "0 8px 30px rgba(0, 0, 0, 0.1)",
-          padding: "4rem 3rem",
-          textAlign: "center",
-        }}
-      >
-        {/* Headings */}
-        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-          <h1 style={{ fontSize: "5.5rem", marginBottom: "1rem" }}>
-            Enrol or Trial a Class
-          </h1>
-          <p>Join the Sky Dance community today</p>
-        </div>
+      <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={"70vh"}>
+        <Box sx={{ marginBottom: 5 }}>
+          <h1 style={{ marginX: "auto", textAlign: "center" }}>Join Now</h1>
+        </Box>
+        <p>Be a part of the Sky Dance community today</p>
+      </Hero>
 
-        <Stack direction={{ xs: "column", md: "row" }} gap={3}>
+      <SnapScrollSection visibility={0.7}>
+        <Stack direction={{ xs: "column", md: "row" }} gap={3} padding={2}>
           {/* Contact Information */}
           <Box
             style={{
@@ -383,7 +373,7 @@ export default function EnrolPage() {
             </Box>
           </Box>
         </Stack>
-      </div>
-    </div>
+      </SnapScrollSection>
+    </Box>
   );
 }
