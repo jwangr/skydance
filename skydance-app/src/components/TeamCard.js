@@ -25,7 +25,8 @@ export default function TeamCard({ staff = staffData[0] }) {
         <Box
           sx={{
             color: "black",
-            paddingLeft: 8,
+            paddingLeft: {xs: 2, md: 8},
+            paddingRight: {xs: 2, md: 0},
             paddingY: 8,
             flex: 2.5,
           }}
