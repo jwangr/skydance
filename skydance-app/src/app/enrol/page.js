@@ -127,7 +127,7 @@ export default function EnrolPage() {
       </Hero>
 
       <SnapScrollSection visibility={0.7}>
-        <Stack direction={{ xs: "column", md: "row" }} gap={3} padding={2}>
+        <Stack direction={{ xs: "column", md: "row" }} gap={3} padding={{xs: 0, md: 2}} overflow={'hidden'}>
           {/* Contact Information */}
           <Box
             style={{
