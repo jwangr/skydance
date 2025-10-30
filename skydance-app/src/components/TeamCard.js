@@ -1,4 +1,4 @@
-import { Box, Card } from "@mui/material";
+import { Box, Card, Divider, Stack } from "@mui/material";
 import staffData from "@/lib/data/staff.json";
 import Image from "next/image";
 import AnimateInView from "./AnimateInView";
@@ -9,8 +9,7 @@ export default function TeamCard({ staff = staffData[0] }) {
       <Box
         sx={{
           borderRadius: 4,
-          backgroundColor: "var(--bg4)",
-          color: "white",
+          background: "linear-gradient(135deg, #f8f8f8, #fbfbfb)", // soft neutral gradient          color: "white",
           display: "flex",
           flexDirection: { xs: "column-reverse", md: "row" },
           justifyContent: "space-between",
@@ -19,6 +18,7 @@ export default function TeamCard({ staff = staffData[0] }) {
           overflow: "hidden",
           marginY: 5,
           gap: 2,
+          boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
         }}
       >
         {/* Text Section */}
@@ -30,17 +30,19 @@ export default function TeamCard({ staff = staffData[0] }) {
             flex: 2.5,
           }}
         >
-          <h2>{staff.title}</h2>
-          <p><b>{staff.role}</b></p>
-          <ul
-            style={{ listStyle: "disc", textAlign: "left", fontSize: "32px" }}
-          >
+          {/* Vertical accent divider */}
+          <h2 style={{color: "var(--bg2)"}}>{staff.title}</h2>
+
+          <p>
+            <b>{staff.role}</b>
+          </p>
+          <Box component="ul" sx={{ pl: 2, m: 0, listStyle: "disc" }}>
             {staff.bulletPoints.map((item) => (
               <li key={item}>
                 <p>{item}</p>
               </li>
             ))}
-          </ul>
+          </Box>
         </Box>
 
         {/* Image Section */}
@@ -53,7 +55,7 @@ export default function TeamCard({ staff = staffData[0] }) {
           }}
         >
           <Image
-            src={`/staff${staff.src}` ?? 'logo.webp'}
+            src={`/staff${staff.src}` ?? "logo.webp"}
             fill
             style={{ objectFit: "cover", objectPosition: "top" }}
             alt={staff.title}
