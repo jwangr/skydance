@@ -49,7 +49,7 @@ const Navbar = () => {
                   color="black"
                   underline="none"
                   href={item.link}
-                  sx={{ fontFamily: "EB-Garamond, serif" }}
+                  sx={{ fontFamily: "Marcellus, sans-serif" }}
                 >
                   {item.title}
                 </Link>
