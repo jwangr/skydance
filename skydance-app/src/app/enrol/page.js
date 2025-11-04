@@ -66,23 +66,27 @@ export default function EnrolPage() {
     setSubmitMessage("");
 
     // Replace this URL with your actual Google Apps Script Web App URL
-    const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE";
-
-    const dataToSubmit = {
-      formType,
-      classes: selectedClasses.join(", "),
-      ...formData,
-      timestamp: new Date().toISOString(),
-    };
+    const GOOGLE_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbygv8oDbOhh64ufhpkmTLXQR3uKXEqVP8alzV7Tk63D2o1PU-mGxNMx8oA95Ii4nFuzJg/exec";
 
     try {
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify(dataToSubmit),
+        body: new URLSearchParams({
+          Date: new Date().toISOString(),
+          JoinType: formType,
+          Classes: selectedClasses.join(", "),
+          Name: formData.studentName,
+          DOB: formData.dob,
+          Gender: formData.gender,
+          Address: formData.address,
+          Phone: formData.phone,
+          Email: formData.email,
+          Notes: formData.notes,
+        }),
       });
 
       setSubmitMessage(
@@ -127,7 +131,12 @@ export default function EnrolPage() {
       </Hero>
 
       <SnapScrollSection visibility={0.7}>
-        <Stack direction={{ xs: "column", md: "row" }} gap={3} padding={{xs: 0, md: 2}} overflow={'hidden'}>
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          gap={3}
+          padding={{ xs: 0, md: 2 }}
+          overflow={"hidden"}
+        >
           {/* Contact Information */}
           <Box
             style={{
