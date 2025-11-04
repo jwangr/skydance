@@ -21,6 +21,10 @@ import {
   Button,
   Alert,
 } from "@mui/material";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import dayjs from "dayjs";
 import GetInTouchDescriptors from "@/components/GetInTouchDescriptors";
 import EmbeddedMap from "@/components/EmbeddedMap";
 import SocialLinks from "@/components/SocialLinks";
@@ -34,7 +38,7 @@ export default function EnrolPage() {
   const [selectedClasses, setSelectedClasses] = useState([]);
   const [formData, setFormData] = useState({
     studentName: "",
-    dob: "",
+    dob: dayjs(),
     gender: "",
     address: "",
     phone: "",
@@ -277,16 +281,19 @@ export default function EnrolPage() {
 
                 {/* DOB and Gender */}
                 <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-                  <TextField
-                    required
-                    fullWidth
-                    type="date"
-                    label="Date of Birth"
-                    name="dob"
-                    value={formData.dob}
-                    onChange={handleInputChange}
-                    InputLabelProps={{ shrink: true }}
-                  />
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker
+                      required
+                      label="Date of Birth"
+                      name="dob"
+                      format="DD/MM/YY"
+                      value={formData.dob}
+                      onChange={(newValue) =>
+                        setFormData({ ...formData, dob: newValue })
+                      }
+                    />
+                  </LocalizationProvider>
+
                   <FormControl required fullWidth>
                     <InputLabel id="gender-label">Gender</InputLabel>
                     <Select
