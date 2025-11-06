@@ -29,7 +29,7 @@ import EmbeddedMap from "@/components/EmbeddedMap";
 import SocialLinks from "@/components/SocialLinks";
 import Hero from "@/components/HeroImage";
 import SnapScrollSection from "@/components/SnapScrollSection";
-import { GOOGLE_SCRIPT_URL } from "@/lib/data/googleScript";
+import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
 
 const danceClasses = classes.map((x) => x.title);
 
@@ -72,6 +72,7 @@ export default function EnrolPage() {
     try {
       // Format the payload
       const payload = {
+        page: 'join',
         Date: new Date().toISOString(),
         JoinType: formType,
         Classes: selectedClasses.join(", "),

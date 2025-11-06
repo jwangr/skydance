@@ -1,34 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import classes from "@/lib/data/classdescriptions.json";
 import contacts from "@/lib/data/contact.json";
-import { Box, FormLabel, Stack } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 
 import {
   FormControl,
   InputLabel,
   Select,
   MenuItem,
-  Checkbox,
   ListItemText,
-  Chip,
-  RadioGroup,
-  FormControlLabel,
-  Radio,
   TextField,
   Button,
   Alert,
 } from "@mui/material";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import GetInTouchDescriptors from "@/components/GetInTouchDescriptors";
 import EmbeddedMap from "@/components/EmbeddedMap";
 import SocialLinks from "@/components/SocialLinks";
 import Hero from "@/components/HeroImage";
 import SnapScrollSection from "@/components/SnapScrollSection";
-import { GOOGLE_SCRIPT_URL } from "@/lib/data/googleScript";
+import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
 
 const marketingOptions = [
   "Word of mouth",
@@ -40,7 +31,7 @@ const marketingOptions = [
   "Other",
 ];
 
-export default function EnrolPage() {
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     address: "",
@@ -67,16 +58,13 @@ export default function EnrolPage() {
     try {
       // Format the payload
       const payload = {
+        page: 'contact',
         Date: new Date().toISOString(),
-        JoinType: formType,
-        Classes: marketing.join(", "),
         Name: formData.name,
-        DOB: formData.dob.toDate().toLocaleDateString(),
-        Gender: formData.gender,
-        Address: formData.address,
         Phone: formData.phone,
         Email: formData.email,
-        Notes: formData.notes,
+        Marketing: formData.marketing,
+        Enquiry: formData.notes,
       };
       console.log(payload);
       const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -120,9 +108,9 @@ export default function EnrolPage() {
     >
       <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={"70vh"}>
         <Box sx={{ marginBottom: 5 }}>
-          <h1 style={{ marginX: "auto", textAlign: "center" }}>Join Now</h1>
+          <h1 style={{ marginX: "auto", textAlign: "center" }}>Contact Us</h1>
         </Box>
-        <p>Be a part of the Sky Dance community today</p>
+        <p>Have any questions or comments? Fill in this form.</p>
       </Hero>
 
       <SnapScrollSection visibility={0.7}>
@@ -183,7 +171,7 @@ export default function EnrolPage() {
                 <TextField
                   required
                   label="Name"
-                  name="Name"
+                  name="name"
                   value={formData.name}
                   onChange={handleInputChange}
                 />
