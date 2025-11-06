@@ -3,8 +3,7 @@
 import { useState } from "react";
 import classes from "@/lib/data/classdescriptions.json";
 import contacts from "@/lib/data/contact.json";
-import { Box, FormLabel, IconButton, Paper, Stack } from "@mui/material";
-import Link from "next/link";
+import { Box, FormLabel, Stack } from "@mui/material";
 
 import {
   FormControl,
@@ -30,6 +29,7 @@ import EmbeddedMap from "@/components/EmbeddedMap";
 import SocialLinks from "@/components/SocialLinks";
 import Hero from "@/components/HeroImage";
 import SnapScrollSection from "@/components/SnapScrollSection";
+import { GOOGLE_SCRIPT_URL } from "@/lib/data/googleScript";
 
 const danceClasses = classes.map((x) => x.title);
 
@@ -38,7 +38,7 @@ export default function EnrolPage() {
   const [selectedClasses, setSelectedClasses] = useState([]);
   const [formData, setFormData] = useState({
     studentName: "",
-    dob: dayjs(),
+    dob: null,
     gender: "",
     address: "",
     phone: "",
@@ -69,30 +69,30 @@ export default function EnrolPage() {
     setIsSubmitting(true);
     setSubmitMessage("");
 
-    // Replace this URL with your actual Google Apps Script Web App URL
-    const GOOGLE_SCRIPT_URL =
-      "https://script.google.com/macros/s/AKfycbygv8oDbOhh64ufhpkmTLXQR3uKXEqVP8alzV7Tk63D2o1PU-mGxNMx8oA95Ii4nFuzJg/exec";
-
     try {
+      // Format the payload
+      const payload = {
+        Date: new Date().toISOString(),
+        JoinType: formType,
+        Classes: selectedClasses.join(", "),
+        Name: formData.studentName,
+        DOB: formData.dob.toDate().toLocaleDateString(),
+        Gender: formData.gender,
+        Address: formData.address,
+        Phone: formData.phone,
+        Email: formData.email,
+        Notes: formData.notes,
+      };
+      console.log(payload);
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new URLSearchParams({
-          Date: new Date().toISOString(),
-          JoinType: formType,
-          Classes: selectedClasses.join(", "),
-          Name: formData.studentName,
-          DOB: formData.dob,
-          Gender: formData.gender,
-          Address: formData.address,
-          Phone: formData.phone,
-          Email: formData.email,
-          Notes: formData.notes,
-        }),
+        body: new URLSearchParams(payload),
       });
 
+      console.log(response);
       setSubmitMessage(
         "Thank you! Your form has been submitted successfully. We will contact you soon."
       );
@@ -100,7 +100,7 @@ export default function EnrolPage() {
       // Reset form
       setFormData({
         studentName: "",
-        dob: "",
+        dob: null,
         gender: "",
         address: "",
         phone: "",
@@ -288,9 +288,9 @@ export default function EnrolPage() {
                       name="dob"
                       format="DD/MM/YY"
                       value={formData.dob}
-                      onChange={(newValue) =>
-                        setFormData({ ...formData, dob: newValue })
-                      }
+                      onChange={(newValue) => {
+                        setFormData({ ...formData, dob: newValue });
+                      }}
                     />
                   </LocalizationProvider>
 
