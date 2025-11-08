@@ -23,7 +23,6 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs from "dayjs";
 import GetInTouchDescriptors from "@/components/GetInTouchDescriptors";
 import EmbeddedMap from "@/components/EmbeddedMap";
 import SocialLinks from "@/components/SocialLinks";
@@ -72,7 +71,7 @@ export default function EnrolPage() {
     try {
       // Format the payload
       const payload = {
-        page: 'join',
+        page: "join",
         Date: new Date().toISOString(),
         JoinType: formType,
         Classes: selectedClasses.join(", "),
