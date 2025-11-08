@@ -12,8 +12,7 @@ export default function Home() {
       link: "/class",
       img: "url('/jazzclass.png')",
     },
-    { title: "Enrol Now", link: "/enrol", img: "url('/aerobics.png')" },
-    { title: "Trial Lesson", link: "/trial", img: "url('/aerobics.png')" },
+    { title: "Join Now", link: "/enrol", img: "url('/aerobics.png')" },
     { title: "Studio Hire", link: "/hire", img: "url('/studio.webp')" },
     { title: "Contact Us", link: "/contact", img: "url('/balletshoes.jpg')" },
   ];
@@ -56,37 +55,45 @@ export default function Home() {
         spacing={1}
         sx={{ marginX: "auto", maxWidth: 1200, marginY: 8 }}
       >
-        {navLinks.map((link) => (
-          <Grid
-            size={{ xs: 12, md: 6 }}
-            key={link.title}
-            sx={{ borderRadius: 10 }}
-          >
-            <AnimateInView>
-              <ListItemButton>
-                <Hero
-                  borderRadius={5}
-                  backgroundImage={link.img}
-                  minHeight={{ xs: 0, md: 400 }}
-                >
-                  <Box
-                    sx={{
-                      display: "column",
-                      alignItems: "center",
-                      color: "white",
-                      width: "80%",
-                      margin: "auto",
-                    }}
+        {navLinks.map((link, index) => {
+          const isLast = index === navLinks.length - 1;
+          const isOdd = navLinks.length % 2 !== 0;
+          const mdSize = isLast && isOdd ? 12 : 6;
+          console.log(mdSize)
+
+          return (
+            <Grid
+            
+              size={{ xs: 12, md: mdSize }}
+              key={link.title}
+              sx={{ borderRadius: 10 }}
+            >
+              <AnimateInView>
+                <ListItemButton>
+                  <Hero
+                    borderRadius={5}
+                    backgroundImage={link.img}
+                    minHeight={{ xs: 0, md: 400 }}
                   >
-                    <Link href={link.link} color="white" underline="none">
-                      <h3>{link.title}</h3>
-                    </Link>
-                  </Box>
-                </Hero>
-              </ListItemButton>
-            </AnimateInView>
-          </Grid>
-        ))}
+                    <Box
+                      sx={{
+                        display: "column",
+                        alignItems: "center",
+                        color: "white",
+                        width: "80%",
+                        margin: "auto",
+                      }}
+                    >
+                      <Link href={link.link} color="white" underline="none">
+                        <h3>{link.title}</h3>
+                      </Link>
+                    </Box>
+                  </Hero>
+                </ListItemButton>
+              </AnimateInView>
+            </Grid>
+          );
+        })}
       </Grid>
 
       {/* Timetable */}
