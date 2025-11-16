@@ -1,6 +1,5 @@
 import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
-import ParallaxSection from "@/components/ParallaxSection";
 import Timetable from "@/components/Timetable";
 import { Box, Grid, Link, ListItemButton, Toolbar } from "@mui/material";
 
@@ -59,7 +58,6 @@ export default function Home() {
           const isLast = index === navLinks.length - 1;
           const isOdd = navLinks.length % 2 !== 0;
           const mdSize = isLast && isOdd ? 12 : 6;
-          console.log(mdSize)
 
           return (
             <Grid
