@@ -16,6 +16,7 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
+import { color } from "motion";
 
 const Navbar = () => {
   // Drawer states
@@ -29,14 +30,14 @@ const Navbar = () => {
     { title: "ABOUT US", link: "/about" },
     { title: "CLASSES", link: "/class" },
     { title: "ENROL NOW", link: "/enrol" },
-    { title: "STUDIO HIRE", link: "/hire" },
+    { title: "STUDIO HIRE", link: "/studiohire" },
     { title: "CONTACT US", link: "/contact" },
   ];
 
   //   Mobile Drawer Contents
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <h4 sx={{ my: 2 }}>Sky Dance Studio</h4>
+      <h4 style={{ my: 2, color: "white" }}>Sky Dance Studio</h4>
       <Divider />
       <List
         sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}
@@ -46,10 +47,10 @@ const Navbar = () => {
             <ListItemButton>
               <ListItemText sx={{ display: "flex", justifyContent: "center" }}>
                 <Link
-                  color="black"
+                  color="white"
                   underline="none"
                   href={item.link}
-                  sx={{ fontFamily: "Marcellus, sans-serif" }}
+                  sx={{ fontFamily: "Montserrat, sans-serif" }}
                 >
                   {item.title}
                 </Link>
@@ -66,7 +67,7 @@ const Navbar = () => {
     <AppBar
       position="fixed"
       color="default"
-      sx={{ boxShadow: "none", backgroundColor: "var(--bg5)" }}
+      sx={{ boxShadow: "none", backgroundColor: "var(--bg2)" }}
     >
       <Toolbar
         sx={{
@@ -86,7 +87,7 @@ const Navbar = () => {
               filter: "brightness(200%)",
             }}
           />
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" }, color:'white' }}>
             <h6>Sky Dance Studio</h6>
           </Box>
         </Box>
@@ -97,10 +98,10 @@ const Navbar = () => {
             <ListItemButton key={link.title}>
               <ListItemText>
                 <Link
-                  color="black"
+                  color="white"
                   underline="none"
                   href={link.link}
-                  sx={{ fontFamily: '"EB Garamond", serif' }}
+                  sx={{ fontFamily: '"Montserrat", sans-serif', letterSpacing:'10%', fontSize:'14px' }}
                 >
                   {link.title}
                 </Link>
@@ -111,11 +112,11 @@ const Navbar = () => {
 
         {/* Mobile Drawer */}
         <IconButton
-          color="inherit"
+          color="white"
           aria-label="open drawer"
           edge="start"
           onClick={handleDrawerToggle}
-          sx={{ mr: 2, display: { sm: "none" } }}
+          sx={{ mr: 2, display: { sm: "none" }, color:'white', fontFamily:'Montserrat' }}
         >
           Menu
         </IconButton>
@@ -131,7 +132,7 @@ const Navbar = () => {
             display: { xs: "block", sm: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              backgroundColor: "var(--bg5)",
+              backgroundColor: "var(--bg2)",
             },
           }}
         >

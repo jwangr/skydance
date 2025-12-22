@@ -4,11 +4,11 @@
 :root {
   /* Background colors */
   --bg1: #ffffff;
-  --bg2: #1A1524;
-  --bg3: #BA968B;
-  --bg4: #FBFBFB;
-  --bg5: #4D0011;
-  --bg6: #FF0038;
+  --bg2: #1a1524;
+  --bg3: #ba968b;
+  --bg4: #fbfbfb;
+  --bg5: #4d0011;
+  --bg6: #ff0038;
 
   /* Paragraph colors */
   --paragraph-1: #000000;
@@ -17,12 +17,6 @@
   /* Accent colors */
   --accent-1: #ba8c93;
   --accent-2: #f2f0f1;
-}
-
-a {
-  overflow-wrap: break-word;
-  word-break: break-word;
-  white-space: normal;
 }
 
 body {
@@ -64,15 +58,17 @@ h4 {
 
 /* H5 - Aboreto */
 h5 {
-  font-family: "EB Garamond", serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 28px;
   /* line-height: 110px; */
   font-weight: 600;
 }
 
 h6 {
-  font-family: "EB Garamond", serif;
-  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 10%;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -86,47 +82,12 @@ p {
 }
 
 /* Stylised Buttons */
-.button1 {
-  background-color: var(--bg5);
-  padding: 25px;
-  font-family: "Marcellus", serif;
-  font-size: 16px;
-  color: var(--bg4);
-  width: 100%;
-  border-radius: 500px;
-}
-
-.button1:hover {
-  background-color: var(--bg2);
-  color: white;
-  cursor: pointer;
-}
-
-/* Base button style */
-.btn {
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  text-decoration: underline;
-  text-transform: uppercase;
-  color: currentColor;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  transition: color 0.3s;
-}
-
-/* Hover effect */
-.btn:hover {
-  color: var(--bg6); /* your theme color */
-}
-
-/* Optional: show arrow on hover */
-.btn .arrow {
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-}
-
-.btn:hover .arrow {
-  opacity: 1;
-  transform: translateX(0.25rem);
+a {
+  color: "white";
+  letter-spacing: 10%;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
 }
