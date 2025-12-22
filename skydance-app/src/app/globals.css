@@ -91,7 +91,7 @@ p {
   padding: 25px;
   font-family: "Marcellus", serif;
   font-size: 16px;
-  color: #000000;
+  color: var(--bg4);
   width: 100%;
   border-radius: 500px;
 }
@@ -100,4 +100,33 @@ p {
   background-color: var(--bg2);
   color: white;
   cursor: pointer;
+}
+
+/* Base button style */
+.btn {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: currentColor;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.3s;
+}
+
+/* Hover effect */
+.btn:hover {
+  color: var(--bg6); /* your theme color */
+}
+
+/* Optional: show arrow on hover */
+.btn .arrow {
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.btn:hover .arrow {
+  opacity: 1;
+  transform: translateX(0.25rem);
 }
