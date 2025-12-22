@@ -17,6 +17,7 @@ import {
   MenuItem,
 } from "@mui/material";
 import NavBarMobile from "./NavBarMobile";
+import { KeyboardArrowDown } from "@mui/icons-material";
 
 const navLinks = [
   { title: "HOME", link: "/" },
@@ -104,7 +105,8 @@ const Navbar = () => {
                       color: "white",
                     }}
                   >
-                    {link.title}
+                    <span>{link.title}</span>
+                    <KeyboardArrowDown sx={{ ml: 1 }} />
                   </Button>
                   <Menu
                     anchorEl={anchorEl}
@@ -112,6 +114,13 @@ const Navbar = () => {
                     onClose={handleClose}
                     MenuListProps={{
                       onMouseLeave: handleClose,
+                    }}
+                    sx={{
+                      "& .MuiPaper-root": {
+                        backgroundColor: "var(--bg2)",
+                        color: "white",
+                        padding: 2,
+                      },
                     }}
                   >
                     {link.children.map((child) => (

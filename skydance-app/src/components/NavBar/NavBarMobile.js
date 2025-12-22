@@ -9,8 +9,12 @@ import {
   ListItemButton,
   ListItemText,
   Link,
+  Typography,
 } from "@mui/material";
+import MobileAccordian from "./MobileAccordian";
+import titleStyle from "./linkTitleStyle";
 
+// has accordian instead of drop down for menu items
 export default function NavBarMobile({ navLinks }) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -18,9 +22,13 @@ export default function NavBarMobile({ navLinks }) {
     setMobileOpen((prev) => !prev);
   };
 
+  const [expanded, setExpanded] = useState(false);
+  const handleAccordionChange = (panel) => (e, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   return (
     <>
-      {/* Menu button (mobile only) */}
       <IconButton
         aria-label="open menu"
         edge="start"
@@ -53,36 +61,31 @@ export default function NavBarMobile({ navLinks }) {
       >
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", py: 2 }}>
           <h4 style={{ color: "white" }}>Sky Dance Studio</h4>
-          <Divider />
+          <Divider sx={{ color: "white" }} />
 
-          <List
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            {navLinks.map((item) => (
-              <ListItem key={item.title} disablePadding>
-                <ListItemButton>
-                  <ListItemText
-                    sx={{ display: "flex", justifyContent: "center" }}
-                  >
-                    <Link
-                      href={item.link}
-                      underline="none"
-                      sx={{
-                        color: "white",
-                        fontFamily: "Montserrat, sans-serif",
-                      }}
-                    >
-                      {item.title}
-                    </Link>
-                  </ListItemText>
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+          {navLinks.map((link) =>
+            link.children ? (
+              <MobileAccordian
+                key={link.title}
+                link={link}
+                expanded={expanded}
+                onChange={handleAccordionChange}
+              />
+            ) : (
+              <ListItemButton key={link.title}>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    color: "white",
+                    width: "100%",
+                    ...titleStyle,
+                  }}
+                >
+                  {link.title}
+                </Typography>
+              </ListItemButton>
+            )
+          )}
 
           <Divider />
         </Box>
