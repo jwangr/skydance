@@ -3,10 +3,9 @@
 import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import {
+  Button,
   Divider,
   Drawer,
   IconButton,
@@ -15,8 +14,9 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
+  Menu,
+  MenuItem,
 } from "@mui/material";
-import { color } from "motion";
 
 const Navbar = () => {
   // Drawer states
@@ -27,8 +27,24 @@ const Navbar = () => {
 
   const navLinks = [
     { title: "HOME", link: "/" },
-    { title: "ABOUT US", link: "/about" },
-    { title: "CLASSES", link: "/class" },
+    {
+      title: "ABOUT US",
+      link: "/about",
+      children: [
+        { title: "OUR TEAM", link: "/about/team" },
+        { title: "OUR STORY", link: "/about/story" },
+      ],
+    },
+    {
+      title: "CLASSES",
+      link: "/class",
+      children: [
+        { title: "DANCE", link: "/class/dance" },
+        { title: "ART", link: "/class/art" },
+        { title: "MUSIC", link: "/class/music" },
+        { title: "TUTORING", link: "/class/tutoring" },
+      ],
+    },
     { title: "ENROL NOW", link: "/enrol" },
     { title: "STUDIO HIRE", link: "/studiohire" },
     { title: "CONTACT US", link: "/contact" },
@@ -63,6 +79,20 @@ const Navbar = () => {
     </Box>
   );
 
+  // hover over multi-links
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [openMenu, setOpenMenu] = useState(null);
+
+  const handleOpen = (event, title) => {
+    setAnchorEl(event.currentTarget);
+    setOpenMenu(title)
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+    setOpenMenu(null)
+  };
+
   return (
     <AppBar
       position="fixed"
@@ -87,27 +117,68 @@ const Navbar = () => {
               filter: "brightness(200%)",
             }}
           />
-          <Box sx={{ display: { xs: "none", sm: "block" }, color:'white' }}>
+          <Box sx={{ display: { xs: "none", sm: "block" }, color: "white" }}>
             <h6>Sky Dance Studio</h6>
           </Box>
         </Box>
 
         {/* Non-mobile Navigation links */}
         <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
-          {navLinks.map((link) => (
-            <ListItemButton key={link.title}>
-              <ListItemText>
-                <Link
-                  color="white"
-                  underline="none"
-                  href={link.link}
-                  sx={{ fontFamily: '"Montserrat", sans-serif', letterSpacing:'10%', fontSize:'14px' }}
-                >
-                  {link.title}
-                </Link>
-              </ListItemText>
-            </ListItemButton>
-          ))}
+          {navLinks.map((link) =>
+            link.children ? (
+              <ListItemButton key={link.title}>
+                <ListItemText>
+                  <Button
+                    underline="none"
+                    onMouseEnter={(e) => handleOpen(e, link.title)}
+                    onClick={(e) => handleOpen(e, link.title)}
+                    sx={{
+                      fontFamily: '"Montserrat", sans-serif',
+                      letterSpacing: "10%",
+                      fontSize: "14px",
+                      color: "white",
+                    }}
+                  >
+                    {link.title}
+                  </Button>
+                  <Menu
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                    onMouseLeave={handleClose}
+                  >
+                    {link.children.map((child) => (
+                      <MenuItem
+                        key={child.title}
+                        component={Link}
+                        href={child.link}
+                        onClick={handleClose}
+                      >
+                        {child.title}
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </ListItemText>
+              </ListItemButton>
+            ) : (
+              <ListItemButton key={link.title}>
+                <ListItemText>
+                  <Link
+                    color="white"
+                    underline="none"
+                    href={link.link}
+                    style={{
+                      fontFamily: '"Montserrat", sans-serif',
+                      letterSpacing: "10%",
+                      fontSize: "14px",
+                    }}
+                  >
+                    {link.title}
+                  </Link>
+                </ListItemText>
+              </ListItemButton>
+            )
+          )}
         </Box>
 
         {/* Mobile Drawer */}
@@ -116,7 +187,12 @@ const Navbar = () => {
           aria-label="open drawer"
           edge="start"
           onClick={handleDrawerToggle}
-          sx={{ mr: 2, display: { sm: "none" }, color:'white', fontFamily:'Montserrat' }}
+          sx={{
+            mr: 2,
+            display: { sm: "none" },
+            color: "white",
+            fontFamily: "Montserrat",
+          }}
         >
           Menu
         </IconButton>
