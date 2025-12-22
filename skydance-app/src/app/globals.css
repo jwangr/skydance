@@ -4,11 +4,11 @@
 :root {
   /* Background colors */
   --bg1: #ffffff;
-  --bg2: #4a5759;
-  --bg3: #b0c4b1;
-  --bg4: #dedbd2;
-  --bg5: #f7e1d7;
-  --bg6: #edafb8cc;
+  --bg2: #1A1524;
+  --bg3: #BA968B;
+  --bg4: #FBFBFB;
+  --bg5: #4D0011;
+  --bg6: #FF0038;
 
   /* Paragraph colors */
   --paragraph-1: #000000;
@@ -28,35 +28,35 @@ a {
 body {
   background: var(--bg1);
   color: var(--paragraph-1);
-  font-family: "EB Garamond", serif;
+  font-family: "Arimo", sans-serif;
 }
 
 h1 {
-  font-family: "Aboreto", serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: clamp(1.75rem, 12vw + 1rem, 9rem);
   line-height: clamp(2rem, 10vw + 1rem, 7.5rem);
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 h2 {
-  font-family: "Marcellus", serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 50px;
   /* line-height: 120px; */
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
-/* H3 - Aboreto */
 h3 {
-  font-family: "EB Garamond", serif;
-  text-transform: uppercase;
+  font-family: "Bebas Neue", sans-serif;
+  /* text-transform: uppercase; */
   font-size: 32px;
-  /* line-height: 120px; */
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 /* H4 - Aboreto */
 h4 {
-  font-family: "Aboreto", cursive;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 32px;
   /* line-height: 110px; */
   font-weight: 400;

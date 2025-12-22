@@ -1,5 +1,7 @@
 import {
   Aboreto,
+  Arimo,
+  Bebas_Neue,
   EB_Garamond,
   Geist,
   Geist_Mono,
@@ -11,6 +13,18 @@ import Footer from "@/components/Footer";
 import { Toolbar } from "@mui/material";
 
 const aboreto = Aboreto({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-heading",
+});
+
+const arimo = Arimo({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const bebas = Bebas_Neue({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-heading",
@@ -58,7 +72,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${aboreto.variable} ${ebGaramond.variable} ${geistSans.variable} ${geistMono.variable} ${marcellus.variable}`}
+      className={`${aboreto.variable} ${arimo.variable} ${bebas.variable} ${ebGaramond.variable} ${geistSans.variable} ${geistMono.variable} ${marcellus.variable}`}
     >
       <body className="font-body">
         <Navbar />
