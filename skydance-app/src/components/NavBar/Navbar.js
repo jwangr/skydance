@@ -65,7 +65,7 @@ const Navbar = () => {
       <AppBar
         position="sticky"
         color="default"
-        sx={{ boxShadow: "none", backgroundColor: "var(--bg2)" }}
+        sx={{backgroundColor: "var(--bg2)" }}
       >
         <Toolbar
           sx={{
