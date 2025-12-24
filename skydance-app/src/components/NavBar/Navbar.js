@@ -18,6 +18,7 @@ import {
 } from "@mui/material";
 import NavBarMobile from "./NavBarMobile";
 import { KeyboardArrowDown } from "@mui/icons-material";
+import ScrollToTop from "./ScrollToTop";
 
 const navLinks = [
   { title: "HOME", link: "/" },
@@ -60,107 +61,109 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar
-      position="sticky"
-      color="default"
-      sx={{ boxShadow: "none", backgroundColor: "var(--bg2)" }}
-    >
-      <Toolbar
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "row", sm: "column", lg: "row" },
-          gap: "auto",
-          justifyContent: "space-between",
-        }}
+    <>
+      <AppBar
+        position="sticky"
+        color="default"
+        sx={{ boxShadow: "none", backgroundColor: "var(--bg2)" }}
       >
-        <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
-          <img
-            src="logo.webp"
-            alt="Logo"
-            style={{
-              height: 40,
-              width: "auto",
-              filter: "brightness(200%)",
-            }}
-          />
-          <Box sx={{ display: { xs: "none", sm: "block" }, color: "white" }}>
-            <h6>Sky Dance Studio</h6>
+        <Toolbar
+          sx={{
+            display: "flex",
+            flexDirection: { xs: "row", sm: "column", lg: "row" },
+            gap: "auto",
+            justifyContent: "space-between",
+          }}
+        >
+          <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
+            <img
+              src="logo.webp"
+              alt="Logo"
+              style={{
+                height: 40,
+                width: "auto",
+              }}
+            />
+            <Box sx={{ display: { xs: "none", sm: "block" }, color: "white" }}>
+              <h6>Sky Dance Studio</h6>
+            </Box>
           </Box>
-        </Box>
 
-        {/* Non-mobile Navigation links */}
-        <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
-          {navLinks.map((link) =>
-            !!link.children ? (
-              <ListItemButton key={link.title}>
-                <ListItemText>
-                  <Button
-                    underline="none"
-                    onMouseEnter={(e) => handleOpen(e, link.title)}
-                    onClick={(e) => handleOpen(e, link.title)}
-                    sx={{
-                      fontFamily: '"Montserrat", sans-serif',
-                      letterSpacing: "10%",
-                      fontSize: "14px",
-                      color: "white",
-                    }}
-                  >
-                    <span>{link.title}</span>
-                    <KeyboardArrowDown sx={{ ml: 1 }} />
-                  </Button>
-                  <Menu
-                    anchorEl={anchorEl}
-                    open={openMenu === link.title}
-                    onClose={handleClose}
-                    MenuListProps={{
-                      onMouseLeave: handleClose,
-                    }}
-                    sx={{
-                      "& .MuiPaper-root": {
-                        backgroundColor: "var(--bg2)",
+          {/* Non-mobile Navigation links */}
+          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
+            {navLinks.map((link) =>
+              !!link.children ? (
+                <ListItemButton key={link.title}>
+                  <ListItemText>
+                    <Button
+                      underline="none"
+                      onMouseEnter={(e) => handleOpen(e, link.title)}
+                      onClick={(e) => handleOpen(e, link.title)}
+                      sx={{
+                        fontFamily: '"Montserrat", sans-serif',
+                        letterSpacing: "10%",
+                        fontSize: "14px",
                         color: "white",
-                        padding: 2,
-                      },
-                    }}
-                  >
-                    {link.children.map((child) => (
-                      <MenuItem
-                        key={child.title}
-                        component={Link}
-                        href={child.link}
-                        onClick={handleClose}
-                      >
-                        {child.title}
-                      </MenuItem>
-                    ))}
-                  </Menu>
-                </ListItemText>
-              </ListItemButton>
-            ) : (
-              <ListItemButton key={link.title}>
-                <ListItemText>
-                  <Link
-                    color="white"
-                    underline="none"
-                    href={link.link}
-                    style={{
-                      fontFamily: '"Montserrat", sans-serif',
-                      letterSpacing: "10%",
-                      fontSize: "14px",
-                    }}
-                  >
-                    {link.title}
-                  </Link>
-                </ListItemText>
-              </ListItemButton>
-            )
-          )}
-        </Box>
+                      }}
+                    >
+                      <span>{link.title}</span>
+                      <KeyboardArrowDown sx={{ ml: 1 }} />
+                    </Button>
+                    <Menu
+                      anchorEl={anchorEl}
+                      open={openMenu === link.title}
+                      onClose={handleClose}
+                      MenuListProps={{
+                        onMouseLeave: handleClose,
+                      }}
+                      sx={{
+                        "& .MuiPaper-root": {
+                          backgroundColor: "var(--bg2)",
+                          color: "white",
+                          padding: 2,
+                        },
+                      }}
+                    >
+                      {link.children.map((child) => (
+                        <MenuItem
+                          key={child.title}
+                          component={Link}
+                          href={child.link}
+                          onClick={handleClose}
+                        >
+                          {child.title}
+                        </MenuItem>
+                      ))}
+                    </Menu>
+                  </ListItemText>
+                </ListItemButton>
+              ) : (
+                <ListItemButton key={link.title}>
+                  <ListItemText>
+                    <Link
+                      color="white"
+                      underline="none"
+                      href={link.link}
+                      style={{
+                        fontFamily: '"Montserrat", sans-serif',
+                        letterSpacing: "10%",
+                        fontSize: "14px",
+                      }}
+                    >
+                      {link.title}
+                    </Link>
+                  </ListItemText>
+                </ListItemButton>
+              )
+            )}
+          </Box>
 
-        {/* Mobile Drawer */}
-        <NavBarMobile navLinks={navLinks} />
-      </Toolbar>
-    </AppBar>
+          {/* Mobile Drawer */}
+          <NavBarMobile navLinks={navLinks} />
+        </Toolbar>
+      </AppBar>
+      <ScrollToTop />
+    </>
   );
 };
 
