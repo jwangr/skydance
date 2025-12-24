@@ -21,7 +21,7 @@ export default function ButtonLink1({ children = "Button Here", href = "/" }) {
         padding: "10px 20px",
         marginY: "20px",
         "&:hover": {
-          backgroundColor: "var(--bg2)",
+          backgroundColor: "var(--bg6)",
           boxShadow: "0 8px 16px 0 rgba(0,0,0,0.6)",
         },
       }}
