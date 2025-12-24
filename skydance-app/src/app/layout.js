@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${aboreto.variable} ${arimo.variable} ${bebas.variable} ${ebGaramond.variable} ${geistSans.variable} ${geistMono.variable} ${marcellus.variable} ${montserrat.variable}`}
     >
-      <body className="font-body">
+      <body className="font-body" style={{ backgroundColor: "var(--bg2)" }}>
         <Navbar />
         {children}
         <Footer />
