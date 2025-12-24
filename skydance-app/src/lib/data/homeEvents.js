@@ -1,0 +1,68 @@
+const homeEvents = [
+  {
+    title: "Open Day",
+    caption1: "Jan 2026",
+    caption2: "Explore your next moves",
+    button: "Explore",
+    link: "/events/open-day",
+    img: "url('/staff/wei.webp')",
+  },
+  {
+    title: "School Holiday Workshops",
+    caption1: "Intensives",
+    caption2: "?? - ?? Jan 2026",
+    button: "Apply Now",
+    link: "/dance/workshops/Jan-2026-school-holiday",
+    img: "url('/HomePage.webp')",
+  },
+  {
+    title: "Get Qualified",
+    caption1: "Learn. Certify. Teach",
+    caption2: "2026 expressions of interest now open",
+    button: "Apply Now",
+    link: "/events/open-day",
+    img: "url('/lyrical/image.png')",
+  },
+  {
+    title: "Dance Classes",
+    caption1: "Ballet, Hip Hop, And More",
+    caption2: "For All Ages",
+    button: "Explore",
+    link: "/classes/dance",
+    img: "url('/lyrical/image copy 2.png')",
+  },
+  {
+    title: "Private Classes",
+    caption1: "",
+    caption2: "1:1 with a qualified teacher",
+    button: "Apply now",
+    link: "/events/open-day",
+    img: "url('/ballet/ballet1.png')",
+  },
+  {
+    title: "Art Classes",
+    caption1: "",
+    caption2: "Drawing, Painting, and More",
+    button: "Apply Now",
+    link: "/events/open-day",
+    img: "url('/logo.webp')",
+  },
+  {
+    title: "Music",
+    caption1: "",
+    caption2: "Violin, Piano, Singing",
+    button: "Apply Now",
+    link: "/events/open-day",
+    img: "url('/logo.webp')",
+  },
+  {
+    title: "Tutoring",
+    caption1: "",
+    caption2: "K - 12",
+    button: "Apply Now",
+    link: "/events/open-day",
+    img: "url('/jazzclass.png')",
+  },
+];
+
+export default homeEvents;

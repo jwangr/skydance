@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-export default function Hero({
+export default function HeroGrows({
   children,
   borderRadius = 0,
   minHeight = 0,
@@ -24,6 +24,30 @@ export default function Hero({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: borderRadius,
+
+        overflow: "hidden",
+        // Disable hover on mobile
+        "@media (hover: none)": {
+          "&::before": {
+            transform: "scale(1.05)",
+          },
+        },
+        // Image grows on hover
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          backgroundImage,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          transform: "scale(1)",
+          transition: "transform 1s ease", // slow grow
+          zIndex: 0,
+        },
+
+        "&:hover::before": {
+          transform: "scale(1.08)", // subtle zoom
+        },
       }}
     >
       {/* Black Overlay */}

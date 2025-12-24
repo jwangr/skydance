@@ -7,12 +7,13 @@ const baseStyles = {
   textDecoration: "underline",
 };
 
-export default function ButtonLink1({ children = "Button Here", href = "/" }) {
+export default function ButtonLink1({ children = "Button Here", href = "/", width="75%" }) {
   return (
     <Button
       href={href}
       sx={{
-        width: "100%",
+        width,
+        margin: "auto",
         backgroundColor: "var(--bg5)",
         textTransform: "uppercase",
         textAlign: "center",
