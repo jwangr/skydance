@@ -13,7 +13,7 @@ export default function ButtonLink2({ children = "Button Here", href = "/" }) {
         justifyContent: "space-between",
         alignItems: "center",
         padding: "10px 20px",
-        color: "black",
+        color: "white",
         borderRadius: "50px",
         padding: "10px 20px",
         marginY: "20px",
