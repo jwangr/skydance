@@ -1,4 +1,6 @@
 import AnimateInView from "@/components/AnimateInView";
+import ButtonLink1 from "@/components/ButtonLink1";
+import ButtonLink2 from "@/components/ButtonLink2";
 import Hero from "@/components/HeroImage";
 import Timetable from "@/components/Timetable";
 import { Box, Grid, Link, ListItemButton, Toolbar } from "@mui/material";
@@ -18,6 +20,7 @@ export default function Home() {
 
   return (
     <div style={{ overflowX: "hidden", backgroundColor: "var(--bg2)" }}>
+      {/* Heading */}
       <Box sx={{ marginY: 5 }}>
         <h1 style={{ marginX: "auto", textAlign: "center", color: "white" }}>
           Sky Dance Studio
@@ -25,24 +28,42 @@ export default function Home() {
       </Box>
 
       {/* Opening Banner */}
-      <Hero overlay="rgba(185, 131, 181, 0.5)" minHeight={500}>
+      <Hero
+        overlay="rgba(0, 0, 0, 0.5)"
+        minHeight={500}
+        backgroundImage="url('HomePage.png')"
+      >
         <AnimateInView>
           <Box
             sx={{
-              display: "column",
+              display: "flex",
+              flexDirection: "column",
+              gap: 3.5,
               alignItems: "center",
               color: "white",
-              width: "80%",
-              margin: "auto",
+              width: "100%",
             }}
           >
-            <h2>WHERE GRACE MEETS STRENGTH</h2>
-            <p>
-              At Sky Dance Studio, we nurture artistry and discipline through
-              professional dance education. Our certified instructors blend the
-              Royal Academy of Dance (RAD) syllabus with many forms of dance,
-              including Jazz, Lyrical, and Traditional Chinese Dance.
-            </p>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 0,
+                alignItems: "center",
+              }}
+            >
+              <h3>
+                Where <span style={{ color: "var(--bg6)" }}>art</span> is the
+                language
+              </h3>
+              <h3>
+                And movement is{" "}
+                <span style={{ color: "var(--bg6)" }}>expression</span>
+              </h3>
+            </Box>
+
+            <h2>2026 CLASSES & TIMETABLE</h2>
+            <ButtonLink1>Explore Now</ButtonLink1>
           </Box>
         </AnimateInView>
       </Hero>
@@ -91,6 +112,9 @@ export default function Home() {
           );
         })}
       </Grid>
+
+      {/* Link List Version 2 */}
+      
 
       {/* Timetable */}
       <Timetable />
