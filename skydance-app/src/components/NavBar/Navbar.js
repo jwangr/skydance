@@ -61,7 +61,7 @@ const Navbar = () => {
 
   return (
     <AppBar
-      position="fixed"
+      position="sticky"
       color="default"
       sx={{ boxShadow: "none", backgroundColor: "var(--bg2)" }}
     >
@@ -69,7 +69,7 @@ const Navbar = () => {
         sx={{
           display: "flex",
           flexDirection: { xs: "row", sm: "column", lg: "row" },
-          gap: { xs: 2, lg: "auto" },
+          gap: "auto",
           justifyContent: "space-between",
         }}
       >

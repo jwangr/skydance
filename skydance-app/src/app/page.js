@@ -17,10 +17,9 @@ export default function Home() {
   ];
 
   return (
-    <div style={{ overflowX: "hidden" }}>
-      <Toolbar />
-      <Box sx={{ marginBottom: 5 }}>
-        <h1 style={{ marginX: "auto", textAlign: "center" }}>
+    <div style={{ overflowX: "hidden", backgroundColor: "var(--bg2)" }}>
+      <Box sx={{ marginY: 5 }}>
+        <h1 style={{ marginX: "auto", textAlign: "center", color: "white" }}>
           Sky Dance Studio
         </h1>
       </Box>
@@ -61,7 +60,6 @@ export default function Home() {
 
           return (
             <Grid
-            
               size={{ xs: 12, md: mdSize }}
               key={link.title}
               sx={{ borderRadius: 10 }}

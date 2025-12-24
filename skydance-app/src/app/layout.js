@@ -83,7 +83,6 @@ export default function RootLayout({ children }) {
     >
       <body className="font-body">
         <Navbar />
-        <Toolbar sx={{ display: { xs: "none", sm: "block" } }} />
         {children}
         <Footer />
       </body>
