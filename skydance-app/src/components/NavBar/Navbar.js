@@ -65,7 +65,7 @@ const Navbar = () => {
       <AppBar
         position="sticky"
         color="default"
-        sx={{backgroundColor: "var(--bg2)" }}
+        sx={{ backgroundColor: "var(--bg2)" }}
       >
         <Toolbar
           sx={{
@@ -104,10 +104,23 @@ const Navbar = () => {
                         letterSpacing: "10%",
                         fontSize: "14px",
                         color: "white",
+
+                        "&:hover": {
+                          color: "coral",
+                        },
                       }}
                     >
                       <span>{link.title}</span>
-                      <KeyboardArrowDown sx={{ ml: 1 }} />
+                      <KeyboardArrowDown
+                        sx={{
+                          ml: 1,
+                          transition: "transform 0.3s ease",
+                          transform:
+                            openMenu == link.title
+                              ? "rotate(180deg)"
+                              : "rotate(0deg)",
+                        }}
+                      />
                     </Button>
                     <Menu
                       anchorEl={anchorEl}
@@ -130,6 +143,11 @@ const Navbar = () => {
                           component={Link}
                           href={child.link}
                           onClick={handleClose}
+                          sx={{
+                            "&:hover": {
+                              color: "coral",
+                            },
+                          }}
                         >
                           {child.title}
                         </MenuItem>
@@ -144,10 +162,13 @@ const Navbar = () => {
                       color="white"
                       underline="none"
                       href={link.link}
-                      style={{
+                      sx={{
                         fontFamily: '"Montserrat", sans-serif',
                         letterSpacing: "10%",
                         fontSize: "14px",
+                        "&:hover": {
+                          color: "coral",
+                        },
                       }}
                     >
                       {link.title}

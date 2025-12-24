@@ -52,7 +52,6 @@ describe("Enrol page", () => {
   it("Should validate emails", () => {
     render(<EnrolPage />);
     const user = userEvent.setup()
-    const 
   });
   it("Should validate phone numbers", () => {
     render(<EnrolPage />);
