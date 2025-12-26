@@ -18,7 +18,8 @@ export default function AboutTeam() {
       <Box
         sx={{
           paddingY: 10,
-          marginX: 0,
+          maxWidth: 1200, 
+          marginX: 'auto',
           paddingX: 5,
           textAlign: "left",
           color: "white",
@@ -43,7 +44,7 @@ export default function AboutTeam() {
           }}
         >
           {staffData.map((staff) => (
-            <Grid key={staff.title} size={{ xs: 6, sm: 4, md: 3 }}>
+            <Grid key={staff.title} size={{ xs: 6, sm: 4 }}>
               <Stack
                 direction={"column"}
                 sx={{

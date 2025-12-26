@@ -91,3 +91,8 @@ a {
   word-break: break-word;
   white-space: normal;
 }
+
+/* customised classes */
+.accent {
+  color: var(--bg6);
+}
