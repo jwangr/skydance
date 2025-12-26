@@ -14,7 +14,7 @@ export default function AboutStory() {
       </Box>
       <Hero>
         <Container maxWidth="md">
-          <Stack direction={"column"} gap={3}>
+          <Stack direction={"column"} gap={3} sx={{fontSize: '1.3rem'}}>
             {" "}
             <h2>Our story began over one decade ago...</h2>
             <div>
