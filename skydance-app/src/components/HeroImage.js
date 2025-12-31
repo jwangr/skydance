@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 
 export default function Hero({
   children,
+  backgroundPosition = "center",
   borderRadius = 0,
   minHeight = 0,
   height = "fit-content",
@@ -19,7 +20,7 @@ export default function Hero({
         height, // fixed height
         backgroundImage: backgroundImage,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: backgroundPosition,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

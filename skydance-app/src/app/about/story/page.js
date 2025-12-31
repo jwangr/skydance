@@ -1,5 +1,6 @@
 import ButtonLink1 from "@/components/ButtonLink1";
 import Hero from "@/components/HeroImage";
+import HeroGrows from "@/components/HeroImageGrows";
 import { Box, Container, Stack } from "@mui/material";
 import React from "react";
 
@@ -12,9 +13,14 @@ export default function AboutStory() {
           About Us
         </h1>
       </Box>
-      <Hero>
+      <Hero backgroundImage="url('/abstractbackground.jpg')">
         <Container maxWidth="md">
-          <Stack direction={"column"} gap={3} sx={{fontSize: '1.3rem'}}>
+          <Stack
+            direction={"column"}
+            gap={3}
+            sx={{ fontSize: "1.3rem" }}
+            margin={3}
+          >
             {" "}
             <h2>Our story began over one decade ago...</h2>
             <div>
@@ -40,6 +46,16 @@ export default function AboutStory() {
           </Stack>
         </Container>
       </Hero>
+
+      {/* Link to Our Team */}
+      <HeroGrows backgroundImage="url('/studio.webp')" minHeight={300}>
+        <h2>
+          Meet Our Team
+        </h2>
+        <ButtonLink1 width="50%" href="/about/team">
+          Learn more
+        </ButtonLink1>
+      </HeroGrows>
     </>
   );
 }
