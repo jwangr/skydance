@@ -2,7 +2,7 @@ import { EastOutlined } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import React from "react";
 
-export default function ButtonLink2({ children = "Button Here", href = "/" }) {
+export default function ButtonLink2({ children = "Button Here", href = "/", marginY='20px' }) {
   return (
     <Button
       href={href}
@@ -16,7 +16,7 @@ export default function ButtonLink2({ children = "Button Here", href = "/" }) {
         color: "white",
         borderRadius: "50px",
         padding: "10px 20px",
-        marginY: "20px",
+        marginY: marginY,
 
         "& .label": {
           position: "relative",
