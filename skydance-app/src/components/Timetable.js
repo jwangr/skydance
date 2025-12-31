@@ -9,7 +9,7 @@ export default function Timetable() {
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
-        marginBottom: 2,
+        marginY: 2,
       }}
     >
       <h2>Class Timetable</h2>
