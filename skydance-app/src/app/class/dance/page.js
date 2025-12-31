@@ -2,8 +2,6 @@ import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
 import { Box, Grid, Stack, Toolbar } from "@mui/material";
 import React from "react";
-import classData from "@/lib/data/classdescriptions.json";
-import ClassInfoCard from "@/components/ClassInfoCard";
 import Timetable from "@/components/Timetable";
 import Link from "next/link";
 import Parallax from "@/components/ParallaxSection";
@@ -12,6 +10,8 @@ import ButtonLink2 from "@/components/ButtonLink2";
 import HeroGrows from "@/components/HeroImageGrows";
 import ButtonLink1 from "@/components/ButtonLink1";
 import danceEvents from "@/lib/data/danceEvents";
+import ClassInfoCard1 from "@/components/ClassInfoCard1";
+import danceClasses from "@/lib/data/classdescriptions";
 
 const classLinks = [
   { title: "DANCE", link: "/class/dance" },
@@ -75,7 +75,7 @@ export default function DancePage() {
           </Stack>
         </Box>
       </SnapScrollSection>
-      
+
       {/* Timetable */}
       <AnimateInView>
         <Timetable />
@@ -101,43 +101,42 @@ export default function DancePage() {
         ))}
       </Grid>
 
-
-      <Box sx={{ px: 2, width: { sm: "75%", md: "100%" }, marginX: "auto" }}>
-        {classData.map((c) => (
-          <AnimateInView key={c.title}>
-            <ClassInfoCard danceClass={c} />
-          </AnimateInView>
+      <Grid
+        container
+        gap={0}
+        alignItems={"stretch"}
+        maxWidth={"xl"}
+        margin={"auto"}
+      >
+        {danceClasses.map((dance) => (
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+            <ClassInfoCard1 danceClass={dance} />
+          </Grid>
         ))}
-      </Box>
+      </Grid>
 
       {/* Enrol or Trial Class */}
-      <SnapScrollSection>
-        <Hero
-          backgroundImage="url('studio.webp')"
-          minHeight={"100vh"}
-          overlay="rgba(4, 11, 9, 0.5)"
+      <Hero
+        backgroundImage="url('studio.webp')"
+        minHeight={"100vh"}
+        overlay="rgba(4, 11, 9, 0.5)"
+      >
+        <Box
+          sx={{
+            my: 5,
+            paddingX: { xs: 2, md: 10 },
+          }}
         >
-          <Box
-            sx={{
-              my: 5,
-              paddingX: { xs: 2, md: 10 },
-            }}
-          >
-            <h4>Join a class</h4>
-            <p>
-              Discover the joy of dance! From Ballet and Lyrical to Hip Hop and
-              Contemporary, our classes inspire creativity, build confidence,
-              and let you move your way. Whether you’re a beginner or
-              experienced, join us and unleash your passion for dance today!
-            </p>
-            <Box sx={{ my: 5 }}>
-              <Link href="/enrol">
-                <button className="button1">Apply Now</button>
-              </Link>
-            </Box>
-          </Box>
-        </Hero>
-      </SnapScrollSection>
+          <h4>Join a class</h4>
+          <p>
+            Discover the joy of dance! From Ballet and Lyrical to Hip Hop and
+            Contemporary, our classes inspire creativity, build confidence, and
+            let you move your way. Whether you’re a beginner or experienced,
+            join us and unleash your passion for dance today!
+          </p>
+          <ButtonLink2 href="/enrol">Apply Now</ButtonLink2>
+        </Box>
+      </Hero>
     </>
   );
 }

@@ -1,16 +1,16 @@
-[
+const danceClasses = [
   {
     "title": "Ballet",
     "description": "Students build strong technique, musicality, and performance skills while working toward internationally recognized RAD certificates, accepted in 83 countries. These classes provide a solid foundation for all dance styles, inspiring confidence and a lifelong foundation of dance in every dancer.",
-    "images": ["ballet/ballet1.png", "ballet/ballet2.png", "ballet/ballet3.png"]
+    "images": ["/ballet/ballet1.png", "/ballet/ballet2.png", "/ballet/ballet3.png"]
   },
   {
     "title": "Lyrical",
     "description": "Lyrical is a form of ballet without all the rules! Lyrical dance combines the grace of ballet with storytelling, encouraging students to feel the music and express emotions.",
     "images": [
-      "lyrical/image.png",
-      "lyrical/image copy.png",
-      "lyrical/image copy 2.png"
+      "/lyrical/image.png",
+      "/lyrical/image copy.png",
+      "/lyrical/image copy 2.png"
     ]
   },
   {
@@ -38,3 +38,5 @@
     "description": "Welcome to our Acrobatics Class! In this fun and exciting class, you'll learn amazing tricks, flips, and balance moves. It's like gymnastics with a touch of circus-style excitement. Get ready to tumble, twist, and soar through the air while building strength and flexibility. Whether you're a beginner or have some experience, our instructors will help you master the art of acrobatics while having a great time!"
   }
 ]
+
+export default danceClasses
