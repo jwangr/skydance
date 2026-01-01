@@ -29,22 +29,7 @@ export default function DancePage() {
         backgroundImage="url('/jazzclass.png')"
       >
         <AnimateInView>
-          <h1>Classes</h1>
-          <Stack
-            direction={{ xs: "column", md: "row" }}
-            // gap={3}
-            width={{ xs: 1, sm: 1 / 2, md: 3 / 4 }}
-            maxWidth={"lg"}
-            marginX={"auto"}
-            marginTop={{ xs: 1, md: 5 }}
-            justifyContent={"center"}
-          >
-            {classLinks.map((link) => (
-              <ButtonLink2 key={link.title} href={link.link} marginY="5px">
-                {link.title}
-              </ButtonLink2>
-            ))}
-          </Stack>
+          <h1>Dance Classes</h1>
         </AnimateInView>
       </Hero>
 
@@ -60,7 +45,6 @@ export default function DancePage() {
           }}
         >
           <Stack gap={{ xs: 1, md: 3 }}>
-            <h2>Dance Classes</h2>
             <p>
               <em>Designed to inspire every dancer's passion and growth</em>
             </p>
@@ -76,14 +60,9 @@ export default function DancePage() {
         </Box>
       </SnapScrollSection>
 
-      {/* Timetable */}
-      <AnimateInView>
-        <Timetable />
-      </AnimateInView>
-
-      <Grid container spacing={0} sx={{ alignItems: "stretch" }}>
+      <Grid container spacing={0} sx={{ alignItems: "stretch" }} margin={5}>
         {danceEvents.map((item) => (
-          <Grid key={item.title} size={{ xs: 12, sm: 4 }}>
+          <Grid key={item.title} size={{ xs: 12, md: 4 }}>
             <HeroGrows
               backgroundImage={item.img}
               overlay="rgba(0, 0, 0, 0.5)"
@@ -101,12 +80,14 @@ export default function DancePage() {
         ))}
       </Grid>
 
+      {/* Gallery of Dance Class Styles */}
       <Grid
         container
         gap={0}
         alignItems={"stretch"}
         maxWidth={"xl"}
         margin={"auto"}
+        marginBottom={4}
       >
         {danceClasses.map((dance) => (
           <Grid size={{ xs: 12, sm: 6, md: 4 }}>
@@ -115,23 +96,29 @@ export default function DancePage() {
         ))}
       </Grid>
 
+      {/* Timetable */}
+      <AnimateInView>
+        <Timetable />
+      </AnimateInView>
+
       {/* Enrol or Trial Class */}
       <Hero
-        backgroundImage="url('studio.webp')"
-        minHeight={"100vh"}
+        backgroundImage="url('/jazz/2.png')"
+        // minHeight={"100vh"}
         overlay="rgba(4, 11, 9, 0.5)"
       >
         <Box
           sx={{
             my: 5,
-            paddingX: { xs: 2, md: 10 },
+            width: {xs: 0.8, md: 1/2},
+            maxWidth: 'lg',
+            marginX: 'auto',
+            marginY: 5
           }}
         >
           <h4>Join a class</h4>
           <p>
-            Discover the joy of dance! From Ballet and Lyrical to Hip Hop and
-            Contemporary, our classes inspire creativity, build confidence, and
-            let you move your way. Whether you’re a beginner or experienced,
+            Discover the joy of dance! Whether you’re a beginner or experienced,
             join us and unleash your passion for dance today!
           </p>
           <ButtonLink2 href="/enrol">Apply Now</ButtonLink2>
