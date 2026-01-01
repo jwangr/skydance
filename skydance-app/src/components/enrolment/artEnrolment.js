@@ -24,7 +24,8 @@ import SocialLinks from "@/components/SocialLinks";
 import Hero from "@/components/HeroImage";
 import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
-import { darkFieldSx, formContainerSx, datePickerSx } from "./FormComponentStyles";
+import { darkFieldSx, formContainerSx, datePickerContainerSx } from "./FormComponentStyles";
+import { CakeOutlined } from "@mui/icons-material";
 
 export default function ArtEnrolment() {
   const [formData, setFormData] = useState({
@@ -100,7 +101,9 @@ export default function ArtEnrolment() {
       <Stack direction={{ xs: "column", md: "row" }} gap={3} padding={2}>
         {/* Form */}
         <Box sx={formContainerSx}>
-          <h2>Join an Art Class Today</h2>
+          <h2>
+            <span className="accent">Join</span> Our Art Class Today
+          </h2>
           <Box component="form" onSubmit={handleSubmit}>
             <Stack gap={2}>
               <TextField
@@ -124,10 +127,12 @@ export default function ArtEnrolment() {
                     sx={darkFieldSx}
                     variant="standard"
                     slotProps={{
-                      textField: {
-                        variant: 'standard',
-                        sx: {datePickerSx}
-                      }
+                      openPickerIcon: {
+                        color: "primary",
+                      },
+                    }}
+                    slots={{
+                      openPickerIcon: CakeOutlined,
                     }}
                   />
                 </LocalizationProvider>
