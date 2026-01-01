@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import classes from "@/lib/data/classdescriptions.json";
+import classes from "@/lib/data/classdescriptions.js";
 import contacts from "@/lib/data/contact.json";
 import { Box, FormLabel, Stack } from "@mui/material";
 
