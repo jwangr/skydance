@@ -25,7 +25,7 @@ const formContainerSx = {
   p: 4,
   boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
   color: "white",
-  width: "80%",
+  width: {xs: 1, md: 0.8},
   maxWidth: "lg",
   marginX: "auto",
 };
@@ -36,7 +36,7 @@ const contactsContainerSx = {
   p: 4,
   boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
   color: "white",
-  width: "80%",
+  width: {xs: 1, md: 0.8},
   maxWidth: "lg",
   marginX: "auto",
 };

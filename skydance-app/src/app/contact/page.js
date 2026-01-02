@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import contacts from "@/lib/data/contact.json";
 import { Box, Stack } from "@mui/material";
 
 import {
@@ -58,7 +57,7 @@ export default function ContactPage() {
     try {
       // Format the payload
       const payload = {
-        page: 'contact',
+        page: "contact",
         Date: new Date().toISOString(),
         Name: formData.name,
         Phone: formData.phone,
@@ -122,38 +121,7 @@ export default function ContactPage() {
           overflow={"hidden"}
         >
           {/* Contact Information */}
-          <Box
-            style={{
-              backgroundColor: "white",
-              borderRadius: "12px",
-              padding: "2rem",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "1.5rem",
-                textAlign: "center",
-              }}
-            >
-              Get In Touch
-            </h2>
-
-            <Box marginY={2}>
-              <SocialLinks />
-            </Box>
-
-            {contacts.map(({ title, description, link }) => (
-              <GetInTouchDescriptors
-                title={title}
-                description={description}
-                link={link}
-                key={title}
-              />
-            ))}
-
-            <EmbeddedMap />
-          </Box>
+          <ContactPage />
 
           {/* Contact Form */}
           <Box

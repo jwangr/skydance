@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import contacts from "@/lib/data/contact.json";
-import { Box, FormLabel, Stack } from "@mui/material";
+
+import { Box, Stack } from "@mui/material";
 
 import {
   FormControl,
@@ -17,20 +17,13 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-
-import GetInTouchDescriptors from "@/components/GetInTouchDescriptors";
-import EmbeddedMap from "@/components/EmbeddedMap";
-import SocialLinks from "@/components/SocialLinks";
 import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
-import {
-  darkFieldSx,
-  formContainerSx,
-  contactsContainerSx,
-} from "./FormComponentStyles";
+import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
 import { CakeOutlined } from "@mui/icons-material";
+import ContactsContainer from "./ContactsContainer";
 
-export default function EnrolmentFormArtTutoringMusic() {
+export default function ArtEnrolment() {
   const [formData, setFormData] = useState({
     studentName: "",
     dob: null,
@@ -108,24 +101,7 @@ export default function EnrolmentFormArtTutoringMusic() {
         maxWidth={"xl"}
       >
         {/* Contact Information */}
-        <Box sx={contactsContainerSx}>
-          <h2>Get In Touch</h2>
-
-          <Box marginY={2}>
-            <SocialLinks />
-          </Box>
-
-          {contacts.map(({ title, description, link }) => (
-            <GetInTouchDescriptors
-              title={title}
-              description={description}
-              link={link}
-              key={title}
-            />
-          ))}
-
-          <EmbeddedMap />
-        </Box>
+        <ContactsContainer />
 
         {/* Form */}
         <Box sx={formContainerSx}>

@@ -29,7 +29,7 @@ export default function DancePage() {
         <HeroGrows minHeight={"50vh"}>
           <h2>Interested in teaching art? Join our team</h2>
           <p>Help inspire the next generation of artists</p>
-          <ButtonLink1>Contact Us</ButtonLink1>
+          <ButtonLink1 href="/contact">Contact Us</ButtonLink1>
         </HeroGrows>
       </SnapScrollSection>
 
@@ -63,7 +63,7 @@ export default function DancePage() {
           <Grid key={item.title} size={{ xs: 12, md: 4 }}>
             <HeroGrows
               backgroundImage={item.img}
-              overlay="rgba(0, 0, 0, 0.5)"
+              overlay="rgba(0, 0, 0, 0)"
               textShadow="0"
               height="30vh"
             ></HeroGrows>
