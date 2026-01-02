@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import classes from "@/lib/data/classdescriptions.js";
-import contacts from "@/lib/data/contact.json";
+import contacts from "@/lib/data/contact.js";
 import { Box, FormLabel, Stack } from "@mui/material";
 
 import {
@@ -29,6 +29,7 @@ import SocialLinks from "@/components/SocialLinks";
 import Hero from "@/components/HeroImage";
 import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
+import ContactsContainer from "@/components/enrolment/ContactsContainer";
 
 const danceClasses = classes.map((x) => x.title);
 
@@ -142,38 +143,7 @@ export default function EnrolPage() {
           overflow={"hidden"}
         >
           {/* Contact Information */}
-          <Box
-            style={{
-              backgroundColor: "white",
-              borderRadius: "12px",
-              padding: "2rem",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "1.5rem",
-                textAlign: "center",
-              }}
-            >
-              Get In Touch
-            </h2>
-
-            <Box marginY={2}>
-              <SocialLinks />
-            </Box>
-
-            {contacts.map(({ title, description, link }) => (
-              <GetInTouchDescriptors
-                title={title}
-                description={description}
-                link={link}
-                key={title}
-              />
-            ))}
-
-            <EmbeddedMap />
-          </Box>
+          <ContactsContainer />
 
           {/* Enrolment Form */}
           <Box
