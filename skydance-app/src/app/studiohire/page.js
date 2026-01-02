@@ -1,26 +1,39 @@
 import ButtonLink1 from "@/components/ButtonLink1";
-import ButtonLink2 from "@/components/ButtonLink2";
-import { Box } from "@mui/material";
+import StudioHireForm from "@/components/forms/StudioHire";
+import Hero from "@/components/HeroImage";
+import HeroGrows from "@/components/HeroImageGrows";
+import { Box, Container, Stack } from "@mui/material";
 import React from "react";
 
-export default function StudioPage() {
+export default function StudioHirePage() {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "90vh",
-        margin: "auto",
-        textAlign: "center",
-      }}
-    >
-      <h5>Studio Hiring Page coming soon...</h5>
-      <div>
-        <ButtonLink1 />
-        <ButtonLink2 />
-      </div>
-    </Box>
+    <>
+      {/* Heading */}
+      <Box sx={{ margin: 5 }}>
+        <h1 style={{ marginX: "auto", textAlign: "center", color: "white" }}>
+          Studio Hire
+        </h1>
+      </Box>
+      <Hero backgroundImage="url('/studio.webp')">
+        <Container maxWidth="md">
+          <Stack
+            direction={"column"}
+            gap={3}
+            sx={{ fontSize: "1.3rem" }}
+            margin={3}
+          >
+            <h2>The perfect space for your next event</h2>
+            <div>
+              Sky Dance has 5 studios, each equipped with vinyl floors and
+              full-length mirrors. Guests can use these for rehearsals,
+              auditions and other creative events.
+            </div>
+            <ButtonLink1>Contact Us</ButtonLink1>
+          </Stack>
+        </Container>
+      </Hero>
+
+      <StudioHireForm />
+    </>
   );
 }

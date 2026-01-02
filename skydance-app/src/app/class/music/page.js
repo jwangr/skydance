@@ -13,8 +13,8 @@ import danceEvents from "@/lib/data/danceEvents";
 import ClassInfoCard1 from "@/components/ClassInfoCard1";
 import danceClasses from "@/lib/data/classdescriptions";
 import artImages from "@/lib/data/artImages";
-import ArtEnrolment from "@/components/enrolment/artEnrolment";
-import MusicEnrolment from "@/components/enrolment/musicEnrolment";
+import ArtEnrolment from "@/components/forms/artEnrolment";
+import MusicEnrolment from "@/components/forms/musicEnrolment";
 
 export default function MusicPage() {
   return (

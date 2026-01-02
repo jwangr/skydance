@@ -29,7 +29,7 @@ import SocialLinks from "@/components/SocialLinks";
 import Hero from "@/components/HeroImage";
 import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
-import ContactsContainer from "@/components/enrolment/ContactsContainer";
+import ContactsContainer from "@/components/forms/ContactsContainer";
 
 const danceClasses = classes.map((x) => x.title);
 

@@ -6,7 +6,7 @@ import Timetable from "@/components/Timetable";
 import SnapScrollSection from "@/components/SnapScrollSection";
 import HeroGrows from "@/components/HeroImageGrows";
 import artImages from "@/lib/data/artImages";
-import TutoringEnrolment from "@/components/enrolment/tutoringEnrolment";
+import TutoringEnrolment from "@/components/forms/tutoringEnrolment";
 
 export default function TutoringPage() {
   return (
