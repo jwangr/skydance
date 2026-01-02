@@ -24,7 +24,12 @@ import SocialLinks from "@/components/SocialLinks";
 import Hero from "@/components/HeroImage";
 import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
-import { darkFieldSx, formContainerSx, datePickerContainerSx } from "./FormComponentStyles";
+import {
+  darkFieldSx,
+  formContainerSx,
+  datePickerContainerSx,
+  contactsContainerSx,
+} from "./FormComponentStyles";
 import { CakeOutlined } from "@mui/icons-material";
 
 export default function ArtEnrolment() {
@@ -98,7 +103,32 @@ export default function ArtEnrolment() {
 
   return (
     <SnapScrollSection visibility={0.9}>
-      <Stack direction={{ xs: "column", md: "row" }} gap={3} padding={2}>
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        gap={3}
+        padding={2}
+        maxWidth={"xl"}
+      >
+        {/* Contact Information */}
+        <Box sx={contactsContainerSx}>
+          <h2>Get In Touch</h2>
+
+          <Box marginY={2}>
+            <SocialLinks />
+          </Box>
+
+          {contacts.map(({ title, description, link }) => (
+            <GetInTouchDescriptors
+              title={title}
+              description={description}
+              link={link}
+              key={title}
+            />
+          ))}
+
+          <EmbeddedMap />
+        </Box>
+
         {/* Form */}
         <Box sx={formContainerSx}>
           <h2>

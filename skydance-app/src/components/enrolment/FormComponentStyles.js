@@ -30,6 +30,17 @@ const formContainerSx = {
   marginX: "auto",
 };
 
+const contactsContainerSx = {
+  background: "linear-gradient(135deg, #1c1f26, #121417)",
+  borderRadius: "16px",
+  p: 4,
+  boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+  color: "white",
+  width: "80%",
+  maxWidth: "lg",
+  marginX: "auto",
+};
+
 const datePickerContainerSx = {
   "& .MuiPickersInputBase-sectionsContainer": {
     color: "#fff",
@@ -41,4 +52,4 @@ const datePickerContainerSx = {
     color: "#fff",
   },
 };
-export { darkFieldSx, formContainerSx, datePickerContainerSx };
+export { darkFieldSx, formContainerSx, datePickerContainerSx, contactsContainerSx };
