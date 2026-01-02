@@ -14,7 +14,7 @@ export default function StudioHirePage() {
           Studio Hire
         </h1>
       </Box>
-      <Hero backgroundImage="url('/studio.webp')">
+      <Hero backgroundImage="url('/studio.webp')" height="50vh">
         <Container maxWidth="md">
           <Stack
             direction={"column"}
@@ -28,7 +28,6 @@ export default function StudioHirePage() {
               full-length mirrors. Guests can use these for rehearsals,
               auditions and other creative events.
             </div>
-            <ButtonLink1>Contact Us</ButtonLink1>
           </Stack>
         </Container>
       </Hero>
