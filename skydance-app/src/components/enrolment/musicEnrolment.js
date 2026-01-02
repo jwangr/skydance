@@ -76,6 +76,7 @@ export default function MusicEnrolment() {
       );
 
       setFormData({
+        instrument: "",
         studentName: "",
         dob: null,
         gender: "",
