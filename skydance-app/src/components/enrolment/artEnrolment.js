@@ -30,7 +30,7 @@ import {
 } from "./FormComponentStyles";
 import { CakeOutlined } from "@mui/icons-material";
 
-export default function ArtEnrolment() {
+export default function EnrolmentFormArtTutoringMusic() {
   const [formData, setFormData] = useState({
     studentName: "",
     dob: null,
@@ -58,7 +58,7 @@ export default function ArtEnrolment() {
 
     try {
       const payload = {
-        page: "art-enrolment",
+        page: "art",
         Date: new Date().toISOString(),
         Name: formData.studentName,
         DOB: formData.dob?.toDate().toLocaleDateString(),
