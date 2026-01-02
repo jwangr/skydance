@@ -1,20 +1,7 @@
+import danceEvents from "./danceEvents";
+
 const homeEvents = [
-  {
-    title: "Open Day",
-    caption1: "Jan 2026",
-    caption2: "Explore your next moves",
-    button: "Explore",
-    link: "/events/open-day",
-    img: "url('/staff/wei.webp')",
-  },
-  {
-    title: "School Holiday Workshops",
-    caption1: "Intensives",
-    caption2: "?? - ?? Jan 2026",
-    button: "Apply Now",
-    link: "/dance/workshops/Jan-2026-school-holiday",
-    img: "url('/HomePage.webp')",
-  },
+  ...danceEvents.slice(0, 3),
   {
     title: "Get Qualified",
     caption1: "Learn. Certify. Teach",
@@ -30,14 +17,6 @@ const homeEvents = [
     button: "Explore",
     link: "/classes/dance",
     img: "url('/lyrical/image copy 2.png')",
-  },
-  {
-    title: "Private Classes",
-    caption1: "",
-    caption2: "1:1 with a qualified teacher",
-    button: "Apply now",
-    link: "/events/open-day",
-    img: "url('/ballet/ballet1.png')",
   },
   {
     title: "Art Classes",

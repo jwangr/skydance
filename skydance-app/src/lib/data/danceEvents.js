@@ -1,10 +1,10 @@
 const danceEvents = [
   {
-    title: "Open Day",
-    caption1: "Jan 2026",
-    caption2: "Explore your next moves",
+    title: "2026 New Year",
+    caption1: "31st January 2026",
+    caption2: "Chatswood Concourse",
     button: "Explore",
-    link: "/events/open-day",
+    link: "/events/cny-2026",
     img: "url('/staff/wei.webp')",
   },
   {
