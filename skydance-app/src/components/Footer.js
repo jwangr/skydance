@@ -23,7 +23,7 @@ const Footer = () => {
       >
         <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
           <img
-            src="logo.webp"
+            src="/logo.webp"
             alt="Logo"
             style={{
               height: 40,
