@@ -12,6 +12,7 @@ import ButtonLink1 from "@/components/ButtonLink1";
 import danceEvents from "@/lib/data/danceEvents";
 import ClassInfoCard1 from "@/components/ClassInfoCard1";
 import danceClasses from "@/lib/data/classdescriptions";
+import SwiperDanceStyles from "@/components/SwiperDanceStyles";
 
 const classLinks = [
   { title: "DANCE", link: "/class/dance" },
@@ -35,28 +36,31 @@ export default function DancePage() {
 
       {/* Dance Styles  */}
       <SnapScrollSection visibility={1}>
-        <Box
-          sx={{
-            marginY: 10,
-            paddingX: { xs: 0, md: 10 },
-            textAlign: "center",
-            maxWidth: "lg",
-            marginX: "auto",
-          }}
-        >
-          <Stack gap={{ xs: 1, md: 3 }}>
-            <p>
-              <em>Designed to inspire every dancer's passion and growth</em>
-            </p>
-            <p>
-              Sky Dance Studio offers high-quality training for dancers for all
-              ages and abilities. Our classes span multiple styles, allowing
-              dancers to explore movements and artistry, while developing strong
-              technical foundations. We encourage every dancer to reach their
-              potential in a space where passion, discipline, and artistry come
-              together.
-            </p>
-          </Stack>
+        <Box maxWidth={"xl"}>
+          <SwiperDanceStyles />
+          <Box
+            sx={{
+              marginY: 10,
+              paddingX: { xs: 0, md: 10 },
+              textAlign: "center",
+              maxWidth: "lg",
+              marginX: "auto",
+            }}
+          >
+            <Stack gap={{ xs: 1, md: 3 }}>
+              <p>
+                <em>Designed to inspire every dancer's passion and growth</em>
+              </p>
+              <p>
+                Sky Dance Studio offers high-quality training for dancers for
+                all ages and abilities. Our classes span multiple styles,
+                allowing dancers to explore movements and artistry, while
+                developing strong technical foundations. We encourage every
+                dancer to reach their potential in a space where passion,
+                discipline, and artistry come together.
+              </p>
+            </Stack>
+          </Box>
         </Box>
       </SnapScrollSection>
 
@@ -110,10 +114,10 @@ export default function DancePage() {
         <Box
           sx={{
             my: 5,
-            width: {xs: 0.8, md: 1/2},
-            maxWidth: 'lg',
-            marginX: 'auto',
-            marginY: 5
+            width: { xs: 0.8, md: 1 / 2 },
+            maxWidth: "lg",
+            marginX: "auto",
+            marginY: 5,
           }}
         >
           <h4>Join a class</h4>

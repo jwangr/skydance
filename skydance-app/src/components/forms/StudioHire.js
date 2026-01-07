@@ -104,7 +104,7 @@ export default function StudioHireForm() {
         {/* Form */}
         <Box sx={formContainerSx}>
           <h2>
-            <span className="accent">Enquire </span> about studio hire
+            <span className="accent">Enquire </span> about studio hire 
           </h2>
           <Box component="form" onSubmit={handleSubmit}>
             <Stack gap={2}>
