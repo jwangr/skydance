@@ -14,6 +14,9 @@ export default function DanceCard({ dance }) {
       }}
     >
       <Image src={dance.images[0]} fill={true} alt={dance.title} style={{objectFit:'cover'}} />
+      <Box sx={{position:'absolute', bottom: '0', right:0}}>
+        <h4>{dance.title}</h4>
+      </Box>
     </Box>
   );
 }

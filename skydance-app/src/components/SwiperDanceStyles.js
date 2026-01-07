@@ -24,13 +24,13 @@ export default function SwiperDanceStyles() {
       slidesPerView={2}
       breakpoints={{
         600: {
-          slidesPerView: 2,
+          slidesPerView: 3,
         },
         900: {
-          slidesPerView: 3,
+          slidesPerView: 5,
         },
         1200: {
-          slidesPerView: 3,
+          slidesPerView: 5,
         },
       }}
       style={{

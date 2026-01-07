@@ -36,7 +36,7 @@ export default function DancePage() {
 
       {/* Dance Styles  */}
       <SnapScrollSection visibility={1}>
-        <Box maxWidth={"xl"}>
+        <Box maxWidth={"xl"} margin={'auto'}>
           <SwiperDanceStyles />
           <Box
             sx={{
