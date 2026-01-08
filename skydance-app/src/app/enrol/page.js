@@ -3,7 +3,6 @@
 import { Box, FormLabel, Stack } from "@mui/material";
 
 import Hero from "@/components/HeroImage";
-import DanceEnrolment from "@/components/forms/danceEnrolment";
 
 export default function EnrolPage() {
   return (
