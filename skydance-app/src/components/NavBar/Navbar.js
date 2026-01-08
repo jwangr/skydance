@@ -16,6 +16,7 @@ import NavBarMobile from "./NavBarMobile";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import ScrollToTop from "./ScrollToTop";
 import Image from "next/image";
+import LogoHeader from "../LogoHeader";
 
 const navLinks = [
   { title: "HOME", link: "/" },
@@ -72,36 +73,7 @@ const Navbar = () => {
             justifyContent: "space-between",
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              gap: 3,
-              alignItems: "center",
-            }}
-          >
-            <Button href="/">
-              <Box
-                sx={{
-                  width: { xs: "90px", md: "70px" },
-                  height: "auto",
-                }}
-              >
-                <Image
-                  src="/logo.webp"
-                  alt="Logo"
-                  height={160}
-                  width={70}
-                  objectFit="contain"
-                  layout="responsive"
-                />
-              </Box>
-              <Box
-                sx={{ display: { xs: "none", lg: "block" }, color: "white" }}
-              >
-                <div className="logo">Sky Dance Studio</div>
-              </Box>
-            </Button>
-          </Box>
+          <LogoHeader />
 
           {/* Non-mobile Navigation links */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
