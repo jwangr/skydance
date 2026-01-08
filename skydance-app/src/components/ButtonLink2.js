@@ -1,13 +1,18 @@
 import { EastOutlined } from "@mui/icons-material";
-import { Button } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import React from "react";
 
-export default function ButtonLink2({ children = "Button Here", href = "/", marginY='20px' }) {
+export default function ButtonLink2({
+  children = "Button Here",
+  href = "/",
+  marginY = "20px",
+}) {
   return (
     <Button
       href={href}
       sx={{
         width: "100%",
+        minHeight: "50px",
         textTransform: "uppercase",
         display: "flex",
         justifyContent: "space-between",
@@ -18,10 +23,14 @@ export default function ButtonLink2({ children = "Button Here", href = "/", marg
         padding: "10px 20px",
         marginY: marginY,
 
+        // Label styling
         "& .label": {
-          position: "relative",
-          display: "inline-block",
-          paddingBottom: "4px", // space between text & underline
+          position: "absolute",
+          left: "50%",
+          top: "50%",
+          transform: "translate(-50%, -50%)", // center the label
+          transition: "all 0.3s ease",
+          paddingBottom: "4px",
         },
 
         "& .label::after": {
@@ -34,15 +43,23 @@ export default function ButtonLink2({ children = "Button Here", href = "/", marg
           backgroundColor: "currentColor",
         },
 
+        // Arrow styling
         "& .arrow": {
-          opacity: 0,
+          position: "absolute",
+          right: "20px",
+          top: "25%",
           transform: "translateX(-20px)",
-          transition: "opacity 0.2s ease, transform 0.2s ease",
+          opacity: 0,
+          transition: "opacity 0.3s ease, transform 0.3s ease",
         },
 
         "&:hover": {
           backgroundColor: "var(--bg5)",
           color: "white",
+          "& .label": {
+            left: "40%", // move left a bit to make space for arrow
+            transform: "translate(-50%, -50%)",
+          },
           "& .arrow": {
             opacity: 1,
             transform: "translateX(0)",
