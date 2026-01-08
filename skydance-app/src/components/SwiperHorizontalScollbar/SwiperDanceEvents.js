@@ -62,8 +62,13 @@ export default function SwiperDanceEvents({ events, heading = "" }) {
         slidesPerView={2}
         breakpoints={{
           600: {
+            slidesPerView: 3,
+          },
+          900: {
+            slidesPerView: 4,
+          },
+          1200: {
             slidesPerView: 5,
-            // spaceBetween: 30,
           },
         }}
         speed={600}
@@ -78,9 +83,8 @@ export default function SwiperDanceEvents({ events, heading = "" }) {
             style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "stretch",
+              height: "auto",
               justifyContent: "stretch",
-              height: "100%",
             }}
           >
             <Box
@@ -92,7 +96,7 @@ export default function SwiperDanceEvents({ events, heading = "" }) {
                 p: { xs: 3, md: 5 },
               }}
             >
-              <h3>{event.title}</h3>
+              <h4>{event.title}</h4>
               <p>{event.caption1}</p>
               <p>{event.caption2}</p>
             </Box>

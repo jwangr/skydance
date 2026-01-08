@@ -71,29 +71,59 @@ export default function DancePage() {
         <Timetable />
       </AnimateInView>
 
-      {/* Enrol or Trial Class */}
-      <Hero
-        backgroundImage="url('/jazz/2.png')"
-        // minHeight={"100vh"}
-        overlay="rgba(4, 11, 9, 0.5)"
+      {/* Enrol for group or private classes */}
+      <Stack
+        direction={{ xs: "column", md: "row" }}
+        sx={{
+          justifyContent: "center",
+          alignItems: "stretch",
+        }}
       >
-        <Box
-          sx={{
-            my: 5,
-            width: { xs: 0.8, md: 1 / 2 },
-            maxWidth: "lg",
-            marginX: "auto",
-            marginY: 5,
-          }}
+        {/* Enrol or Trial Class */}
+        <Hero
+          backgroundImage="url('/jazz/2.png')"
+          overlay="rgba(4, 11, 9, 0.5)"
+          height="100%"
         >
-          <h4>Join a class</h4>
-          <p>
-            Discover the joy of dance! Whether you’re a beginner or experienced,
-            join us and unleash your passion for dance today!
-          </p>
-          <ButtonLink2 href="/enrol">Apply Now</ButtonLink2>
-        </Box>
-      </Hero>
+          <Box
+            sx={{
+              my: 5,
+              width: { xs: 0.8, md: 1 / 2 },
+              maxWidth: "lg",
+              marginX: "auto",
+              marginY: 5,
+            }}
+          >
+            <h4>Join a class</h4>
+            <p>
+              Discover the joy of dance! Whether you’re a beginner or
+              experienced, join us and unleash your passion for dance today!
+            </p>
+            <ButtonLink2 href="/enrol">Apply Now</ButtonLink2>
+          </Box>
+        </Hero>
+
+        {/* Register for private class */}
+        <Hero
+          backgroundImage="url('/jazz/1.png')"
+          height="inherit"
+          overlay="rgba(4, 11, 9, 0.5)"
+        >
+          <Box
+            sx={{
+              my: 5,
+              width: { xs: 0.8, md: 1 / 2 },
+              maxWidth: "lg",
+              marginX: "auto",
+              marginY: 5,
+            }}
+          >
+            <h4>Private Class</h4>
+            <p>Sign up for 1:1 class and tailor your learning</p>
+            <ButtonLink2 href="/enrol">Apply Now</ButtonLink2>
+          </Box>
+        </Hero>
+      </Stack>
     </>
   );
 }
