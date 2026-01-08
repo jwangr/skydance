@@ -3,7 +3,6 @@ import Image from "next/image";
 import React from "react";
 
 export default function DanceCard({ dance }) {
-  console.log(dance);
   return (
     <Box
       sx={{
@@ -13,8 +12,13 @@ export default function DanceCard({ dance }) {
         position: "relative",
       }}
     >
-      <Image src={dance.images[0]} fill={true} alt={dance.title} style={{objectFit:'cover'}} />
-      <Box sx={{position:'absolute', bottom: '0', right:0}}>
+      <Image
+        src={dance.images[0]}
+        fill={true}
+        alt={dance.title}
+        style={{ objectFit: "cover" }}
+      />
+      <Box sx={{ position: "absolute", bottom: "0", right: 0 }}>
         <h4>{dance.title}</h4>
       </Box>
     </Box>

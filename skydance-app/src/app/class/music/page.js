@@ -9,7 +9,7 @@ import SnapScrollSection from "@/components/SnapScrollSection";
 import ButtonLink2 from "@/components/ButtonLink2";
 import HeroGrows from "@/components/HeroImageGrows";
 import ButtonLink1 from "@/components/ButtonLink1";
-import danceEvents from "@/lib/data/danceEvents";
+import danceEvents from "@/lib/data/danceWorkshops";
 import ClassInfoCard1 from "@/components/ClassInfoCard1";
 import danceClasses from "@/lib/data/classdescriptions";
 import artImages from "@/lib/data/artImages";

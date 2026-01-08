@@ -7,7 +7,7 @@ import "swiper/css";
 
 import { Box, Typography } from "@mui/material";
 import danceClasses from "@/lib/data/classdescriptions";
-import DanceCard from "./DanceCard";
+import DanceCard from "../DanceCard";
 
 export default function SwiperDanceStyles() {
   return (

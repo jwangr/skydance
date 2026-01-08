@@ -1,4 +1,4 @@
-import danceEvents from "./danceEvents";
+import danceEvents from "./danceWorkshops";
 
 const homeEvents = [
   ...danceEvents.slice(0, 3),

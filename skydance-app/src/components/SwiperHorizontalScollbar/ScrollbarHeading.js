@@ -8,7 +8,7 @@ export default function ScrollbarHeading({ title = "Heading" }) {
       gap={5}
       direction={"row"}
       alignItems={"center"}
-      paddingX={{ xs: 1, md: 3 }}
+      paddingX={1}
       paddingTop={3}
     >
       <h2>{title}</h2>
