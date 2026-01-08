@@ -6,11 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import {
   Button,
-  Drawer,
-  IconButton,
   Link,
-  List,
-  ListItem,
   ListItemButton,
   ListItemText,
   Menu,
@@ -19,6 +15,7 @@ import {
 import NavBarMobile from "./NavBarMobile";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import ScrollToTop from "./ScrollToTop";
+import Image from "next/image";
 
 const navLinks = [
   { title: "HOME", link: "/" },
@@ -75,25 +72,37 @@ const Navbar = () => {
             justifyContent: "space-between",
           }}
         >
-          <Box sx={{ display: "flex", gap: 3, alignItems: "center" }}>
-            <img
-              src="logo.webp"
-              alt="Logo"
-              style={{
-                height: 40,
-                width: "auto",
-              }}
-            />
-            <Box sx={{ display: { xs: "none", sm: "block" }, color: "white" }}>
-              <h6>Sky Dance Studio</h6>
-            </Box>
+          <Box
+            sx={{
+              display: "flex",
+              gap: 3,
+              alignItems: "center",
+            }}
+          >
+            <Button href="/">
+              <Image
+                src="/logo.webp"
+                alt="Logo"
+                height={160}
+                width={70}
+                objectFit="contain"
+              />
+              <Box
+                sx={{ display: { xs: "none", lg: "block" }, color: "white" }}
+              >
+                <div className="logo">Sky Dance Studio</div>
+              </Box>
+            </Button>
           </Box>
 
           {/* Non-mobile Navigation links */}
           <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
             {navLinks.map((link) =>
               !!link.children ? (
-                <ListItemButton key={link.title}>
+                <ListItemButton
+                  key={link.title}
+                  onMouseEnter={(e) => handleOpen(e, link.title)} // open menu on hover
+                >
                   <ListItemText>
                     <Button
                       underline="none"
@@ -126,8 +135,10 @@ const Navbar = () => {
                       anchorEl={anchorEl}
                       open={openMenu === link.title}
                       onClose={handleClose}
-                      MenuListProps={{
-                        onMouseLeave: handleClose,
+                      slotProps={{
+                        list: {
+                          onMouseLeave: handleClose,
+                        },
                       }}
                       sx={{
                         "& .MuiPaper-root": {

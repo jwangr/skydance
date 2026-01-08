@@ -96,3 +96,10 @@ a {
 .accent {
   color: var(--bg6);
 }
+
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
