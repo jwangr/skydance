@@ -13,6 +13,8 @@ import danceEvents from "@/lib/data/danceEvents";
 import ClassInfoCard1 from "@/components/ClassInfoCard1";
 import danceClasses from "@/lib/data/classdescriptions";
 import SwiperDanceStyles from "@/components/SwiperDanceStyles";
+import { ArrowForwardIos } from "@mui/icons-material";
+import ScrollbarHeading from "@/components/ScrollbarHeading";
 
 const classLinks = [
   { title: "DANCE", link: "/class/dance" },
@@ -31,33 +33,32 @@ export default function DancePage() {
       >
         <AnimateInView>
           <h1>Dance Classes</h1>
+          <p>
+            <em>Designed to inspire every dancer's passion and growth</em>
+          </p>
         </AnimateInView>
       </Hero>
 
-      {/* Dance Styles  */}
       <SnapScrollSection visibility={1}>
-        <Box maxWidth={"xl"} margin={'auto'}>
+        <Box maxWidth={"xl"} margin={"auto"}>
+          {/* Dance Styles Info */}
+          <ScrollbarHeading title="Dance Styles" />
           <SwiperDanceStyles />
           <Box
             sx={{
-              marginY: 10,
-              paddingX: { xs: 0, md: 10 },
-              textAlign: "center",
+              marginY: 5,
+              paddingX: { xs: 2, md: 5 },
+              textAlign: "left",
               maxWidth: "lg",
               marginX: "auto",
             }}
           >
             <Stack gap={{ xs: 1, md: 3 }}>
               <p>
-                <em>Designed to inspire every dancer's passion and growth</em>
-              </p>
-              <p>
                 Sky Dance Studio offers high-quality training for dancers for
                 all ages and abilities. Our classes span multiple styles,
                 allowing dancers to explore movements and artistry, while
-                developing strong technical foundations. We encourage every
-                dancer to reach their potential in a space where passion,
-                discipline, and artistry come together.
+                developing strong technical foundations.
               </p>
             </Stack>
           </Box>

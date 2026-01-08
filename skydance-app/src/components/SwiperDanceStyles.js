@@ -20,7 +20,7 @@ export default function SwiperDanceStyles() {
         disableOnInteraction: false,
         // pauseOnMouseEnter: true,
       }}
-      speed={12000}
+      speed={2000}
       slidesPerView={2}
       breakpoints={{
         600: {
