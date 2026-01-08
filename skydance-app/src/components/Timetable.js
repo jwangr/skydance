@@ -25,8 +25,8 @@ export default function Timetable() {
           src="/Timetable.PNG"
           alt="Timetable"
           sx={{
-            maxWidth: "100%", // scales to container
-            minWidth: 750, // never shrink below 500px
+            maxWidth: 1, // scales to container
+            minWidth: 750, // never shrink below
             height: "auto",
             maxHeight: "80vh",
             display: "block",

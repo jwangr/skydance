@@ -5,15 +5,12 @@ import React from "react";
 import Timetable from "@/components/Timetable";
 import SnapScrollSection from "@/components/SnapScrollSection";
 import ButtonLink2 from "@/components/ButtonLink2";
-import HeroGrows from "@/components/HeroImageGrows";
-import ButtonLink1 from "@/components/ButtonLink1";
 import danceEvents from "@/lib/data/danceWorkshops";
-import ClassInfoCard1 from "@/components/ClassInfoCard1";
-import danceClasses from "@/lib/data/classdescriptions";
 import SwiperDanceStyles from "@/components/SwiperHorizontalScollbar/SwiperDanceStyles";
 import ScrollbarHeading from "@/components/SwiperHorizontalScollbar/ScrollbarHeading";
 import SwiperDanceEvents from "@/components/SwiperHorizontalScollbar/SwiperDanceEvents";
 import danceIntensives from "@/lib/data/danceIntensives";
+import SnapScrollSection2 from "@/components/SnapScrollSection2";
 
 export default function DancePage() {
   return (
@@ -31,7 +28,7 @@ export default function DancePage() {
         </AnimateInView>
       </Hero>
 
-      <SnapScrollSection visibility={1}>
+      <SnapScrollSection2 visibility={0.1}>
         <Box maxWidth={"xl"} margin={"auto"}>
           {/* Dance Styles Info */}
           <ScrollbarHeading title="Dance Styles" />
@@ -51,7 +48,7 @@ export default function DancePage() {
             </p>
           </Box>
         </Box>
-      </SnapScrollSection>
+      </SnapScrollSection2>
 
       <Box maxWidth={"xl"} margin={"auto"}>
         {/* Workshops */}
@@ -59,6 +56,7 @@ export default function DancePage() {
           events={danceEvents}
           heading={"Upcoming Workshops"}
         />
+
         {/* Intensives */}
         <SwiperDanceEvents
           events={danceIntensives}
@@ -67,9 +65,7 @@ export default function DancePage() {
       </Box>
 
       {/* Timetable */}
-      <AnimateInView>
-        <Timetable />
-      </AnimateInView>
+      <Timetable />
 
       {/* Enrol for group or private classes */}
       <Stack
