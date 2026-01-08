@@ -37,7 +37,7 @@ const navLinks = [
       { title: "TUTORING", link: "/class/tutoring" },
     ],
   },
-  { title: "ENROL NOW", link: "/enrol" },
+  { title: "ENROL", link: "/enrol" },
   { title: "STUDIO HIRE", link: "/studiohire" },
   { title: "CONTACT US", link: "/contact" },
 ];
@@ -67,7 +67,7 @@ const Navbar = () => {
         <Toolbar
           sx={{
             display: "flex",
-            flexDirection: { xs: "row", sm: "column", lg: "row" },
+            flexDirection: { xs: "row", md: "column", lg: "row" },
             gap: "auto",
             justifyContent: "space-between",
           }}
@@ -80,13 +80,21 @@ const Navbar = () => {
             }}
           >
             <Button href="/">
-              <Image
-                src="/logo.webp"
-                alt="Logo"
-                height={160}
-                width={70}
-                objectFit="contain"
-              />
+              <Box
+                sx={{
+                  width: { xs: "90px", md: "70px" },
+                  height: "auto",
+                }}
+              >
+                <Image
+                  src="/logo.webp"
+                  alt="Logo"
+                  height={160}
+                  width={70}
+                  objectFit="contain"
+                  layout="responsive"
+                />
+              </Box>
               <Box
                 sx={{ display: { xs: "none", lg: "block" }, color: "white" }}
               >
@@ -96,7 +104,7 @@ const Navbar = () => {
           </Box>
 
           {/* Non-mobile Navigation links */}
-          <Box sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
             {navLinks.map((link) =>
               !!link.children ? (
                 <ListItemButton

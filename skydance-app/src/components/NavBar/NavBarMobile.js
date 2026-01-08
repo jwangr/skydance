@@ -34,7 +34,7 @@ export default function NavBarMobile({ navLinks }) {
         edge="start"
         onClick={handleDrawerToggle}
         sx={{
-          display: { sm: "none" },
+          display: { md: "none" },
           color: "white",
           fontFamily: "Montserrat",
         }}
@@ -52,7 +52,7 @@ export default function NavBarMobile({ navLinks }) {
           keepMounted: true,
         }}
         sx={{
-          display: { xs: "block", sm: "none" },
+          display: { xs: "block", md: "none" },
           "& .MuiDrawer-paper": {
             boxSizing: "border-box",
             backgroundColor: "var(--bg2)",
