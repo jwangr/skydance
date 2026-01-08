@@ -12,46 +12,31 @@ import { NextButton, PreviousButton } from "./NavigationButtons";
 
 export default function SwiperDanceEvents({ events, heading = "" }) {
   const swiperRef = useRef(null);
+  const [isScrollable, setIsScrollable] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const [isBeginning, setIsBeginning] = useState(true);
 
   return (
-    <>
+    <Box paddingY={2}>
       {/* Top-right arrows */}
       <Stack
         direction={"row"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
         paddingX={{ xs: 1, md: 3 }}
-        alignContent={"stretch"}
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "center",
+          alignContent: "stretch",
+        }}
       >
         <ScrollbarHeading title={heading} />
         {/* Swiper buttons */}
-        <Box>
+        <Box
+          sx={{
+            display: isScrollable ? "block" : "none",
+          }}
+        >
           <PreviousButton swiperRef={swiperRef} disabled={isBeginning} />
           <NextButton swiperRef={swiperRef} disabled={isEnd} />
-          {/* <IconButton
-            className="events-prev"
-            sx={{
-              color: "white",
-              "&:hover": { backgroundColor: "rgba(255,255,255,0.2)" },
-              mr: 1,
-              display: "inline-flex",
-            }}
-          >
-            <ArrowBackIosNew fontSize="small" />
-          </IconButton>
-
-          <IconButton
-            className="events-next"
-            sx={{
-              color: "white",
-              display: "inline-flex",
-              "&:hover": { backgroundColor: "rgba(255,255,255,0.2)" },
-            }}
-          >
-            <ArrowForwardIos fontSize="small" />
-          </IconButton> */}
         </Box>
       </Stack>
       <Swiper
@@ -72,6 +57,15 @@ export default function SwiperDanceEvents({ events, heading = "" }) {
           },
         }}
         speed={600}
+        // Initialises the states
+        onInit={(swiper) => {
+          const totalSlides = swiper.slides.length;
+          const visibleSlides = swiper.params.slidesPerView;
+
+          setIsScrollable(totalSlides > visibleSlides);
+          setIsBeginning(swiper.isBeginning);
+          setIsEnd(swiper.isEnd);
+        }}
         onSlideChange={(swiper) => {
           setIsBeginning(swiper.isBeginning);
           setIsEnd(swiper.isEnd);
@@ -103,6 +97,6 @@ export default function SwiperDanceEvents({ events, heading = "" }) {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </Box>
   );
 }

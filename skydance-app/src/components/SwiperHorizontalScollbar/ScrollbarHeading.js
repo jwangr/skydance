@@ -11,7 +11,7 @@ export default function ScrollbarHeading({ title = "Heading" }) {
       paddingX={1}
       paddingTop={3}
     >
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       <ArrowForwardIos />
     </Stack>
   );

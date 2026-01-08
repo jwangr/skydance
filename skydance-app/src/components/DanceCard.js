@@ -10,6 +10,7 @@ export default function DanceCard({ dance }) {
         width: "100%",
         aspectRatio: 4 / 3,
         position: "relative",
+        flexShrink: 0,
       }}
     >
       <Image
@@ -17,7 +18,9 @@ export default function DanceCard({ dance }) {
         fill={true}
         alt={dance.title}
         style={{ objectFit: "cover" }}
+        loading="lazy"
       />
+      <div className="swiper-lazy-preloader"></div>
       <Box sx={{ position: "absolute", bottom: "0", right: 0 }}>
         <h4>{dance.title}</h4>
       </Box>
