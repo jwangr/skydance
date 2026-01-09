@@ -51,7 +51,9 @@ export default function Home() {
             </Box>
 
             <h2>2026 CLASSES & TIMETABLE</h2>
-            <ButtonLink1 width="50%">Explore Now</ButtonLink1>
+            <ButtonLink1 width="50%" href="/class/dance">
+              Explore Now
+            </ButtonLink1>
           </Box>
         </AnimateInView>
       </Hero>

@@ -3,17 +3,9 @@ import Hero from "@/components/HeroImage";
 import { Box, Grid, Stack, Toolbar } from "@mui/material";
 import React from "react";
 import Timetable from "@/components/Timetable";
-import Link from "next/link";
-import Parallax from "@/components/ParallaxSection";
 import SnapScrollSection from "@/components/SnapScrollSection";
-import ButtonLink2 from "@/components/ButtonLink2";
 import HeroGrows from "@/components/HeroImageGrows";
-import ButtonLink1 from "@/components/ButtonLink1";
-import danceEvents from "@/lib/data/danceWorkshops";
-import ClassInfoCard1 from "@/components/ClassInfoCard1";
-import danceClasses from "@/lib/data/classdescriptions";
 import artImages from "@/lib/data/artImages";
-import ArtEnrolment from "@/components/forms/artEnrolment";
 import MusicEnrolment from "@/components/forms/musicEnrolment";
 
 export default function MusicPage() {
@@ -42,8 +34,9 @@ export default function MusicPage() {
             </p>
             <p>
               Sky Dance Studio’s music classes are open to students of all ages
-              and skill levels. We offer classes for{" "}
-              <span className="accent">violin, piano and singing. </span>
+              and skill levels. We offer classes for violin, piano and singing.
+            </p>
+            <p>
               We focus on building confidence, having fun, and creating in a
               relaxed and supportive environment.
             </p>
@@ -66,9 +59,7 @@ export default function MusicPage() {
       </Grid>
 
       {/* Timetable */}
-      <AnimateInView>
-        <Timetable />
-      </AnimateInView>
+      <Timetable />
 
       <MusicEnrolment />
     </>

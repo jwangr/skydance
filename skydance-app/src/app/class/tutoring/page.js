@@ -22,7 +22,7 @@ export default function TutoringPage() {
         <Box
           sx={{
             marginY: 10,
-            paddingX: { xs: 0, md: 10 },
+            paddingX: { xs: 2, md: 10 },
             textAlign: "center",
             maxWidth: "lg",
             marginX: "auto",
@@ -30,14 +30,16 @@ export default function TutoringPage() {
         >
           <Stack gap={{ xs: 1, md: 3 }}>
             <p>
-              <em>Designed to inspire creativity and confidence</em>
+              <em>Tutoring for many subjects: Lorum Ipsum</em>
             </p>
             <p>
-              Sky Dance Studio’s music classes are open to students of all ages
-              and skill levels. We offer classes for{" "}
-              <span className="accent">violin, piano and singing. </span>
-              We focus on building confidence, having fun, and creating in a
-              relaxed and supportive environment.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p>
+              Tutoring helps students understand ideas clearly and build
+              confidence. Lessons are tailored to each student’s pace and goals,
+              with a focus on asking questions and learning step by step.
             </p>
           </Stack>
         </Box>
@@ -58,9 +60,7 @@ export default function TutoringPage() {
       </Grid>
 
       {/* Timetable */}
-      <AnimateInView>
-        <Timetable />
-      </AnimateInView>
+      <Timetable />
 
       <TutoringEnrolment />
     </>

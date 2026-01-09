@@ -4,11 +4,7 @@ import {
   Divider,
   Drawer,
   IconButton,
-  List,
-  ListItem,
   ListItemButton,
-  ListItemText,
-  Link,
   Typography,
 } from "@mui/material";
 import MobileAccordian from "./MobileAccordian";
@@ -72,7 +68,7 @@ export default function NavBarMobile({ navLinks }) {
                 onChange={handleAccordionChange}
               />
             ) : (
-              <ListItemButton key={link.title}>
+              <ListItemButton key={link.title} href={link.link}>
                 <Typography
                   sx={{
                     textAlign: "center",
