@@ -39,6 +39,7 @@ const navLinks = [
     ],
   },
   { title: "ENROL", link: "/enrol" },
+  { title: "EVENTS", link: "/events" },
   { title: "STUDIO HIRE", link: "/studiohire" },
   { title: "CONTACT US", link: "/contact" },
 ];

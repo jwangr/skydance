@@ -6,7 +6,7 @@ const danceEvents = [
     date: "2026-01-31",
     location: "Chatswood Concourse",
     button: "Explore",
-    link: "/dance/events",
+    link: "/events",
     img: "url('/contemporary/1.png')",
   },
   {
@@ -14,7 +14,7 @@ const danceEvents = [
     date: "2026-02-15",
     location: "Town Hall",
     button: "",
-    link: "/dance/events",
+    link: "/events",
     img: "url('/staff/wei.webp')",
   },
   {
@@ -22,7 +22,7 @@ const danceEvents = [
     date: "2026-02-22",
     location: "Darling Harbour",
     button: "",
-    link: "/dance/events",
+    link: "/events",
     img: "url('/staff/audrey.webp')",
   },
 ];
