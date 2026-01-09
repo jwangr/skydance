@@ -19,7 +19,7 @@ export default function Home() {
       <Hero
         overlay="rgba(0, 0, 0, 0.5)"
         minHeight={500}
-        backgroundImage="url('HomePage.png')"
+        backgroundImage="url('/HomePage.png')"
       >
         <AnimateInView>
           <Box
