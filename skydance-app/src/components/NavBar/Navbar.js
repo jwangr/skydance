@@ -8,14 +8,12 @@ import {
   Button,
   Link,
   ListItemButton,
-  ListItemText,
   Menu,
   MenuItem,
 } from "@mui/material";
 import NavBarMobile from "./NavBarMobile";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import ScrollToTop from "./ScrollToTop";
-import Image from "next/image";
 import LogoHeader from "../LogoHeader";
 
 const navLinks = [
@@ -70,7 +68,6 @@ const Navbar = () => {
           sx={{
             display: "flex",
             flexDirection: { xs: "row", md: "column", lg: "row" },
-            gap: "auto",
             justifyContent: "space-between",
           }}
         >
@@ -84,88 +81,86 @@ const Navbar = () => {
                   key={link.title}
                   onMouseEnter={(e) => handleOpen(e, link.title)} // open menu on hover
                 >
-                  <ListItemText>
-                    <Button
-                      underline="none"
-                      onMouseEnter={(e) => handleOpen(e, link.title)}
-                      onClick={(e) => handleOpen(e, link.title)}
-                      sx={{
-                        fontFamily: '"Montserrat", sans-serif',
-                        letterSpacing: "10%",
-                        fontSize: "14px",
-                        color: "white",
+                  <Button
+                    underline="none"
+                    onMouseEnter={(e) => handleOpen(e, link.title)}
+                    onClick={(e) => handleOpen(e, link.title)}
+                    sx={{
+                      fontFamily: '"Montserrat", sans-serif',
+                      letterSpacing: "10%",
+                      fontSize: "14px",
+                      color: "white",
 
-                        "&:hover": {
-                          color: "coral",
-                        },
-                      }}
-                    >
-                      <span>{link.title}</span>
-                      <KeyboardArrowDown
-                        sx={{
-                          ml: 1,
-                          transition: "transform 0.3s ease",
-                          transform:
-                            openMenu == link.title
-                              ? "rotate(180deg)"
-                              : "rotate(0deg)",
-                        }}
-                      />
-                    </Button>
-                    <Menu
-                      anchorEl={anchorEl}
-                      open={openMenu === link.title}
-                      onClose={handleClose}
-                      slotProps={{
-                        list: {
-                          onMouseLeave: handleClose,
-                        },
-                      }}
+                      "&:hover": {
+                        color: "coral",
+                      },
+                    }}
+                  >
+                    <span>{link.title}</span>
+                    <KeyboardArrowDown
                       sx={{
-                        "& .MuiPaper-root": {
-                          backgroundColor: "var(--bg2)",
-                          color: "white",
-                          padding: 2,
-                        },
+                        ml: 1,
+                        transition: "transform 0.3s ease",
+                        transform:
+                          openMenu == link.title
+                            ? "rotate(180deg)"
+                            : "rotate(0deg)",
                       }}
-                    >
-                      {link.children.map((child) => (
-                        <MenuItem
-                          key={child.title}
-                          component={Link}
-                          href={child.link}
-                          onClick={handleClose}
-                          sx={{
-                            "&:hover": {
-                              color: "coral",
-                            },
-                          }}
-                        >
-                          {child.title}
-                        </MenuItem>
-                      ))}
-                    </Menu>
-                  </ListItemText>
+                    />
+                  </Button>
+                  <Menu
+                    anchorEl={anchorEl}
+                    open={openMenu === link.title}
+                    onClose={handleClose}
+                    slotProps={{
+                      list: {
+                        onMouseLeave: handleClose,
+                      },
+                    }}
+                    sx={{
+                      "& .MuiPaper-root": {
+                        backgroundColor: "var(--bg2)",
+                        color: "white",
+                        padding: 2,
+                      },
+                    }}
+                  >
+                    {link.children.map((child) => (
+                      <MenuItem
+                        key={child.title}
+                        component={Link}
+                        href={child.link}
+                        onClick={handleClose}
+                        sx={{
+                          "&:hover": {
+                            color: "coral",
+                          },
+                        }}
+                      >
+                        {child.title}
+                      </MenuItem>
+                    ))}
+                  </Menu>
                 </ListItemButton>
               ) : (
                 <ListItemButton key={link.title}>
-                  <ListItemText>
-                    <Link
-                      color="white"
-                      underline="none"
-                      href={link.link}
-                      sx={{
-                        fontFamily: '"Montserrat", sans-serif',
-                        letterSpacing: "10%",
-                        fontSize: "14px",
-                        "&:hover": {
-                          color: "coral",
-                        },
-                      }}
-                    >
-                      {link.title}
-                    </Link>
-                  </ListItemText>
+                  <Link
+                    color="white"
+                    underline="none"
+                    href={link.link}
+                    sx={{
+                      fontFamily: '"Montserrat", sans-serif',
+                      letterSpacing: "10%",
+                      fontSize: "14px",
+                      textWrap: "nowrap",
+                      whiteSpace: "nowrap",
+                      "&:hover": {
+                        color: "coral",
+                      },
+                    }}
+                  >
+                    {link.title}
+                  </Link>
                 </ListItemButton>
               )
             )}
