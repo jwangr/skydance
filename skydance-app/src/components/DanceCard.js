@@ -21,7 +21,7 @@ export default function DanceCard({ dance }) {
         loading="lazy"
       />
       <div className="swiper-lazy-preloader"></div>
-      <Box sx={{ position: "absolute", bottom: "0", right: 0 }}>
+      <Box sx={{ position: "absolute", bottom: "0", right: 10 }}>
         <h4>{dance.title}</h4>
       </Box>
     </Box>
