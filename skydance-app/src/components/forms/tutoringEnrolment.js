@@ -97,7 +97,7 @@ export default function TutoringEnrolment() {
   };
 
   return (
-    <SnapScrollSection visibility={0.8}>
+    <>
       <Stack
         direction={{ xs: "column-reverse", md: "row" }}
         gap={3}
@@ -269,6 +269,6 @@ export default function TutoringEnrolment() {
           </Box>
         </Box>
       </Stack>
-    </SnapScrollSection>
+    </>
   );
 }

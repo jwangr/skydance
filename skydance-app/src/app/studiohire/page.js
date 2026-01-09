@@ -14,13 +14,12 @@ export default function StudioHirePage() {
           Studio Hire
         </h1>
       </Box>
-      <Hero backgroundImage="url('/studio.webp')" height="50vh">
+      <Hero backgroundImage="url('/studio.webp')" minHeight="50vh">
         <Container maxWidth="md">
           <Stack
             direction={"column"}
             gap={3}
             sx={{ fontSize: "1.3rem" }}
-            margin={3}
           >
             <h2>The perfect space for your next event</h2>
             <div>

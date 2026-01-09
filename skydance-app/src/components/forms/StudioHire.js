@@ -17,10 +17,8 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
 import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
-import { CakeOutlined } from "@mui/icons-material";
 import ContactsContainer from "./ContactsContainer";
 
 export default function StudioHireForm() {
@@ -91,7 +89,7 @@ export default function StudioHireForm() {
   };
 
   return (
-    <SnapScrollSection visibility={0.8}>
+    <>
       <Stack
         direction={{ xs: "column-reverse", md: "row" }}
         gap={3}
@@ -104,7 +102,7 @@ export default function StudioHireForm() {
         {/* Form */}
         <Box sx={formContainerSx}>
           <h2>
-            <span className="accent">Enquire </span> about studio hire 
+            <span className="accent">Enquire </span> about studio hire
           </h2>
           <Box component="form" onSubmit={handleSubmit}>
             <Stack gap={2}>
@@ -206,6 +204,6 @@ export default function StudioHireForm() {
           </Box>
         </Box>
       </Stack>
-    </SnapScrollSection>
+    </>
   );
 }

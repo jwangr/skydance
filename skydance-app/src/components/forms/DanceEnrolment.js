@@ -125,7 +125,7 @@ export default function DanceEnrolment() {
   };
 
   return (
-    <SnapScrollSection visibility={0.9}>
+    <>
       <Stack
         direction={{ xs: "column-reverse", md: "row" }}
         gap={3}
@@ -350,6 +350,6 @@ export default function DanceEnrolment() {
           </Box>
         </Box>
       </Stack>
-    </SnapScrollSection>
+    </>
   );
 }

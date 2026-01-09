@@ -95,7 +95,7 @@ export default function MusicEnrolment() {
   };
 
   return (
-    <SnapScrollSection visibility={0.8}>
+    <>
       <Stack
         direction={{ xs: "column-reverse", md: "row" }}
         gap={3}
@@ -245,6 +245,6 @@ export default function MusicEnrolment() {
           </Box>
         </Box>
       </Stack>
-    </SnapScrollSection>
+    </>
   );
 }
