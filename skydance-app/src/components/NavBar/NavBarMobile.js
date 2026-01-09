@@ -57,7 +57,6 @@ export default function NavBarMobile({ navLinks }) {
       >
         <Box onClick={handleDrawerToggle} sx={{ textAlign: "center", py: 2 }}>
           <h4 style={{ color: "white" }}>Sky Dance Studio</h4>
-          <Divider sx={{ color: "white" }} />
 
           {navLinks.map((link) =>
             link.children ? (

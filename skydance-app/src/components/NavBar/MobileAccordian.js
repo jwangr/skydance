@@ -46,9 +46,16 @@ export default function MobileAccordian({
           expandIcon={<ExpandMore sx={{ color: "white" }} />}
           onClick={(e) => e.stopPropagation()}
           sx={{
+            position: "relative",
+
             "& .MuiAccordionSummary-content": {
               justifyContent: "center",
               margin: 0,
+            },
+
+            "& .MuiAccordionSummary-expandIconWrapper": {
+              position: "absolute",
+              right: 16, // or theme spacing
             },
           }}
         >
@@ -67,8 +74,7 @@ export default function MobileAccordian({
                 sx={{
                   ...titleStyle,
                   fontSize: "0.8rem",
-                  textAlign: "left",
-                  paddingLeft: 5,
+                  textAlign: "center",
                 }}
               >
                 {child.title}
