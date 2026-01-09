@@ -66,9 +66,10 @@ export default function HeroGrows({
         sx={{
           color: "white",
           textAlign: "center",
-          width: "80%",
+          width: 1,
           margin: "auto",
           maxWidth: "lg",
+          padding: { xs: 1, sm: 2 },
           textShadow,
           zIndex: 2, // above image & overlay
         }}

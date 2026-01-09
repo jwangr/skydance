@@ -56,7 +56,7 @@ export default function Home() {
         </AnimateInView>
       </Hero>
 
-      {/* Link List Version 2 */}
+      {/* Link List */}
       <Grid container spacing={0} sx={{ alignItems: "stretch" }}>
         {/* Row 1 (2 items)*/}
         {homeEvents.slice(0, 2).map((item) => (
@@ -67,7 +67,12 @@ export default function Home() {
               textShadow="0"
               height="100%"
             >
-              <Stack gap={2.5} paddingY={8} width={"inherit"}>
+              <Stack
+                gap={2.5}
+                paddingY={8}
+                width={"inherit"}
+                sx={{ justifyContent: "center" }}
+              >
                 <h4 style={{ color: "var(--bg6)" }}>{item.caption1}</h4>
                 <h2>{item.title} </h2>
                 <h4>{item.caption2}</h4>
