@@ -8,7 +8,7 @@ const danceIntensives = [
     caption2: "05 - 07 Jan 2026",
     button: "Apply Now",
     link: "/class/dance/workshops/Jan-2026-intense-1",
-    img: "url('/HomePage1.webp')",
+    img: "url('/studio.webp')",
   },
   {
     title: "Intensive 2",

@@ -1,7 +1,13 @@
-import danceEvents from "./danceWorkshops";
+// import danceEvents from "./danceWorkshops";
+
+import danceEvents from "./danceEvents";
+import danceIntensives from "./danceIntensives";
+import danceWorkshops from "./danceWorkshops";
 
 const homeEvents = [
-  ...danceEvents.slice(0, 3),
+  danceEvents[0],
+  danceWorkshops[0],
+  danceIntensives[0],
   {
     title: "Get Qualified",
     caption1: "Learn. Certify. Teach",

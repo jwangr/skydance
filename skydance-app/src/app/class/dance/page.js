@@ -5,21 +5,18 @@ import React from "react";
 import Timetable from "@/components/Timetable";
 import SnapScrollSection from "@/components/SnapScrollSection";
 import ButtonLink2 from "@/components/ButtonLink2";
-import danceEvents from "@/lib/data/danceWorkshops";
+import danceWorkshops from "@/lib/data/danceWorkshops";
 import SwiperDanceStyles from "@/components/SwiperHorizontalScollbar/SwiperDanceStyles";
 import ScrollbarHeading from "@/components/SwiperHorizontalScollbar/ScrollbarHeading";
 import SwiperDanceEvents from "@/components/SwiperHorizontalScollbar/SwiperDanceEvents";
 import danceIntensives from "@/lib/data/danceIntensives";
 import SnapScrollSection2 from "@/components/SnapScrollSection2";
+import danceEvents from "@/lib/data/danceEvents";
 
 export default function DancePage() {
   return (
     <>
-      <Hero
-        overlay="rgba(185, 131, 181, 0.5)"
-        minHeight={"100vh"}
-        backgroundImage="url('/jazzclass.png')"
-      >
+      <Hero minHeight={"100vh"} backgroundImage="url('/jazzclass.png')">
         <AnimateInView>
           <h1>Dance Classes</h1>
           <p>
@@ -51,16 +48,25 @@ export default function DancePage() {
       </SnapScrollSection2>
 
       <Box maxWidth={"xl"} margin={"auto"}>
-        {/* Workshops */}
+        {/* Events */}
         <SwiperDanceEvents
           events={danceEvents}
+          heading={"Upcoming Events"}
+          link={"/class/dance/events"}
+        />
+
+        {/* Workshops */}
+        <SwiperDanceEvents
+          events={danceWorkshops}
           heading={"Upcoming Workshops"}
+          link={"/class/dance/programs"}
         />
 
         {/* Intensives */}
         <SwiperDanceEvents
           events={danceIntensives}
           heading={"Upcoming Intensives"}
+          link={"/class/dance/programs"}
         />
       </Box>
 

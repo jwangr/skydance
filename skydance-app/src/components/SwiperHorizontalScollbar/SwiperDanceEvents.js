@@ -9,8 +9,15 @@ import "swiper/css";
 import { useRef, useState } from "react";
 import ScrollbarHeading from "./ScrollbarHeading";
 import { NextButton, PreviousButton } from "./NavigationButtons";
+import ScrollbarHeadingLink from "./ScrollbarHeadingLink";
+import formatDate from "@/lib/utils/formatDate";
 
-export default function SwiperDanceEvents({ events, heading = "" }) {
+export default function SwiperDanceEvents({
+  events,
+  heading = "",
+  description,
+  link,
+}) {
   const swiperRef = useRef(null);
   const [isScrollable, setIsScrollable] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -20,7 +27,7 @@ export default function SwiperDanceEvents({ events, heading = "" }) {
     <Box paddingY={2}>
       {/* Top-right arrows */}
       <Stack
-        direction={"row"}
+        direction={description ? "column" : "row"}
         paddingX={{ xs: 1, md: 3 }}
         sx={{
           justifyContent: "space-between",
@@ -28,7 +35,12 @@ export default function SwiperDanceEvents({ events, heading = "" }) {
           alignContent: "stretch",
         }}
       >
-        <ScrollbarHeading title={heading} />
+        {link ? (
+          <ScrollbarHeadingLink title={heading} link={link} />
+        ) : (
+          <ScrollbarHeading title={heading} />
+        )}
+
         {/* Swiper buttons */}
         <Box
           sx={{
@@ -91,8 +103,25 @@ export default function SwiperDanceEvents({ events, heading = "" }) {
               }}
             >
               <h4>{event.title}</h4>
-              <p>{event.caption1}</p>
-              <p>{event.caption2}</p>
+
+              <p>
+                {event.caption1
+                  ? event.caption1
+                  : event.location
+                  ? event.location
+                  : ""}
+              </p>
+              <p>
+                {event.caption2
+                  ? event.caption2
+                  : event.date
+                  ? formatDate(event.date, {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })
+                  : ""}
+              </p>
             </Box>
           </SwiperSlide>
         ))}

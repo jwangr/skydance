@@ -3,20 +3,12 @@
 
 const danceWorkshops = [
   {
-    title: "2026 New Year",
-    caption1: "31st January 2026",
-    caption2: "Chatswood Concourse",
-    button: "Explore",
-    link: "/events/cny-2026",
-    img: "url('/staff/wei.webp')",
-  },
-  {
     title: "Workshop 1",
     caption1: "Workshop",
     caption2: "05 - 07 Jan 2026",
     button: "Apply Now",
     link: "/class/dance/workshops/Jan-2026-school-holiday-1",
-    img: "url('/HomePage1.webp')",
+    img: "url('/staff/wei.webp')",
   },
   {
     title: "Workshop 2",
