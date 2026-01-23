@@ -30,19 +30,22 @@ export default function DanceEvents() {
           {/* Row 1 (3 items) */}
           {events.map((item, index) => {
             // Medium screens: grid items in the last row automatically resize
+            const columnsSm = 2; // number of columns in md size
             const columnsMd = 3; // number of columns in md size
             const isLast = index === events.length - 1;
-            const itemsInLastRow = events.length % columnsMd || columnsMd;
-            const isAlone = isLast && itemsInLastRow === 1;
-            const isLastButNotAlone = isLast && itemsInLastRow !== 1;
+            const itemsInLastMdRow = events.length % columnsMd || columnsMd;
+            const itemsInLastSmRow = events.length % columnsSm;
+            const isAloneSm = isLast && itemsInLastSmRow === 1;
+            const isAloneMd = isLast && itemsInLastMdRow === 1;
+            const isLastButNotAlone = isLast && itemsInLastMdRow !== 1;
 
             return (
               <Grid
                 key={item.title}
                 size={{
                   xs: 12,
-                  sm: 6,
-                  md: isAlone ? 12 : isLastButNotAlone ? "grow" : 4,
+                  sm: isAloneSm ? 12 : 6,
+                  md: isAloneMd ? 12 : isLastButNotAlone ? "grow" : 4,
                 }}
               >
                 <HeroGrows
