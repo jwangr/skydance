@@ -12,6 +12,7 @@ import "./globals.css";
 import Navbar from "@/components/NavBar/Navbar";
 import Footer from "@/components/Footer";
 import { Toolbar } from "@mui/material";
+import Navbar2 from "@/components/NavBar/NavBar2";
 
 const aboreto = Aboreto({
   weight: "400",
@@ -82,7 +83,8 @@ export default function RootLayout({ children }) {
       className={`${aboreto.variable} ${arimo.variable} ${bebas.variable} ${ebGaramond.variable} ${geistSans.variable} ${geistMono.variable} ${marcellus.variable} ${montserrat.variable}`}
     >
       <body className="font-body" style={{ backgroundColor: "var(--bg2)" }}>
-        <Navbar />
+        <Navbar2 />
+        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>
