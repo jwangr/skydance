@@ -1,4 +1,5 @@
-// ISO date string (YYYY-MM-DD)
+// on homepage, it will display the location (caption 1) and date (caption 2)
+// date: ISO date string (YYYY-MM-DD)
 
 const danceEvents = [
   {
@@ -24,6 +25,22 @@ const danceEvents = [
     button: "/events",
     link: "/events",
     img: "url('/contemporary/Contemporary8.jpg')",
+  },
+  {
+    title: "Chinese New Year at Ashfield",
+    date: "2026-02-28",
+    location: "Ashfield",
+    button: "/events",
+    link: "/events",
+    img: "url('/events/CNY1.jpg')",
+  },
+  {
+    title: "2026 School Concert",
+    date: "2026-10-26",
+    location: "The Theatre, Bankstown Sports Club",
+    button: "/events",
+    link: "/events",
+    img: "url('/contemporary/contemporary10.jpg')",
   },
 ];
 

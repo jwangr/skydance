@@ -1,47 +1,48 @@
-// caption1: date
-// caption2: location
+import previousClasses from "../utils/previousClasses";
+import upcomingClasses from "../utils/upcomingClasses";
 
 const danceIntensives = [
   {
-    title: "Intensive 1",
-    caption1: "Workshop",
-    caption2: "05 - 07 Jan 2026",
-    button: "Apply Now",
-    link: "/class/dance/workshops/Jan-2026-intense-1",
-    img: "url('/studio.webp')",
+    title: "Autumn Holiday Program",
+    caption1: "Intensives",
+    caption2: "7 - 11 Apr 2026",
+    dateStart: "2026-04-07",
+    dateEnd: "2026-04-11",
+    button: "Explore Programs",
+    link: "/class/dance/programs",
+    img: "url('/chinesedance/Chinese1.jpg')",
   },
   {
-    title: "Intensive 2",
-    caption1: "Workshop",
-    caption2: "10 - 12 Jan 2026",
-    button: "Apply Now",
-    link: "/class/dance/workshops/Jan-2026-intense-2",
-    img: "url('/HomePage2.webp')",
+    title: "Winter Holiday Program",
+    caption1: "Intensives",
+    caption2: "6 - 10 July 2026",
+    dateStart: "2026-07-06",
+    dateEnd: "2026-07-10",
+    button: "Explore Programs",
+    link: "/class/dance/programs",
+    img: "url('/chinesedance/Chinese1.jpg')",
   },
   {
-    title: "Intensive 3",
-    caption1: "Workshop",
-    caption2: "15 - 17 Jan 2026",
-    button: "Apply Now",
-    link: "/class/dance/workshops/Jan-2026-intense-3",
-    img: "url('/HomePage3.webp')",
+    title: "Spring Holiday Program",
+    caption1: "Intensives",
+    caption2: "28 Sep - 3 Oct 2026",
+    dateStart: "2026-09-28",
+    dateEnd: "2026-10-03",
+    button: "Explore Programs",
+    link: "/class/dance/programs",
+    img: "url('/chinesedance/Chinese1.jpg')",
   },
   {
-    title: "Intensive 4",
-    caption1: "Workshop",
-    caption2: "20 - 22 Jan 2026",
-    button: "Apply Now",
-    link: "/class/dance/workshops/Jan-2026-intense-4",
-    img: "url('/HomePage4.webp')",
-  },
-  {
-    title: "Intensive 5",
-    caption1: "Workshop",
-    caption2: "25 - 27 Jan 2026",
-    button: "Apply Now",
-    link: "/class/dance/workshops/Jan-2026-intense-5",
-    img: "url('/HomePage5.webp')",
+    title: "Korea and China Exchange Program",
+    caption1: "Intensives",
+    caption2: "Dec 2026 TBC",
+    button: "Explore Programs",
+    link: "/class/dance/programs",
+    img: "url('/chinesedance/Chinese1.jpg')",
   },
 ];
 
+const upcomingIntensives = upcomingClasses(danceIntensives, "dateEnd");
+const previousIntensives = previousClasses(danceIntensives, "dateEnd");
+export { upcomingIntensives, previousIntensives };
 export default danceIntensives;
