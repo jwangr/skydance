@@ -2,28 +2,28 @@
 
 const danceEvents = [
   {
-    title: "2026 Chinese New Year",
+    title: "Chinese New Year at Chatswood",
     date: "2026-01-31",
     location: "Chatswood Concourse",
     button: "Explore",
     link: "/events",
-    img: "url('/contemporary/1.png')",
+    img: "url('/chinesedance/Chinese6.jpg')",
   },
   {
-    title: "Event 2",
+    title: "Chinese New Year at Town Hall",
     date: "2026-02-15",
     location: "Town Hall",
-    button: "",
+    button: "Explore",
     link: "/events",
-    img: "url('/staff/wei.webp')",
+    img: "url('/contemporary/Contemporary6.jpg')",
   },
   {
-    title: "Lunar New Year Eve",
+    title: "Chinese New Year Series",
     date: "2026-02-22",
-    location: "Darling Harbour",
-    button: "",
+    location: "Darling Harbour | Town Hall",
+    button: "/events",
     link: "/events",
-    img: "url('/staff/audrey.webp')",
+    img: "url('/contemporary/Contemporary8.jpg')",
   },
 ];
 

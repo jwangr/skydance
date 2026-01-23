@@ -18,8 +18,8 @@ export default function Home() {
       {/* Opening Banner */}
       <Hero
         overlay="rgba(0, 0, 0, 0.5)"
-        minHeight={500}
-        backgroundImage="url('/HomePage.png')"
+        minHeight={700}
+        backgroundImage="url('/ballet/Ballet7.jpg')"
       >
         <AnimateInView>
           <Box
@@ -29,7 +29,8 @@ export default function Home() {
               gap: 3.5,
               alignItems: "center",
               color: "white",
-              width: "100%",
+              maxWidth: "md",
+              margin: "auto",
             }}
           >
             <Box

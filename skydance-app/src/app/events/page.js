@@ -12,37 +12,60 @@ const events = danceEvents;
 export default function DanceEvents() {
   return (
     <>
-      <Hero minHeight={"100vh"} backgroundImage="url('/jazzclass.png')">
+      {/* <Hero minHeight={"100vh"} backgroundImage="url('/jazzclass.png')">
         <AnimateInView>
           <h1>Dance Events</h1>
         </AnimateInView>
-      </Hero>
+      </Hero> */}
+
+      {/* Heading */}
+      <Box sx={{ margin: 5 }}>
+        <h1 style={{ marginX: "auto", textAlign: "center", color: "white" }}>
+          Dance Events
+        </h1>
+      </Box>
 
       <Box maxWidth={"xl"} margin={"auto"}>
         <Grid container spacing={0} sx={{ alignItems: "stretch" }}>
           {/* Row 1 (3 items) */}
-          {events.map((item) => (
-            <Grid key={item.title} size={{ xs: 12, sm: 6, md: 4 }}>
-              <HeroGrows
-                backgroundImage={item.img}
-                overlay="rgba(0, 0, 0, 0.6)"
-                textShadow="0"
-                height="100%"
+          {events.map((item, index) => {
+            // Medium screens: grid items in the last row automatically resize
+            const columnsMd = 3; // number of columns in md size
+            const isLast = index === events.length - 1;
+            const itemsInLastRow = events.length % columnsMd || columnsMd;
+            const isAlone = isLast && itemsInLastRow === 1;
+            const isLastButNotAlone = isLast && itemsInLastRow !== 1;
+
+            return (
+              <Grid
+                key={item.title}
+                size={{
+                  xs: 12,
+                  sm: 6,
+                  md: isAlone ? 12 : isLastButNotAlone ? "grow" : 4,
+                }}
               >
-                <Stack gap={2.5} paddingY={8} width={"inherit"}>
-                  <h4 style={{ color: "var(--bg6)" }}>{item.location}</h4>
-                  <h2>{item.title} </h2>
-                  <h4>
-                    {formatDate(item.date, {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
-                    })}
-                  </h4>
-                </Stack>
-              </HeroGrows>
-            </Grid>
-          ))}
+                <HeroGrows
+                  backgroundImage={item.img}
+                  overlay="rgba(0, 0, 0, 0.6)"
+                  textShadow="0"
+                  height="100%"
+                >
+                  <Stack gap={2.5} paddingY={8} width={"inherit"}>
+                    <h4 style={{ color: "var(--bg6)" }}>{item.location}</h4>
+                    <h2>{item.title} </h2>
+                    <h4>
+                      {formatDate(item.date, {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </h4>
+                  </Stack>
+                </HeroGrows>
+              </Grid>
+            );
+          })}
         </Grid>
       </Box>
     </>
