@@ -3,6 +3,7 @@ import ButtonLink1 from "@/components/ButtonLink1";
 import Hero from "@/components/HeroImage";
 import HeroGrows from "@/components/HeroImageGrows";
 import homeEvents from "@/lib/data/homeEvents";
+import formatDate from "@/lib/utils/formatDate";
 import { Box, Grid, Stack } from "@mui/material";
 
 export default function Home() {
@@ -78,7 +79,7 @@ export default function Home() {
               >
                 <h4 style={{ color: "var(--bg6)" }}>{item.caption1}</h4>
                 <h2>{item.title} </h2>
-                <h4>{item.caption2}</h4>
+                <h4>{item.date ? formatDate(item.date) : item.caption2}</h4>
                 <ButtonLink1 href={item.link}>{item.button}</ButtonLink1>
               </Stack>
             </HeroGrows>
@@ -96,7 +97,7 @@ export default function Home() {
               <Stack gap={2.5} paddingY={8} width={"inherit"}>
                 <h4 style={{ color: "var(--bg6)" }}>{item.caption1}</h4>
                 <h2>{item.title} </h2>
-                <h4>{item.caption2}</h4>
+                <h4>{item.date ? formatDate(item.date) : item.caption2}</h4>
                 <ButtonLink1 href={item.link}>{item.button}</ButtonLink1>
               </Stack>
             </HeroGrows>

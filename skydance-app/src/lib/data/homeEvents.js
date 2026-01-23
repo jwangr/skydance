@@ -6,7 +6,7 @@ import danceWorkshops from "./danceWorkshops";
 
 const homeEvents = [
   danceEvents[0],
-  danceWorkshops[0],
+  danceEvents[1],
   danceIntensives[0],
   {
     title: "Get Qualified",
