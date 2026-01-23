@@ -5,6 +5,7 @@ import danceIntensives from "./danceIntensives";
 import danceWorkshops from "./danceWorkshops";
 
 const homeEvents = [
+  // Add 3 events / workshops
   danceEvents[0],
   danceEvents[1],
   danceIntensives[0],
