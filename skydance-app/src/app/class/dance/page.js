@@ -81,7 +81,7 @@ export default function DancePage() {
       >
         {/* Enrol or Trial Class */}
         <Hero
-          backgroundImage="url('/jazz/2.png')"
+          backgroundImage="url('/lyrical/Lyrical7.jpg')"
           overlay="rgba(4, 11, 9, 0.5)"
           height="100%"
         >
@@ -105,7 +105,7 @@ export default function DancePage() {
 
         {/* Register for private class */}
         <Hero
-          backgroundImage="url('/jazz/1.png')"
+          backgroundImage="url('/chinesedance/Chinese6.jpg')"
           height="inherit"
           overlay="rgba(4, 11, 9, 0.5)"
         >

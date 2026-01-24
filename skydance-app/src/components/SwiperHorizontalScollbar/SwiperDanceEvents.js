@@ -51,7 +51,11 @@ export default function SwiperDanceEvents({
           <NextButton swiperRef={swiperRef} disabled={isEnd} />
         </Box>
       </Stack>
-      {events.length === 0 && <Box sx={{ px: 3 }}>Coming soon...</Box>}
+      {events.length === 0 && (
+        <Box sx={{ px: 10 }}>
+          <p>Coming soon...</p>
+        </Box>
+      )}
       <Swiper
         modules={[Navigation]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
