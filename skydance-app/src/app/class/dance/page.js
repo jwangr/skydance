@@ -16,14 +16,12 @@ import danceEvents from "@/lib/data/danceEvents";
 export default function DancePage() {
   return (
     <>
-      <Hero minHeight={"100vh"} backgroundImage="url('/jazzclass.png')">
-        <AnimateInView>
-          <h1>Dance Classes</h1>
-          <p>
-            <em>Designed to inspire every dancer's passion and growth</em>
-          </p>
-        </AnimateInView>
-      </Hero>
+      {/* Heading */}
+      <Box sx={{ margin: 5 }}>
+        <h1 style={{ marginX: "auto", textAlign: "center", color: "white" }}>
+          Dance Classes
+        </h1>
+      </Box>
 
       <SnapScrollSection2 visibility={0.1}>
         <Box maxWidth={"xl"} margin={"auto"}>
@@ -52,7 +50,7 @@ export default function DancePage() {
         <SwiperDanceEvents
           events={danceEvents}
           heading={"Upcoming Events"}
-          link={"/class/dance/events"}
+          link={"/events"}
         />
 
         {/* Workshops */}
