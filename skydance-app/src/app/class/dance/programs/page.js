@@ -11,7 +11,7 @@ import SnapScrollSection from "@/components/SnapScrollSection";
 export default function DancePrograms() {
   return (
     <>
-      <Hero minHeight={"100vh"} backgroundImage="url('/jazzclass.png')">
+      <Hero minHeight={"100vh"} backgroundImage="url('/lyrical/Lyrical7.jpg')">
         <AnimateInView>
           <h1>Dance Programs</h1>
           <em>

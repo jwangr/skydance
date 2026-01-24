@@ -51,6 +51,7 @@ export default function SwiperDanceEvents({
           <NextButton swiperRef={swiperRef} disabled={isEnd} />
         </Box>
       </Stack>
+      {events.length === 0 && <Box sx={{ px: 3 }}>Coming soon...</Box>}
       <Swiper
         modules={[Navigation]}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -104,23 +105,17 @@ export default function SwiperDanceEvents({
             >
               <h4>{event.title}</h4>
 
-              <p>
-                {event.caption1
-                  ? event.caption1
-                  : event.location
-                  ? event.location
-                  : ""}
-              </p>
+              <p>{event.location ? event.location : ""}</p>
               <p>
                 {event.caption2
                   ? event.caption2
                   : event.date
-                  ? formatDate(event.date, {
-                      day: "numeric",
-                      month: "short",
-                      year: "numeric",
-                    })
-                  : ""}
+                    ? formatDate(event.date, {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })
+                    : ""}
               </p>
             </Box>
           </SwiperSlide>
