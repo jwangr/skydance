@@ -1,7 +1,7 @@
 const artImages = [
-  { title: "1", img: "url('/jazz/1.png')" },
-  { title: "2", img: "url('/jazz/2.png')" },
-  { title: "3", img: "url('/jazz/3.png')" },
+  { title: "2", img: "url('/music/Singing4.jpg')" },
+  { title: "3", img: "url('/stockimages/Stock1.jpg')" },
+  { title: "1", img: "url('/music/Singing5.jpg')" },
 ];
 
 export default artImages;

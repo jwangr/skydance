@@ -11,7 +11,11 @@ import MusicEnrolment from "@/components/forms/musicEnrolment";
 export default function MusicPage() {
   return (
     <>
-      <Hero backgroundImage="url('/studio.webp')" minHeight={"100vh"}>
+      <Hero
+        backgroundImage="url('/music/Singing2.jpg')"
+        minHeight={"80vh"}
+        overlay="rgba(0, 0, 0, 0.6)"
+      >
         <AnimateInView>
           <h1>Music Classes</h1>
         </AnimateInView>
@@ -22,7 +26,7 @@ export default function MusicPage() {
         <Box
           sx={{
             marginY: 10,
-            paddingX: { xs: 0, md: 10 },
+            paddingX: { xs: 2, md: 10 },
             textAlign: "center",
             maxWidth: "lg",
             marginX: "auto",
@@ -30,15 +34,13 @@ export default function MusicPage() {
         >
           <Stack gap={{ xs: 1, md: 3 }}>
             <p>
-              <em>Designed to inspire creativity and confidence</em>
-            </p>
-            <p>
               Sky Dance Studio’s music classes are open to students of all ages
-              and skill levels. We offer classes for violin, piano and singing.
+              and skill levels. We offer one-on-one classes for violin, piano
+              and singing.
             </p>
             <p>
-              We focus on building confidence, having fun, and creating in a
-              relaxed and supportive environment.
+              We focus on building confidence, having fun, and creating music in
+              a relaxed and supportive environment.
             </p>
           </Stack>
         </Box>

@@ -72,7 +72,7 @@ export default function MusicEnrolment() {
       });
 
       setSubmitMessage(
-        "Thank you! Your enquiry has been submitted. We will contact you soon."
+        "Thank you! Your enquiry has been submitted. We will contact you soon.",
       );
 
       setFormData({
@@ -87,7 +87,7 @@ export default function MusicEnrolment() {
       });
     } catch (error) {
       setSubmitMessage(
-        "There was an error submitting your form. Please try again."
+        "There was an error submitting your form. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -108,7 +108,7 @@ export default function MusicEnrolment() {
         {/* Form */}
         <Box sx={formContainerSx}>
           <h2>
-            <span className="accent">Join</span> Our Music Class Today
+            <span className="accent">Sign Up</span> for a Trial Class Today
           </h2>
           <Box component="form" onSubmit={handleSubmit}>
             <Stack gap={2}>

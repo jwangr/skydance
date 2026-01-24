@@ -81,6 +81,11 @@ p {
   font-size: clamp(18px, 2vw, 24px);
 }
 
+li {
+  font-family: "Arimo", sans-serif;
+  font-size: clamp(18px, 2vw, 24px);
+}
+
 /* Stylised Buttons */
 a {
   color: "white";
