@@ -79,10 +79,13 @@ export default function AboutTeam() {
       </Hero>
 
       {/* Link to Our Story */}
-      <HeroGrows backgroundImage="url('/studio.webp')" minHeight={300}>
+      <HeroGrows
+        backgroundImage="url('/ballet/Ballet7.jpg')"
+        minHeight={{ xs: 300, sm: 500 }}
+      >
         <h2>
           Our story began over one{" "}
-          <span style={{ color: "var(--bg6)" }}>decade</span> ago
+          <span style={{ color: "var(--bg6)" }}>decade</span> ago...
         </h2>
         <ButtonLink1 width="50%" href="/about/story">
           Learn more
