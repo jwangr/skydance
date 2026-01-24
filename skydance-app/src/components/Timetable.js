@@ -1,7 +1,9 @@
+import newestTimetable from "@/lib/data/timetable";
 import { Box } from "@mui/material";
 import React from "react";
 
-export default function Timetable() {
+export default function Timetable({ timetable = newestTimetable }) {
+  console.log(timetable);
   return (
     <Box
       sx={{
@@ -13,7 +15,7 @@ export default function Timetable() {
       }}
     >
       <h2>Class Timetable</h2>
-      <h5>Term 4, 2025 (13/10/25 - 21/12/2025)</h5>
+      <h5>{timetable.title}</h5>
       <Box
         sx={{
           width: "100%", // fill width of container
@@ -22,8 +24,8 @@ export default function Timetable() {
       >
         <Box
           component="img"
-          src="/Timetable.PNG"
-          alt="Timetable"
+          src={timetable.url}
+          alt="Timetable to come..."
           sx={{
             maxWidth: 1, // scales to container
             minWidth: 750, // never shrink below
