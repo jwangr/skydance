@@ -15,7 +15,7 @@ const homeEvents = [
     caption2: "2026 expressions of interest now open",
     button: "Apply Now",
     link: "/",
-    img: "url('/lyrical/image.png')",
+    img: "url('/jazz/Jazz1.jpg')",
   },
   {
     title: "Dance Classes",
@@ -23,7 +23,7 @@ const homeEvents = [
     caption2: "For All Ages",
     button: "Explore",
     link: "/class/dance",
-    img: "url('/lyrical/image copy 2.png')",
+    img: "url('/lyrical/Lyrical11.jpg')",
   },
   {
     title: "Art Classes",
@@ -31,7 +31,7 @@ const homeEvents = [
     caption2: "Drawing, Painting, and More",
     button: "Apply Now",
     link: "/class/art",
-    img: "url('/logo.webp')",
+    img: "url('/stockimages/stock1.jpg')",
   },
   {
     title: "Music",
@@ -39,7 +39,7 @@ const homeEvents = [
     caption2: "Violin, Piano, Singing",
     button: "Apply Now",
     link: "/class/music",
-    img: "url('/logo.webp')",
+    img: "url('/studios/StudioMusic.jpg')",
   },
   {
     title: "Tutoring",
@@ -47,7 +47,7 @@ const homeEvents = [
     caption2: "K - 12",
     button: "Apply Now",
     link: "/class/tutoring",
-    img: "url('/jazzclass.png')",
+    img: "url('/stockimages/Stock2.jpg')",
   },
 ];
 
