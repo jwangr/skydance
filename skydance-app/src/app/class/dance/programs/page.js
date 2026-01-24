@@ -2,19 +2,11 @@ import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
-import ButtonLink2 from "@/components/ButtonLink2";
-import danceEvents from "@/lib/data/danceWorkshops";
-import SwiperDanceStyles from "@/components/SwiperHorizontalScollbar/SwiperDanceStyles";
-import ScrollbarHeading from "@/components/SwiperHorizontalScollbar/ScrollbarHeading";
+import danceWorkshops from "@/lib/data/danceWorkshops";
 import SwiperDanceEvents from "@/components/SwiperHorizontalScollbar/SwiperDanceEvents";
 import danceIntensives from "@/lib/data/danceIntensives";
-import SnapScrollSection2 from "@/components/SnapScrollSection2";
-import danceWorkshops from "@/lib/data/danceWorkshops";
 import DanceProgramEnrolment from "@/components/forms/DanceProgramEnrolment";
 import SnapScrollSection from "@/components/SnapScrollSection";
-
-const intensives = danceIntensives.map;
-const workshops = danceWorkshops;
 
 export default function DancePrograms() {
   return (
@@ -33,7 +25,7 @@ export default function DancePrograms() {
         <Box maxWidth={"xl"} margin={"auto"}>
           {/* Workshops */}
           <SwiperDanceEvents
-            events={danceEvents}
+            events={danceWorkshops}
             heading={"Upcoming Workshops"}
           />
 
