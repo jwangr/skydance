@@ -14,12 +14,12 @@ export default function LogoHeader() {
       <Button href="/">
         <Box
           sx={{
-            width: { xs: "90px", md: "70px" },
+            width: { xs: "50px", md: "40px" },
             height: "auto",
           }}
         >
           <Image
-            src="/logo.webp"
+            src="/logo.png"
             alt="Logo"
             height={160}
             width={70}
