@@ -6,8 +6,7 @@ export default function StudioCard({ studio }) {
       sx={{
         position: "relative",
         width: "100%",
-        minHeight: 200,
-        height: "fit-content",
+        aspectRatio: 3 / 2,
         backgroundImage: `url(${studio.image})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -49,7 +48,7 @@ export default function StudioCard({ studio }) {
           position: "absolute",
           bottom: "0px",
           right: "5px",
-          color: "white",
+          color: "var(--bg2)",
 
           opacity: 1,
           transition: "all 0.3s ease",
@@ -63,6 +62,7 @@ export default function StudioCard({ studio }) {
           color: "white",
           textAlign: "center",
           width: "100%",
+          padding: 2,
 
           mt: 1,
           opacity: 0,

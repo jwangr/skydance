@@ -20,7 +20,7 @@ const studiosForHire = [
   {
     title: "Meeting Room",
     description:
-      "A meeting room featuring a large table fit for up to 6 people.",
+      "A meeting room featuring a large table fit for up to 6 people. Available for hire: Thursday and Friday.",
     image: "/studios/StudioMusic.jpg",
   },
 ];
