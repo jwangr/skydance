@@ -18,7 +18,7 @@ import ArtEnrolment from "@/components/forms/artEnrolment";
 export default function DancePage() {
   return (
     <>
-      <Hero backgroundImage="url('/studio.webp')" minHeight={"100vh"}>
+      <Hero minHeight={"100vh"}>
         <AnimateInView>
           <h1>Art Classes</h1>
         </AnimateInView>

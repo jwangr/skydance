@@ -11,7 +11,7 @@ import TutoringEnrolment from "@/components/forms/tutoringEnrolment";
 export default function TutoringPage() {
   return (
     <>
-      <Hero backgroundImage="url('/studio.webp')" minHeight={"100vh"}>
+      <Hero minHeight={"100vh"}>
         <AnimateInView>
           <h1>Tutoring Classes</h1>
         </AnimateInView>
