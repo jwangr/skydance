@@ -68,7 +68,7 @@ export default function StudioHireForm() {
       });
 
       setSubmitMessage(
-        "Thank you! Your enquiry has been submitted. We will contact you soon."
+        "Thank you! Your enquiry has been submitted. We will contact you soon.",
       );
 
       setFormData({
@@ -81,7 +81,7 @@ export default function StudioHireForm() {
       });
     } catch (error) {
       setSubmitMessage(
-        "There was an error submitting your form. Please try again."
+        "There was an error submitting your form. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -95,6 +95,7 @@ export default function StudioHireForm() {
         gap={3}
         padding={2}
         maxWidth={"xl"}
+        marginX={"auto"}
       >
         {/* Contact Information */}
         <ContactsContainer />
