@@ -44,7 +44,7 @@ export default function SocialLinks() {
         >
           <Box
             component="img"
-            src="/wechat-audreyzhao-qr.png"
+            src="/WechatQR.jpg"
             alt="WeChat QR Code for Sky Dance Studio"
             sx={{ width: "100%", borderRadius: "8px", mb: 2 }}
           />
