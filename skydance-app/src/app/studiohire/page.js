@@ -1,8 +1,8 @@
 import StudioHireForm from "@/components/forms/StudioHire";
 import Hero from "@/components/HeroImage";
-import StudioCard from "@/components/studioCard";
+import StudioCard from "@/components/StudioCard";
 import studiosForHire from "@/lib/data/studiosForHire";
-import { Box, Container, Grid, Stack } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import React from "react";
 
 export default function StudioHirePage() {
