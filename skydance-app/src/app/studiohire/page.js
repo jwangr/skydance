@@ -12,11 +12,16 @@ export default function StudioHirePage() {
       <Box sx={{ margin: 5, textAlign: "center" }}>
         <h1 style={{ marginX: "auto", color: "white" }}>Studio Hire</h1>
       </Box>
-      <Hero minHeight="20vh">
-        <Box maxWidth="md" sx={{ margin: "auto" }}>
-          <h2>The perfect space for your next event</h2>
-        </Box>
-      </Hero>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "20vh",
+        }}
+      >
+        <h2>The perfect space for your next event</h2>
+      </Box>
 
       <Grid container spacing={0} maxWidth={"xl"} sx={{ margin: "auto" }}>
         {studiosForHire.map((studio) => (
