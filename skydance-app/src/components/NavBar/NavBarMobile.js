@@ -7,6 +7,7 @@ import {
   ListItemButton,
   Typography,
 } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
 import MobileAccordian from "./MobileAccordian";
 import titleStyle from "./linkTitleStyle";
 
@@ -35,7 +36,7 @@ export default function NavBarMobile({ navLinks }) {
           fontFamily: "Montserrat",
         }}
       >
-        Menu
+        <MenuIcon fontSize="large" />
       </IconButton>
 
       {/* Drawer */}

@@ -14,7 +14,7 @@ export default function LogoHeader() {
       <Button href="/">
         <Box
           sx={{
-            width: { xs: "50px", md: "40px" },
+            width: { xs: "20px", md: "30px" },
             height: "auto",
           }}
         >
