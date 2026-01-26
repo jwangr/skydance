@@ -10,7 +10,7 @@ const defaultSettings = {
 
 const danceIntensives = [
   {
-    title: "Autumn Holiday Program",
+    title: "Autumn Holiday Program 2026",
     caption1: "Intensives",
     caption2: "7 - 11 Apr 2026",
     dateStart: "2026-04-07",
@@ -18,7 +18,7 @@ const danceIntensives = [
     ...defaultSettings,
   },
   {
-    title: "Winter Holiday Program",
+    title: "Winter Holiday Program 2026",
     caption1: "Intensives",
     caption2: "6 - 10 July 2026",
     dateStart: "2026-07-06",
@@ -26,7 +26,7 @@ const danceIntensives = [
     ...defaultSettings,
   },
   {
-    title: "Spring Holiday Program",
+    title: "Spring Holiday Program 2026",
     caption1: "Intensives",
     caption2: "28 Sep - 3 Oct 2026",
     dateStart: "2026-09-28",
@@ -34,7 +34,7 @@ const danceIntensives = [
     ...defaultSettings,
   },
   {
-    title: "Korea and China Exchange Program",
+    title: "Korea and China Exchange Program 2026",
     caption1: "Intensives",
     caption2: "Dec 2026 TBC",
     ...defaultSettings,

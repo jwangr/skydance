@@ -78,7 +78,6 @@ export default function DanceEnrolment() {
         Email: formData.email || "",
         Notes: formData.notes || "",
       };
-      console.log(payload);
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         headers: {
@@ -100,7 +99,7 @@ export default function DanceEnrolment() {
       );
 
       // Reset form
-      // setFormData(resetData); // disabled for testing purposes
+      setFormData(resetData); // disable for testing purposes
     } catch (error) {
       console.error("Error:", error);
       setAlertType("error");

@@ -41,9 +41,9 @@ const danceClasses = [...workshops, ...intensives];
 
 const resetData = {
   studentName: "",
+  parentName: "",
   dob: null,
   gender: "",
-  address: "",
   phone: "",
   email: "",
   notes: "",
@@ -54,6 +54,7 @@ export default function DanceProgramEnrolment() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [alertType, setAlertType] = useState("success");
 
   const handleClassChange = (e) => {
     const value = e.target.value;
@@ -75,18 +76,17 @@ export default function DanceProgramEnrolment() {
     try {
       // Format the payload
       const payload = {
-        page: "join",
+        page: "danceprogram",
         Date: new Date().toISOString(),
-        Programs: selectedClasses.join(", "),
-        Name: formData.studentName,
+        Program: selectedClasses.join(", "),
+        StudentName: formData.studentName,
         DOB: formData.dob.toDate().toLocaleDateString(),
         Gender: formData.gender,
-        Address: formData.address,
+        ParentName: formData.parentName || "",
         Phone: formData.phone,
         Email: formData.email,
         Notes: formData.notes,
       };
-      console.log(payload);
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         headers: {
@@ -95,26 +95,19 @@ export default function DanceProgramEnrolment() {
         body: new URLSearchParams(payload),
       });
 
-      console.log(response);
+      setAlertType("success");
       setSubmitMessage(
-        "Thank you! Your form has been submitted successfully. We will contact you soon."
+        "Thank you! Your form has been submitted successfully. We will contact you soon.",
       );
 
       // Reset form
-      setFormData({
-        studentName: "",
-        dob: null,
-        gender: "",
-        address: "",
-        phone: "",
-        email: "",
-        notes: "",
-      });
+      setFormData(resetData);
       setSelectedClasses([]);
     } catch (error) {
       console.error("Error:", error);
+      setAlertType("error");
       setSubmitMessage(
-        "There was an error submitting your form. Please try again or contact us directly."
+        "There was an error submitting your form. Please try again or contact us directly.",
       );
     } finally {
       setIsSubmitting(false);
@@ -128,6 +121,7 @@ export default function DanceProgramEnrolment() {
         gap={3}
         padding={2}
         maxWidth={"xl"}
+        marginX={"auto"}
       >
         {/* Contact Information */}
         <ContactsContainer />
@@ -189,6 +183,7 @@ export default function DanceProgramEnrolment() {
                 </Select>
               </FormControl>
 
+              {/* Student Name */}
               <TextField
                 required
                 label="Student Name"
@@ -238,27 +233,27 @@ export default function DanceProgramEnrolment() {
                     <MenuItem value="">
                       <em>Select gender</em>
                     </MenuItem>
-                    <MenuItem value="female">Female</MenuItem>
-                    <MenuItem value="male">Male</MenuItem>
-                    <MenuItem value="other">Other</MenuItem>
-                    <MenuItem value="prefer-not-to-say">
+                    <MenuItem value="Female">Female</MenuItem>
+                    <MenuItem value="Male">Male</MenuItem>
+                    <MenuItem value="Other">Other</MenuItem>
+                    <MenuItem value="Prefer-not-to-say">
                       Prefer not to say
                     </MenuItem>
                   </Select>
                 </FormControl>
               </Stack>
 
-              {/* Address */}
+              {/* Parent Name */}
               <TextField
-                required
-                label="Address"
-                name="address"
-                value={formData.address}
+                label="Parent or Guardian Name (for students under 18 years old)"
+                name="parentName"
+                value={formData.parentName}
                 onChange={handleInputChange}
                 sx={darkFieldSx}
                 variant="standard"
               />
 
+              {/* Phone and Email */}
               <TextField
                 required
                 type="tel"
@@ -302,7 +297,11 @@ export default function DanceProgramEnrolment() {
               </Button>
             </Stack>
 
-            {submitMessage && <Alert sx={{ mt: 2 }}>{submitMessage}</Alert>}
+            {submitMessage && (
+              <Alert sx={{ mt: 2 }} severity={alertType}>
+                {submitMessage}
+              </Alert>
+            )}
           </Box>
         </Box>
       </Stack>
