@@ -17,26 +17,28 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
 import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
 import { CakeOutlined } from "@mui/icons-material";
 import ContactsContainer from "./ContactsContainer";
 
+const resetData = {
+  instrument: "",
+  parentName: "",
+  studentName: "",
+  dob: null,
+  gender: "",
+  phone: "",
+  email: "",
+  notes: "",
+};
+
 export default function MusicEnrolment() {
-  const [formData, setFormData] = useState({
-    instrument: "",
-    studentName: "",
-    dob: null,
-    gender: "",
-    address: "",
-    phone: "",
-    email: "",
-    notes: "",
-  });
+  const [formData, setFormData] = useState(resetData);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [alertType, setAlertType] = useState("success");
 
   const handleInputChange = (e) => {
     setFormData({
@@ -54,10 +56,11 @@ export default function MusicEnrolment() {
       const payload = {
         page: "music",
         Date: new Date().toISOString(),
-        Name: formData.studentName,
+        Instrument: formData.instrument,
+        StudentName: formData.studentName,
         DOB: formData.dob?.toDate().toLocaleDateString(),
         Gender: formData.gender,
-        Address: formData.address,
+        ParentName: formData.parentName,
         Phone: formData.phone,
         Email: formData.email,
         Notes: formData.notes,
@@ -71,21 +74,14 @@ export default function MusicEnrolment() {
         body: new URLSearchParams(payload),
       });
 
+      setAlertType("success");
       setSubmitMessage(
         "Thank you! Your enquiry has been submitted. We will contact you soon.",
       );
 
-      setFormData({
-        instrument: "",
-        studentName: "",
-        dob: null,
-        gender: "",
-        address: "",
-        phone: "",
-        email: "",
-        notes: "",
-      });
+      setFormData(resetData);
     } catch (error) {
+      setAlertType("error");
       setSubmitMessage(
         "There was an error submitting your form. Please try again.",
       );
@@ -101,6 +97,7 @@ export default function MusicEnrolment() {
         gap={3}
         padding={2}
         maxWidth={"xl"}
+        marginX={"auto"}
       >
         {/* Contact Information */}
         <ContactsContainer />
@@ -108,7 +105,7 @@ export default function MusicEnrolment() {
         {/* Form */}
         <Box sx={formContainerSx}>
           <h2>
-            <span className="accent">Sign Up</span> for a Trial Class Today
+            <span className="accent">Trial </span>a Music Class Today
           </h2>
           <Box component="form" onSubmit={handleSubmit}>
             <Stack gap={2}>
@@ -128,9 +125,9 @@ export default function MusicEnrolment() {
                   <MenuItem value="">
                     <em>Select instrument</em>
                   </MenuItem>
-                  <MenuItem value="piano">Piano</MenuItem>
-                  <MenuItem value="violin">Violin</MenuItem>
-                  <MenuItem value="singing">Singing</MenuItem>
+                  <MenuItem value="Piano">Piano</MenuItem>
+                  <MenuItem value="Violin">Violin</MenuItem>
+                  <MenuItem value="Singing">Singing</MenuItem>
                 </Select>
               </FormControl>
               <TextField
@@ -180,10 +177,10 @@ export default function MusicEnrolment() {
                     <MenuItem value="">
                       <em>Select gender</em>
                     </MenuItem>
-                    <MenuItem value="female">Female</MenuItem>
-                    <MenuItem value="male">Male</MenuItem>
-                    <MenuItem value="other">Other</MenuItem>
-                    <MenuItem value="prefer-not-to-say">
+                    <MenuItem value="Female">Female</MenuItem>
+                    <MenuItem value="Male">Male</MenuItem>
+                    <MenuItem value="Other">Other</MenuItem>
+                    <MenuItem value="Prefer-not-to-say">
                       Prefer not to say
                     </MenuItem>
                   </Select>
@@ -191,10 +188,9 @@ export default function MusicEnrolment() {
               </Stack>
 
               <TextField
-                required
-                label="Address"
-                name="address"
-                value={formData.address}
+                label="Parent or Guardian Name (for students under 18 years old)"
+                name="parentName"
+                value={formData.parentName}
                 onChange={handleInputChange}
                 sx={darkFieldSx}
                 variant="standard"
@@ -241,7 +237,11 @@ export default function MusicEnrolment() {
               </Button>
             </Stack>
 
-            {submitMessage && <Alert sx={{ mt: 2 }}>{submitMessage}</Alert>}
+            {submitMessage && (
+              <Alert sx={{ mt: 2 }} severity={alertType}>
+                {submitMessage}
+              </Alert>
+            )}
           </Box>
         </Box>
       </Stack>
