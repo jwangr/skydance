@@ -118,6 +118,7 @@ export default function DanceEnrolment() {
         gap={3}
         padding={2}
         maxWidth={"xl"}
+        marginX={"auto"}
       >
         {/* Contact Information */}
         <ContactsContainer />

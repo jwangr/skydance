@@ -18,15 +18,19 @@ import ArtEnrolment from "@/components/forms/artEnrolment";
 export default function DancePage() {
   return (
     <>
-      <Hero minHeight={"100vh"}>
-        <AnimateInView>
-          <h1>Art Classes</h1>
-        </AnimateInView>
-      </Hero>
+      {/* Heading */}
+      <Box sx={{ margin: 5 }}>
+        <h1 style={{ marginX: "auto", textAlign: "center", color: "white" }}>
+          Art Classes
+        </h1>
+      </Box>
 
       {/* Dance Styles  */}
       <SnapScrollSection visibility={1}>
-        <HeroGrows minHeight={"50vh"}>
+        <HeroGrows
+          minHeight={"50vh"}
+          backgroundImage="url('/contemporary/Contemporary8.jpg    ')"
+        >
           <h2>Interested in teaching art? Join our team</h2>
           <p>Help inspire the next generation of artists</p>
           <ButtonLink1 href="/contact">Contact Us</ButtonLink1>

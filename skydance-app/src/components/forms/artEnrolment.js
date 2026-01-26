@@ -17,25 +17,27 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
 import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
 import { CakeOutlined } from "@mui/icons-material";
 import ContactsContainer from "./ContactsContainer";
 
+const resetData = {
+  parentName: "",
+  studentName: "",
+  dob: null,
+  gender: "",
+  phone: "",
+  email: "",
+  notes: "",
+};
+
 export default function ArtEnrolment() {
-  const [formData, setFormData] = useState({
-    studentName: "",
-    dob: null,
-    gender: "",
-    address: "",
-    phone: "",
-    email: "",
-    notes: "",
-  });
+  const [formData, setFormData] = useState(resetData);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [alertType, setAlertType] = useState("success");
 
   const handleInputChange = (e) => {
     setFormData({
@@ -53,10 +55,10 @@ export default function ArtEnrolment() {
       const payload = {
         page: "art",
         Date: new Date().toISOString(),
-        Name: formData.studentName,
+        StudentName: formData.studentName,
         DOB: formData.dob?.toDate().toLocaleDateString(),
         Gender: formData.gender,
-        Address: formData.address,
+        ParentName: formData.parentName,
         Phone: formData.phone,
         Email: formData.email,
         Notes: formData.notes,
@@ -71,21 +73,15 @@ export default function ArtEnrolment() {
       });
 
       setSubmitMessage(
-        "Thank you! Your enquiry has been submitted. We will contact you soon."
+        "Thank you! Your enquiry has been submitted. We will contact you soon.",
       );
-
-      setFormData({
-        studentName: "",
-        dob: null,
-        gender: "",
-        address: "",
-        phone: "",
-        email: "",
-        notes: "",
-      });
+      setAlertType("success");
+      setFormData(resetData);
     } catch (error) {
+      console.error("Error:", error);
+      setAlertType("error");
       setSubmitMessage(
-        "There was an error submitting your form. Please try again."
+        "There was an error submitting your form. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -99,6 +95,7 @@ export default function ArtEnrolment() {
         gap={3}
         padding={2}
         maxWidth={"xl"}
+        marginX={"auto"}
       >
         {/* Contact Information */}
         <ContactsContainer />
@@ -157,10 +154,10 @@ export default function ArtEnrolment() {
                     <MenuItem value="">
                       <em>Select gender</em>
                     </MenuItem>
-                    <MenuItem value="female">Female</MenuItem>
-                    <MenuItem value="male">Male</MenuItem>
-                    <MenuItem value="other">Other</MenuItem>
-                    <MenuItem value="prefer-not-to-say">
+                    <MenuItem value="Female">Female</MenuItem>
+                    <MenuItem value="Male">Male</MenuItem>
+                    <MenuItem value="Other">Other</MenuItem>
+                    <MenuItem value="Prefer-not-to-say">
                       Prefer not to say
                     </MenuItem>
                   </Select>
@@ -168,10 +165,9 @@ export default function ArtEnrolment() {
               </Stack>
 
               <TextField
-                required
-                label="Address"
-                name="address"
-                value={formData.address}
+                label="Parent or Guardian Name (for students under 18 years old)"
+                name="parentName"
+                value={formData.parentName}
                 onChange={handleInputChange}
                 sx={darkFieldSx}
                 variant="standard"
@@ -218,7 +214,11 @@ export default function ArtEnrolment() {
               </Button>
             </Stack>
 
-            {submitMessage && <Alert sx={{ mt: 2 }}>{submitMessage}</Alert>}
+            {submitMessage && (
+              <Alert sx={{ mt: 2 }} severity={alertType}>
+                {submitMessage}
+              </Alert>
+            )}
           </Box>
         </Box>
       </Stack>
