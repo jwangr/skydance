@@ -4,8 +4,6 @@ import { useState } from "react";
 
 import {
   Box,
-  Checkbox,
-  Chip,
   FormControlLabel,
   FormLabel,
   ListItemText,
@@ -27,39 +25,31 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import SnapScrollSection from "@/components/SnapScrollSection";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
 import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
 import { CakeOutlined } from "@mui/icons-material";
 import ContactsContainer from "./ContactsContainer";
 import classes from "@/lib/data/classdescriptions";
+
 const danceClasses = classes.map((x) => x.title);
 
 const resetData = {
+  format: "Group",
+  class: "",
+  parentName: "",
   studentName: "",
   dob: null,
   gender: "",
-  address: "",
   phone: "",
   email: "",
   notes: "",
 };
 export default function DanceEnrolment() {
-  const [formType, setFormType] = useState("trial");
-  const [selectedClasses, setSelectedClasses] = useState([]);
   const [formData, setFormData] = useState(resetData);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-
-  const handleClassChange = (e) => {
-    const value = e.target.value;
-    if (formType === "trial") {
-      setSelectedClasses([value]);
-    } else {
-      setSelectedClasses(typeof value === "string" ? value.split(",") : value);
-    }
-  };
+  const [alertType, setAlertType] = useState("success");
 
   const handleInputChange = (e) => {
     setFormData({
@@ -76,17 +66,17 @@ export default function DanceEnrolment() {
     try {
       // Format the payload
       const payload = {
-        page: "join",
+        page: "dance",
         Date: new Date().toISOString(),
-        JoinType: formType,
-        Classes: selectedClasses.join(", "),
-        Name: formData.studentName,
-        DOB: formData.dob.toDate().toLocaleDateString(),
-        Gender: formData.gender,
-        Address: formData.address,
-        Phone: formData.phone,
-        Email: formData.email,
-        Notes: formData.notes,
+        Format: formData.format || "",
+        Class: formData.class || "",
+        ParentName: formData.parentName || "",
+        StudentName: formData.studentName || "",
+        DOB: formData.dob.toDate().toLocaleDateString() || "",
+        Gender: formData.gender || "",
+        Phone: formData.phone || "",
+        Email: formData.email || "",
+        Notes: formData.notes || "",
       };
       console.log(payload);
       const response = await fetch(GOOGLE_SCRIPT_URL, {
@@ -97,27 +87,25 @@ export default function DanceEnrolment() {
         body: new URLSearchParams(payload),
       });
 
-      console.log(response);
+      const data = await response.json();
+      console.log(data);
+
+      if (!data.success) {
+        throw new Error(data.error);
+      }
+
+      setAlertType("success");
       setSubmitMessage(
-        "Thank you! Your form has been submitted successfully. We will contact you soon."
+        "Thank you! Your form has been submitted successfully. We will contact you soon.",
       );
 
       // Reset form
-      setFormData({
-        studentName: "",
-        dob: null,
-        gender: "",
-        address: "",
-        phone: "",
-        email: "",
-        notes: "",
-      });
-      setSelectedClasses([]);
-      setFormType("trial");
+      // setFormData(resetData); // disabled for testing purposes
     } catch (error) {
       console.error("Error:", error);
+      setAlertType("error");
       setSubmitMessage(
-        "There was an error submitting your form. Please try again or contact us directly."
+        "There was an error submitting your form. Please try again or contact us directly.",
       );
     } finally {
       setIsSubmitting(false);
@@ -138,95 +126,51 @@ export default function DanceEnrolment() {
         {/* Form */}
         <Box sx={formContainerSx}>
           <h2>
-            <span className="accent">Join</span> A Dance Class Today
+            <span className="accent">Trial</span> A Dance Class Today
           </h2>
           <Box component="form" onSubmit={handleSubmit}>
             <Stack direction={"column"} gap={2}>
-              {/* Radio Group - Trial vs Enrol */}
+              {/* Radio Group - Class Format */}
               <FormControl sx={darkFieldSx} variant="standard">
                 <FormLabel sx={{ mb: 1, fontWeight: 600, textAlign: "left" }}>
-                  I want to...
+                  Class Format
                 </FormLabel>
                 <RadioGroup
+                  name="format"
                   row
-                  value={formType}
-                  onChange={(e) => {
-                    setFormType(e.target.value);
-                    setSelectedClasses([]);
-                  }}
+                  value={formData.format}
+                  onChange={handleInputChange}
                   sx={{ gap: 2 }}
                 >
                   <FormControlLabel
-                    value="trial"
+                    value="Group"
                     control={<Radio />}
-                    label="Trial a Class"
+                    label="Group Class"
                   />
                   <FormControlLabel
-                    value="enrol"
+                    value="Private"
                     control={<Radio />}
-                    label="Enrol"
+                    label="Private 1:1 Class"
                   />
                 </RadioGroup>
               </FormControl>
 
-              {/* Select Class(es) */}
+              {/* Select Class */}
               <FormControl required sx={darkFieldSx} variant="standard">
                 <InputLabel id="dance-class-label">
-                  Select Dance Class{formType === "enrol" ? "es" : ""}
+                  Select Dance Class
                 </InputLabel>
                 <Select
                   labelId="dance-class-label"
-                  id="dance-class-select"
-                  multiple={formType === "enrol"}
-                  value={
-                    formType === "trial"
-                      ? selectedClasses[0] || ""
-                      : selectedClasses
-                  }
-                  onChange={handleClassChange}
-                  label={`Select Dance Class${
-                    formType === "enrol" ? "es" : ""
-                  }`}
-                  renderValue={
-                    formType === "enrol"
-                      ? (selected) => (
-                          <Box
-                            sx={{
-                              display: "flex",
-                              flexWrap: "wrap",
-                              gap: 0.5,
-                              color: "white",
-                            }}
-                          >
-                            {selected.map((value) => (
-                              <Chip
-                                key={value}
-                                label={value}
-                                size="small"
-                                sx={{
-                                  color: "white",
-                                  backgroundColor: "var(--bg5)",
-                                }}
-                              />
-                            ))}
-                          </Box>
-                        )
-                      : undefined
-                  }
-                  sx={{
-                    minHeight: formType === "enrol" ? "56px" : "auto",
-                  }}
+                  name="class"
+                  value={formData.class}
+                  onChange={handleInputChange}
                 >
-                  {formType === "trial" && (
-                    <MenuItem value="">
-                      <em>Select a class</em>
-                    </MenuItem>
-                  )}
+                  <MenuItem value="">
+                    <em>Select a class</em>
+                  </MenuItem>
                   {danceClasses.map((cls) => (
                     <MenuItem key={cls} value={cls}>
-                      {formType === "enrol" && (
-                        <Checkbox checked={selectedClasses.indexOf(cls) > -1} />
-                      )}
                       <ListItemText primary={cls} />
                     </MenuItem>
                   ))}
@@ -282,22 +226,20 @@ export default function DanceEnrolment() {
                     <MenuItem value="">
                       <em>Select gender</em>
                     </MenuItem>
-                    <MenuItem value="female">Female</MenuItem>
-                    <MenuItem value="male">Male</MenuItem>
-                    <MenuItem value="other">Other</MenuItem>
-                    <MenuItem value="prefer-not-to-say">
+                    <MenuItem value="Female">Female</MenuItem>
+                    <MenuItem value="Male">Male</MenuItem>
+                    <MenuItem value="Other">Other</MenuItem>
+                    <MenuItem value="Prefer-not-to-say">
                       Prefer not to say
                     </MenuItem>
                   </Select>
                 </FormControl>
               </Stack>
 
-              {/* Address */}
               <TextField
-                required
-                label="Address"
-                name="address"
-                value={formData.address}
+                label="Parent or Guardian Name (for students under 18 years old)"
+                name="parentName"
+                value={formData.parentName}
                 onChange={handleInputChange}
                 sx={darkFieldSx}
                 variant="standard"
@@ -331,7 +273,7 @@ export default function DanceEnrolment() {
                 name="notes"
                 value={formData.notes}
                 onChange={handleInputChange}
-                placeholder="Previous level of expertise, special learning needs, or questions..."
+                placeholder="Previous level of expertise, special learning needs, or medical conditions..."
                 sx={darkFieldSx}
                 variant="standard"
               />
@@ -341,12 +283,19 @@ export default function DanceEnrolment() {
                 variant="contained"
                 size="large"
                 disabled={isSubmitting}
+                sx={{
+                  color: "white",
+                }}
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </Button>
             </Stack>
 
-            {submitMessage && <Alert sx={{ mt: 2 }}>{submitMessage}</Alert>}
+            {submitMessage && (
+              <Alert sx={{ mt: 2 }} severity={alertType}>
+                {submitMessage}
+              </Alert>
+            )}
           </Box>
         </Box>
       </Stack>
