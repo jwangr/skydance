@@ -21,18 +21,21 @@ import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
 import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
 import ContactsContainer from "./ContactsContainer";
 
+const resetData = {
+  event: "",
+  name: "",
+  bookingDate: null,
+  phone: "",
+  email: "",
+  notes: "",
+};
+
 export default function StudioHireForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    date: null,
-    event: "",
-    phone: "",
-    email: "",
-    notes: "",
-  });
+  const [formData, setFormData] = useState(resetData);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [alertType, setAlertType] = useState("success");
 
   const handleInputChange = (e) => {
     setFormData({
@@ -51,9 +54,8 @@ export default function StudioHireForm() {
         page: "studiohire",
         Date: new Date().toISOString(),
         Name: formData.studentName,
-        DOB: formData.dob?.toDate().toLocaleDateString(),
-        Gender: formData.gender,
-        Address: formData.address,
+        BookingDate: formData.bookingDate?.toDate().toLocaleDateString() || "",
+        Event: formData.event,
         Phone: formData.phone,
         Email: formData.email,
         Notes: formData.notes,
@@ -66,20 +68,14 @@ export default function StudioHireForm() {
         },
         body: new URLSearchParams(payload),
       });
-
+      setAlertType("success");
       setSubmitMessage(
         "Thank you! Your enquiry has been submitted. We will contact you soon.",
       );
 
-      setFormData({
-        name: "",
-        date: null,
-        event: "",
-        phone: "",
-        email: "",
-        notes: "",
-      });
+      setFormData(resetData);
     } catch (error) {
+      setAlertType("error");
       setSubmitMessage(
         "There was an error submitting your form. Please try again.",
       );
@@ -151,9 +147,10 @@ export default function StudioHireForm() {
                     <MenuItem value="">
                       <em>Select reason</em>
                     </MenuItem>
-                    <MenuItem value="dance">Dance Practice</MenuItem>
-                    <MenuItem value="party">Party</MenuItem>
-                    <MenuItem value="other">
+                    <MenuItem value="Dance">Dance Practice</MenuItem>
+                    <MenuItem value="Party">Party</MenuItem>
+                    <MenuItem value="Workshop">Training Workshop</MenuItem>
+                    <MenuItem value="Other">
                       Other (specify in Additional Notes)
                     </MenuItem>
                   </Select>
@@ -183,7 +180,7 @@ export default function StudioHireForm() {
               <TextField
                 multiline
                 rows={4}
-                label="Additional Notes (e.g. description of event, number of people, other requirements)"
+                label="Additional Notes (e.g. description of event, preferred studio, number of people...)"
                 name="notes"
                 value={formData.notes}
                 onChange={handleInputChange}
@@ -201,7 +198,11 @@ export default function StudioHireForm() {
               </Button>
             </Stack>
 
-            {submitMessage && <Alert sx={{ mt: 2 }}>{submitMessage}</Alert>}
+            {submitMessage && (
+              <Alert sx={{ mt: 2 }} severity={alertType}>
+                {submitMessage}
+              </Alert>
+            )}
           </Box>
         </Box>
       </Stack>

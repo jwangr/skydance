@@ -82,6 +82,7 @@ export default function TutoringEnrolment() {
       setAlertType("success");
       setFormData(resetData);
     } catch (error) {
+      setAlertType("error");
       setSubmitMessage(
         "There was an error submitting your form. Please try again.",
       );
