@@ -53,7 +53,7 @@ export default function StudioHireForm() {
       const payload = {
         page: "studiohire",
         Date: new Date().toISOString(),
-        Name: formData.studentName,
+        Name: formData.name,
         BookingDate: formData.bookingDate?.toDate().toLocaleDateString() || "",
         Event: formData.event,
         Phone: formData.phone,
@@ -61,19 +61,25 @@ export default function StudioHireForm() {
         Notes: formData.notes,
       };
 
-      await fetch(GOOGLE_SCRIPT_URL, {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
         body: new URLSearchParams(payload),
       });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.error);
+      }
       setAlertType("success");
       setSubmitMessage(
         "Thank you! Your enquiry has been submitted. We will contact you soon.",
       );
 
-      setFormData(resetData);
+      // setFormData(resetData);
     } catch (error) {
       setAlertType("error");
       setSubmitMessage(
@@ -117,10 +123,12 @@ export default function StudioHireForm() {
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
                     required
-                    label="Date"
+                    label="Booking Date"
                     format="DD/MM/YYYY"
-                    value={formData.date}
-                    onChange={(date) => setFormData({ ...formData, date })}
+                    value={formData.bookingDate}
+                    onChange={(date) =>
+                      setFormData({ ...formData, bookingDate: date })
+                    }
                     sx={darkFieldSx}
                     variant="standard"
                     slotProps={{
