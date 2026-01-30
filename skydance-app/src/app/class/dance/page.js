@@ -3,15 +3,19 @@ import Hero from "@/components/HeroImage";
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
 import Timetable from "@/components/Timetable";
-import SnapScrollSection from "@/components/SnapScrollSection";
 import ButtonLink2 from "@/components/ButtonLink2";
 import danceWorkshops from "@/lib/data/danceWorkshops";
 import SwiperDanceStyles from "@/components/SwiperHorizontalScollbar/SwiperDanceStyles";
 import ScrollbarHeading from "@/components/SwiperHorizontalScollbar/ScrollbarHeading";
 import SwiperDanceEvents from "@/components/SwiperHorizontalScollbar/SwiperDanceEvents";
 import danceIntensives from "@/lib/data/danceIntensives";
-import SnapScrollSection2 from "@/components/SnapScrollSection2";
 import danceEvents from "@/lib/data/danceEvents";
+
+export const metadata = {
+  title: "Dance Classes in Auburn, Sydney",
+  description:
+    "Looking for dance classes in Auburn, Sydney? Sky Dance Studio offers ballet, jazz, hip hop and kids dance classes for all ages.",
+};
 
 export default function DancePage() {
   return (
@@ -23,55 +27,59 @@ export default function DancePage() {
         </h1>
       </Box>
 
-      <SnapScrollSection2 visibility={0.1}>
-        <Box maxWidth={"xl"} margin={"auto"}>
-          {/* Dance Styles Info */}
-          <ScrollbarHeading title="Dance Styles" />
-          <SwiperDanceStyles />
-          <Box
-            sx={{
-              marginY: 5,
-              paddingX: { xs: 2, md: 5 },
-              textAlign: "left",
-            }}
-          >
-            <p>
-              Sky Dance Studio offers high-quality training for dancers for all
-              ages and abilities. Our classes span multiple styles, allowing
-              dancers to explore movements and artistry, while developing strong
-              technical foundations.
-            </p>
-            <br />
-            <p>
-              Our adult classes are open to all levels and designed for those
-              who want to move, build strength, and enjoy dance. We offer open
-              classes for ballet, chinese dance and jazz.
-            </p>
-          </Box>
+      <Box maxWidth={"xl"} margin={"auto"}>
+        {/* Dance Styles Info */}
+        <ScrollbarHeading title="Dance Styles" />
+        <SwiperDanceStyles />
+        <Box
+          sx={{
+            marginY: 5,
+            paddingX: { xs: 2, md: 5 },
+            textAlign: "left",
+          }}
+        >
+          <p>
+            Sky Dance Studio offers high-quality training for dancers for all
+            ages and abilities. Our classes span multiple styles, allowing
+            dancers to explore movements and artistry, while developing strong
+            technical foundations.
+          </p>
+          <br />
+          <p>
+            Our adult classes are open to all levels and designed for those who
+            want to move, build strength, and enjoy dance. We offer open classes
+            for ballet, chinese dance and jazz.
+          </p>
         </Box>
-      </SnapScrollSection2>
+      </Box>
 
       <Box maxWidth={"xl"} margin={"auto"}>
         {/* Events */}
-        <SwiperDanceEvents
-          events={danceEvents}
-          heading={"Upcoming Events"}
-          link={"/events"}
-        />
+        <AnimateInView>
+          <SwiperDanceEvents
+            events={danceEvents}
+            heading={"Upcoming Events"}
+            link={"/events"}
+          />
+        </AnimateInView>
 
         {/* Workshops */}
-        <SwiperDanceEvents
-          events={danceWorkshops}
-          heading={"Upcoming Workshops"}
-          link={"/class/dance/programs"}
-        />
+        <AnimateInView>
+          <SwiperDanceEvents
+            events={danceWorkshops}
+            heading={"Upcoming Workshops"}
+            link={"/class/dance/programs"}
+          />
+        </AnimateInView>
 
         {/* Intensives */}
-        <SwiperDanceEvents
-          events={danceIntensives}
-          heading={"Upcoming Intensives"}
-          link={"/class/dance/programs"}
-        />
+        <AnimateInView>
+          <SwiperDanceEvents
+            events={danceIntensives}
+            heading={"Upcoming Intensives"}
+            link={"/class/dance/programs"}
+          />
+        </AnimateInView>
       </Box>
 
       {/* Timetable */}

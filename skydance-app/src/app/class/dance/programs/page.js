@@ -8,6 +8,12 @@ import danceIntensives from "@/lib/data/danceIntensives";
 import DanceProgramEnrolment from "@/components/forms/DanceProgramEnrolment";
 import SnapScrollSection from "@/components/SnapScrollSection";
 
+export const metadata = {
+  title: "Dance Programs in Auburn, Sydney",
+  description:
+    "Checkout a range of dance workshops and intensives in Auburn, Sydney. Sky Dance Studio offers dance programs year round, for all ages.",
+};
+
 export default function DancePrograms() {
   return (
     <>
