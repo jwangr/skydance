@@ -9,12 +9,14 @@ const homeEvents = [
   danceEvents[0],
   danceEvents[1],
   danceIntensives[0],
+
+  // Home Cards
   {
-    title: "Get Qualified",
-    caption1: "Learn. Certify. Teach",
-    caption2: "2026 expressions of interest now open",
-    button: "Apply Now",
-    link: "/",
+    title: "Classes for Adults",
+    caption1: "Learn to Dance",
+    caption2: "All Levels Welcome",
+    button: "Explore",
+    link: "/class/dance",
     img: "url('/jazz/Jazz1.jpg')",
   },
   {
@@ -24,30 +26,6 @@ const homeEvents = [
     button: "Explore",
     link: "/class/dance",
     img: "url('/lyrical/Lyrical11.jpg')",
-  },
-  {
-    title: "Art Classes",
-    caption1: "",
-    caption2: "Drawing, Painting, and More",
-    button: "Apply Now",
-    link: "/class/art",
-    img: "url('/stockimages/stock1.jpg')",
-  },
-  {
-    title: "Music",
-    caption1: "",
-    caption2: "Violin, Piano, Singing",
-    button: "Apply Now",
-    link: "/class/music",
-    img: "url('/studios/StudioMusic.jpg')",
-  },
-  {
-    title: "Tutoring",
-    caption1: "",
-    caption2: "K - 12",
-    button: "Apply Now",
-    link: "/class/tutoring",
-    img: "url('/stockimages/Stock2.jpg')",
   },
 ];
 

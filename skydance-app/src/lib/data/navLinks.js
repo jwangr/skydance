@@ -9,13 +9,11 @@ const navLinks = [
     ],
   },
   {
-    title: "CLASSES",
-    link: "/class",
+    title: "DANCE",
+    link: "/class/dance",
     children: [
-      { title: "DANCE", link: "/class/dance" },
-      { title: "ART", link: "/class/art" },
-      { title: "MUSIC", link: "/class/music" },
-      { title: "TUTORING", link: "/class/tutoring" },
+      { title: "CLASS", link: "/class/dance" },
+      { title: "PROGRAMS", link: "/class/dance/programs" },
     ],
   },
   { title: "ENROL", link: "/enrol" },
