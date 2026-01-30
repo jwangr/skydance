@@ -9,18 +9,27 @@ export default function StudioHirePage() {
   return (
     <>
       {/* Heading */}
-      <Box sx={{ margin: 5, textAlign: "center" }}>
-        <h1 style={{ marginX: "auto", color: "white" }}>Studio Hire</h1>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "20vh",
-        }}
-      >
-        <h2>The perfect space for your next event</h2>
+      <Box sx={{ margin: 5 }}>
+        <h1
+          style={{
+            marginX: "auto",
+            color: "white",
+            textAlign: "center",
+            marginBottom: 5,
+          }}
+        >
+          Studio Hire
+        </h1>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            marginY: 5,
+          }}
+        >
+          <h2>The perfect space for your next event</h2>
+        </Box>
       </Box>
 
       <Grid container spacing={0} maxWidth={"xl"} sx={{ margin: "auto" }}>
