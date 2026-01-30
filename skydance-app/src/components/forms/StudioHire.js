@@ -22,6 +22,7 @@ import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
 import ContactsContainer from "./ContactsContainer";
 
 const resetData = {
+  studio: "",
   event: "",
   name: "",
   bookingDate: null,
@@ -53,6 +54,7 @@ export default function StudioHireForm() {
       const payload = {
         page: "studiohire",
         Date: new Date().toISOString(),
+        Studio: formData.studio,
         Name: formData.name,
         BookingDate: formData.bookingDate?.toDate().toLocaleDateString() || "",
         Event: formData.event,
@@ -119,6 +121,29 @@ export default function StudioHireForm() {
                 variant="standard"
               />
 
+              <FormControl
+                required
+                fullWidth
+                sx={darkFieldSx}
+                variant="standard"
+              >
+                <InputLabel>Studio</InputLabel>
+                <Select
+                  name="studio"
+                  value={formData.studio}
+                  onChange={handleInputChange}
+                  label="Pick a studio"
+                >
+                  <MenuItem value="">
+                    <em>Select reason</em>
+                  </MenuItem>
+                  <MenuItem value="Studio-1">Studio 1</MenuItem>
+                  <MenuItem value="Studio-2">Studio 2</MenuItem>
+                  <MenuItem value="Music-Room">Music Room</MenuItem>
+                  <MenuItem value="Meeting-Room">Meeting Room</MenuItem>
+                </Select>
+              </FormControl>
+
               <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DatePicker
@@ -155,7 +180,7 @@ export default function StudioHireForm() {
                     <MenuItem value="">
                       <em>Select reason</em>
                     </MenuItem>
-                    <MenuItem value="Dance">Dance Practice</MenuItem>
+                    <MenuItem value="Dance-Practice">Dance Practice</MenuItem>
                     <MenuItem value="Party">Party</MenuItem>
                     <MenuItem value="Workshop">Training Workshop</MenuItem>
                     <MenuItem value="Other">
