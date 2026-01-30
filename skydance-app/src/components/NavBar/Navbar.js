@@ -4,43 +4,12 @@ import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
-import {
-  Button,
-  Link,
-  ListItemButton,
-  Menu,
-  MenuItem,
-} from "@mui/material";
+import { Button, Link, ListItemButton, Menu, MenuItem } from "@mui/material";
 import NavBarMobile from "./NavBarMobile";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import ScrollToTop from "./ScrollToTop";
 import LogoHeader from "../LogoHeader";
-
-const navLinks = [
-  { title: "HOME", link: "/" },
-  {
-    title: "ABOUT US",
-    link: "/about",
-    children: [
-      { title: "OUR TEAM", link: "/about/team" },
-      { title: "OUR STORY", link: "/about/story" },
-    ],
-  },
-  {
-    title: "CLASSES",
-    link: "/class",
-    children: [
-      { title: "DANCE", link: "/class/dance" },
-      { title: "ART", link: "/class/art" },
-      { title: "MUSIC", link: "/class/music" },
-      { title: "TUTORING", link: "/class/tutoring" },
-    ],
-  },
-  { title: "ENROL", link: "/enrol" },
-  { title: "EVENTS", link: "/events" },
-  { title: "STUDIO HIRE", link: "/studiohire" },
-  { title: "CONTACT US", link: "/contact" },
-];
+import navLinks from "@/lib/data/navLinks";
 
 const Navbar = () => {
   // hover over multi-links
@@ -162,7 +131,7 @@ const Navbar = () => {
                     {link.title}
                   </Link>
                 </ListItemButton>
-              )
+              ),
             )}
           </Box>
 

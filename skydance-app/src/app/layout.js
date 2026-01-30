@@ -84,7 +84,6 @@ export default function RootLayout({ children }) {
     >
       <body className="font-body" style={{ backgroundColor: "var(--bg2)" }}>
         <Navbar2 />
-        {/* <Navbar /> */}
         {children}
         <Footer />
       </body>
