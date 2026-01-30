@@ -41,6 +41,12 @@ export default function DancePage() {
               dancers to explore movements and artistry, while developing strong
               technical foundations.
             </p>
+            <br />
+            <p>
+              Our adult classes are open to all levels and designed for those
+              who want to move, build strength, and enjoy dance. We offer open
+              classes for ballet, chinese dance and jazz.
+            </p>
           </Box>
         </Box>
       </SnapScrollSection2>
