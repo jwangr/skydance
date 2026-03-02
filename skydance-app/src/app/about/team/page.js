@@ -1,9 +1,9 @@
 import AnimateInView from "@/components/AnimateInView";
 import { Avatar, Box, Grid, Stack } from "@mui/material";
-import staffData from "@/lib/data/staff";
 import HeroGrows from "@/components/HeroImageGrows";
 import ButtonLink1 from "@/components/ButtonLink1";
 import Hero from "@/components/HeroImage";
+import staffData from "@/lib/data/staff.js";
 
 export default function AboutTeam() {
   return (
@@ -62,11 +62,14 @@ export default function AboutTeam() {
                     alt={staff.title}
                     src={`/staff/${staff.src}`}
                     sx={{
-                      width: { xs: 80, sm: 150, md: 200 },
-                      height: { xs: 80, sm: 150, md: 200 },
+                      width: { xs: 80, sm: 160, md: 200 },
+                      height: { xs: 100, sm: 200, md: 240 },
                       marginTop: 3,
                       marginBottom: 1,
+                      bgcolor: "var(--bg2)",
+                      fontSize: "2rem",
                     }}
+                    variant="square"
                   />
                   <AnimateInView>
                     <h4>{staff.title}</h4>
