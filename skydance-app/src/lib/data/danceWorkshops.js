@@ -17,6 +17,14 @@ const danceWorkshops = [
     dateEnd: "2026-03-29",
     ...defaultSettings,
   },
+  {
+    title: "Ballet with Vicki Attard",
+    caption1: "Internationally Recognised Teacher",
+    caption2: "7th Apr 2026, 12-3pm",
+    dateStart: "2026-04-07",
+    dateEnd: "2026-04-07",
+    ...defaultSettings,
+  },
 ];
 
 export default danceWorkshops;
