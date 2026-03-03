@@ -11,6 +11,7 @@ const staffData = [
   },
   {
     title: "Abbey",
+    src: "/abbey.jpg",
   },
   {
     title: "Angie",
@@ -19,6 +20,7 @@ const staffData = [
   },
   {
     title: "Bao Bao",
+    src: "/baobao.jpg",
   },
   {
     title: "Cassidy",
@@ -42,6 +44,7 @@ const staffData = [
   },
   {
     title: "Kai",
+    src: "/kai.jpg",
   },
   {
     title: "Rylee",
@@ -50,9 +53,11 @@ const staffData = [
   },
   {
     title: "Ruby",
+    src: "/ruby.jpg",
   },
   {
     title: "Sahara",
+    src: "/sahara.jpg",
   },
 ];
 

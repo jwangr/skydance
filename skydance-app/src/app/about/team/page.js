@@ -51,7 +51,7 @@ export default function AboutTeam() {
             }}
           >
             {staffData.map((staff) => (
-              <Grid key={staff.title} size={{ xs: 6, sm: 4 }}>
+              <Grid key={staff.title} size={{ xs: 6, sm: 4, md: 3 }}>
                 <Stack
                   direction={"column"}
                   sx={{
@@ -62,8 +62,8 @@ export default function AboutTeam() {
                     alt={staff.title}
                     src={`/staff/${staff.src}`}
                     sx={{
-                      width: { xs: 80, sm: 160, md: 200 },
-                      height: { xs: 100, sm: 200, md: 240 },
+                      width: { xs: 100, sm: 160, md: 200 },
+                      height: { xs: 120, sm: 200, md: 240 },
                       marginTop: 3,
                       marginBottom: 1,
                       bgcolor: "var(--bg2)",
