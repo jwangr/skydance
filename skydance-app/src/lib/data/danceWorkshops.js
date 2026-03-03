@@ -8,6 +8,15 @@ const defaultSettings = {
   img: "url('/lyrical/Lyrical10.jpg')",
 };
 
-const danceWorkshops = [];
+const danceWorkshops = [
+  {
+    title: "Open Week",
+    caption1: "Workshop",
+    caption2: "23 - 29 March 2026",
+    dateStart: "2026-03-23",
+    dateEnd: "2026-03-29",
+    ...defaultSettings,
+  },
+];
 
 export default danceWorkshops;

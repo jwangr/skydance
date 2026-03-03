@@ -30,7 +30,7 @@ export default function DanceEvents() {
           {/* Row 1 (3 items) */}
           {events.map((item, index) => {
             // Medium screens: grid items in the last row automatically resize
-            const columnsSm = 2; // number of columns in md size
+            const columnsSm = 2; // number of columns in Sm size
             const columnsMd = 3; // number of columns in md size
             const isLast = index === events.length - 1;
             const itemsInLastMdRow = events.length % columnsMd || columnsMd;

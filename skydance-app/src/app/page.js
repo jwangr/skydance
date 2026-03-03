@@ -85,24 +85,44 @@ export default function Home() {
             </HeroGrows>
           </Grid>
         ))}
-        {/* Row 2 (3 items) */}
-        {homeEvents.slice(2, 8).map((item) => (
-          <Grid key={item.title} size={{ xs: 12, sm: 6, md: 4 }}>
-            <HeroGrows
-              backgroundImage={item.img}
-              overlay="rgba(0, 0, 0, 0.6)"
-              textShadow="0"
-              height="100%"
+        {/* Row 2 (3 items) - can add more if wanted */}
+        {homeEvents.slice(2, 8).map((item, index) => {
+          const numberEvents = 3;
+          // Sm + Medium screens: grid items in the last row automatically resize
+          const columnsSm = 2; // number of columns in Sm size
+          const columnsMd = 3; // number of columns in md size
+          const isLast = index === numberEvents - 1;
+          const itemsInLastMdRow = numberEvents % columnsMd || columnsMd;
+          const itemsInLastSmRow = numberEvents % columnsSm;
+          const isAloneSm = isLast && itemsInLastSmRow === 1;
+          const isAloneMd = isLast && itemsInLastMdRow === 1;
+          const isLastButNotAlone = isLast && itemsInLastMdRow !== 1;
+
+          return (
+            <Grid
+              key={item.title}
+              size={{
+                xs: 12,
+                sm: isAloneSm ? 12 : 6,
+                md: isAloneMd ? 12 : isLastButNotAlone ? "grow" : 4,
+              }}
             >
-              <Stack gap={2.5} paddingY={8} width={"inherit"}>
-                <h4 style={{ color: "var(--bg6)" }}>{item.caption1}</h4>
-                <h2>{item.title} </h2>
-                <h4>{item.date ? formatDate(item.date) : item.caption2}</h4>
-                <ButtonLink1 href={item.link}>{item.button}</ButtonLink1>
-              </Stack>
-            </HeroGrows>
-          </Grid>
-        ))}
+              <HeroGrows
+                backgroundImage={item.img}
+                overlay="rgba(0, 0, 0, 0.6)"
+                textShadow="0"
+                height="100%"
+              >
+                <Stack gap={2.5} paddingY={8} width={"inherit"}>
+                  <h4 style={{ color: "var(--bg6)" }}>{item.caption1}</h4>
+                  <h2>{item.title} </h2>
+                  <h4>{item.date ? formatDate(item.date) : item.caption2}</h4>
+                  <ButtonLink1 href={item.link}>{item.button}</ButtonLink1>
+                </Stack>
+              </HeroGrows>
+            </Grid>
+          );
+        })}
       </Grid>
     </div>
   );
