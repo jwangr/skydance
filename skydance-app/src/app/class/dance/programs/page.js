@@ -27,21 +27,19 @@ export default function DancePrograms() {
         </AnimateInView>
       </Hero>
 
-      <SnapScrollSection>
-        <Box maxWidth={"xl"} margin={"auto"}>
-          {/* Workshops */}
-          <SwiperDanceEvents
-            events={danceWorkshops}
-            heading={"Upcoming Workshops"}
-          />
+      <Box maxWidth={"xl"} margin={"auto"}>
+        {/* Workshops */}
+        <SwiperDanceEvents
+          events={danceWorkshops}
+          heading={"Upcoming Workshops"}
+        />
 
-          {/* Intensives */}
-          <SwiperDanceEvents
-            events={danceIntensives}
-            heading={"Upcoming Intensives"}
-          />
-        </Box>
-      </SnapScrollSection>
+        {/* Intensives */}
+        <SwiperDanceEvents
+          events={danceIntensives}
+          heading={"Upcoming Intensives"}
+        />
+      </Box>
 
       <DanceProgramEnrolment />
     </>

@@ -37,6 +37,20 @@ const danceEvents = [
     ...defaultSettings,
   },
   {
+    title: "Kpop Showcase",
+    date: "2026-03-07",
+    location: "Bankstown Sports Club",
+    img: "url('/hiphop/Hiphop4.jpg')",
+    ...defaultSettings,
+  },
+  {
+    title: "Lyrical and Jazz Showcase",
+    date: "2026-03-21",
+    location: "Mounties, Mount Pritchard",
+    img: "url('/jazz/Jazz5.jpg')",
+    ...defaultSettings,
+  },
+  {
     title: "2026 School Concert",
     date: "2026-10-26",
     location: "The Theatre, Bankstown Sports Club",

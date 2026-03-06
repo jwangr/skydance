@@ -1,4 +1,5 @@
 import AnimateInView from "@/components/AnimateInView";
+import AdultsClassBanner from "@/components/AdultsClassBanner";
 import Hero from "@/components/HeroImage";
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
@@ -54,13 +55,8 @@ export default function DancePage() {
       </Box>
 
       <Box maxWidth={"xl"} margin={"auto"}>
-        {/* Events */}
         <AnimateInView>
-          <SwiperDanceEvents
-            events={danceEvents}
-            heading={"Upcoming Events"}
-            link={"/events"}
-          />
+          <AdultsClassBanner />
         </AnimateInView>
 
         {/* Workshops */}

@@ -140,7 +140,7 @@ export default function StudioHireForm() {
                   <MenuItem value="Studio-1">Studio 1</MenuItem>
                   <MenuItem value="Studio-2">Studio 2</MenuItem>
                   <MenuItem value="Music-Room">Music Room</MenuItem>
-                  <MenuItem value="Meeting-Room">Meeting Room</MenuItem>
+                  <MenuItem value="Solo-Room">Solo Room</MenuItem>
                 </Select>
               </FormControl>
 

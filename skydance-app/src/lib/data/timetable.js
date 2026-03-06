@@ -6,7 +6,7 @@ const timetables = [
   },
   {
     title: "Term 1, 2026 (27/01/26 - 02/04/26)",
-    url: "/timetables/2026Term1.png",
+    url: "/timetables/2026Term1.jpg",
   },
 ];
 

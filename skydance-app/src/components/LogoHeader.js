@@ -25,9 +25,10 @@ export default function LogoHeader() {
             width={70}
             objectFit="contain"
             layout="responsive"
-            style={{
-              filter: "brightness(1.5)", // 1 = normal, >1 brighter, <1 darker
-            }}
+            // <Summary> Commented out to change logo from white to pink </Summary>
+            // style={{
+            //   filter: "brightness(1.5)", // 1 = normal, >1 brighter, <1 darker
+            // }}
           />
         </Box>
         <Box sx={{ display: { xs: "none", lg: "block" }, color: "white" }}>
