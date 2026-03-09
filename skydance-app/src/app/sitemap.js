@@ -34,7 +34,7 @@ export default function sitemap() {
       url: "https://skydancestudio.com.au/about/story",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.7,
+      priority: 0.6,
     },
     {
       url: "https://skydancestudio.com.au/events",
@@ -46,7 +46,7 @@ export default function sitemap() {
       url: "https://skydancestudio.com.au/studiohire",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.6,
+      priority: 0.7,
     },
     {
       url: "https://skydancestudio.com.au/contact",

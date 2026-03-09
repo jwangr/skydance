@@ -9,10 +9,9 @@ import {
   Montserrat,
 } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/NavBar/Navbar";
 import Footer from "@/components/Footer";
-import { Toolbar } from "@mui/material";
 import Navbar2 from "@/components/NavBar/NavBar2";
+import { Metadata } from "next";
 
 const aboreto = Aboreto({
   weight: "400",
@@ -60,25 +59,51 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://skydancestudio.com.au"),
+
   title: {
-    default: "Sky Dance Studio | Dance Classes in Sydney NSW",
+    default: "Sky Dance Studio | Dance Classes in Auburn, Sydney NSW",
     template: "%s | Sky Dance Studio",
   },
+
   description:
-    "Sky Dance Studio offers fun and professional dance classes in Sydney NSW, for kids, teens, and adults. Ballet, jazz, hip hop, and more.",
+    "Sky Dance Studio in Auburn, Sydney offers dance classes for kids and adults including RAD ballet, jazz, lyrical, hip hop, K-pop, Chinese dance and acrobatics. Join a supportive community and build confidence through dance.",
+
   keywords: [
     "Sky Dance Studio",
-    "Dance classes Auburn",
-    "Ballet lessons Sydney",
-    "Jazz dance",
-    "Contemporary dance",
-    "Children's dance school",
-    "Adult dance classes",
+    "dance studio Sydney",
+    "dance classes Auburn NSW",
+    "ballet classes Sydney",
+    "RAD ballet Auburn",
+    "kids dance classes Sydney",
+    "adult dance classes Sydney",
+    "hip hop dance classes Sydney",
+    "Kpop dance classes Sydney",
+    "Chinese dance Sydney",
+    "acrobatics classes Sydney",
   ],
-  authors: [{ name: "Sky Dance Studio" }],
-  creator: "Sky Dance Studio",
-  publisher: "Sky Dance Studio",
-  metadataBase: new URL("https://www.skydancestudio.com"),
+
+  openGraph: {
+    title: "Sky Dance Studio",
+    description:
+      "Professional dance studio in Auburn, Sydney offering ballet, jazz, hip hop, K-pop and Chinese dance classes for children and adults.",
+    url: "https://skydancestudio.com.au",
+    siteName: "Sky Dance Studio",
+    locale: "en_AU",
+    type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1000,
+        height: 600,
+      },
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {

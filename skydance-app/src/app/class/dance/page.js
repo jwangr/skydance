@@ -13,7 +13,7 @@ import danceIntensives from "@/lib/data/danceIntensives";
 import danceEvents from "@/lib/data/danceEvents";
 
 export const metadata = {
-  title: "Dance Classes in Auburn, Sydney",
+  title: "Dance Classes in Auburn, Sydney NSW",
   description:
     "Looking for dance classes in Auburn, Sydney? Sky Dance Studio offers ballet, jazz, hip hop and kids dance classes for all ages.",
 };

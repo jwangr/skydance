@@ -3,7 +3,12 @@ import Hero from "@/components/HeroImage";
 import StudioCard from "@/components/StudioCard";
 import studiosForHire from "@/lib/data/studiosForHire";
 import { Box, Grid } from "@mui/material";
-import React from "react";
+
+export const metadata = {
+  title: "Dance Studio Venue Hire",
+  description:
+    "Hire professional dance studio spaces at Sky Dance Studio in Auburn. Perfect for rehearsals, workshops, parties, tutoring and group classes.",
+};
 
 export default function StudioHirePage() {
   return (
