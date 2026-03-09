@@ -25,7 +25,7 @@ const homeEvents = [
     caption2: "Chinese Dance, Ballet, Jazz",
     button: "Explore",
     link: "/class/dance",
-    img: "url('/chinesedance/chinese8.jpg')",
+    img: "url('/chinesedance/Chinese8.jpg')",
   },
   danceIntensives[0],
   danceWorkshops[0],
@@ -35,7 +35,7 @@ const homeEvents = [
     caption2: "Perfect for parties, workshops and more",
     button: "Explore",
     link: "/studiohire",
-    img: "url('/studios/studio1.jpg')",
+    img: "url('/studios/Studio1.jpg')",
   },
 ];
 
