@@ -1,0 +1,29 @@
+{
+  "redirects": [
+    {
+      "source": "/classes",
+      "destination": "/class/dance",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about/story",
+      "permanent": true
+    },
+    {
+      "source": "/get-in-touch-1",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/blank-2",
+      "destination": "/enrol",
+      "permanent": true
+    },
+    {
+      "source": "/blank",
+      "destination": "/contact",
+      "permanent": true
+    }
+  ]
+}
