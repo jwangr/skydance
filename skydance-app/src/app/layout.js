@@ -60,6 +60,9 @@ const montserrat = Montserrat({
 
 export const metadata = {
   metadataBase: new URL("https://skydancestudio.com.au"),
+  verification: {
+    google: "Ku8kZIazKbR8HrZVwUkVx3mi3Fum7wXmcZ_Nj1COThQ",
+  },
 
   title: {
     default: "Sky Dance Studio | Dance Classes in Auburn, Sydney NSW",
