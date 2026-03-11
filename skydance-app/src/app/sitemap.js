@@ -13,7 +13,7 @@ export default function sitemap() {
       priority: 0.9, // High priority - key conversion page
     },
     {
-      url: "https:/skydancestudio.com.au/class/dance",
+      url: "https://skydancestudio.com.au/class/dance",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9, // Important - main classes page
