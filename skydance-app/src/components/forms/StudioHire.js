@@ -203,6 +203,18 @@ export default function StudioHireForm() {
                 onChange={handleInputChange}
                 sx={darkFieldSx}
                 variant="standard"
+                slotProps={{
+                  htmlInput: {
+                    pattern: "[0-9+ ]{8,15}", // for form validation
+                    inputMode: "tel", // mobile numeric keyboard
+                    onKeyPress: (e) => {
+                      // Prevent any non-numeric characters except + and space
+                      if (!/[0-9+ ]/.test(e.key)) {
+                        e.preventDefault();
+                      }
+                    },
+                  },
+                }}
               />
 
               <TextField

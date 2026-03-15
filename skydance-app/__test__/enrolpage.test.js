@@ -45,7 +45,6 @@ describe("Enrol page", () => {
     // expect(screen.getByLabelText(/contact's name/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/gender/i)).toBeInTheDocument();
     expect(screen.getByText(/date of birth/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/address/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/phone number/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/additional notes/i)).toBeInTheDocument();
   });

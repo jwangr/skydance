@@ -80,13 +80,13 @@ export default function ContactUsForm() {
       });
 
       setSubmitMessage(
-        "Thank you! Your enquiry has been submitted. We will contact you soon."
+        "Thank you! Your enquiry has been submitted. We will contact you soon.",
       );
 
       setFormData(resetData);
     } catch (error) {
       setSubmitMessage(
-        "There was an error submitting your form. Please try again or contact us directly.."
+        "There was an error submitting your form. Please try again or contact us directly..",
       );
     } finally {
       setIsSubmitting(false);
@@ -131,6 +131,18 @@ export default function ContactUsForm() {
                 onChange={handleInputChange}
                 sx={darkFieldSx}
                 variant="standard"
+                slotProps={{
+                  htmlInput: {
+                    pattern: "[0-9+ ]{8,15}", // for form validation
+                    inputMode: "tel", // mobile numeric keyboard
+                    onKeyPress: (e) => {
+                      // Prevent any non-numeric characters except + and space
+                      if (!/[0-9+ ]/.test(e.key)) {
+                        e.preventDefault();
+                      }
+                    },
+                  },
+                }}
               />
               <TextField
                 required

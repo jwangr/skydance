@@ -155,11 +155,6 @@ export default function DanceEnrolment() {
                     control={<Radio />}
                     label="Group Class"
                   />
-                  <FormControlLabel
-                    value="Private"
-                    control={<Radio />}
-                    label="Private 1:1 Class"
-                  />
                 </RadioGroup>
               </FormControl>
 
@@ -270,6 +265,18 @@ export default function DanceEnrolment() {
                 onChange={handleInputChange}
                 sx={darkFieldSx}
                 variant="standard"
+                slotProps={{
+                  htmlInput: {
+                    pattern: "[0-9+ ]{8,15}", // for form validation
+                    inputMode: "tel", // mobile numeric keyboard
+                    onKeyPress: (e) => {
+                      // Prevent any non-numeric characters except + and space
+                      if (!/[0-9+ ]/.test(e.key)) {
+                        e.preventDefault();
+                      }
+                    },
+                  },
+                }}
               />
               <TextField
                 required
