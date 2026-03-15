@@ -54,7 +54,7 @@ export default function StudioCard({ studio }) {
           transition: "all 0.3s ease",
         }}
       >
-        <h3>{studio.title}</h3>
+        <h3 style={{ color: "white" }}>{studio.title}</h3>
       </Box>
       <Box
         className="description"

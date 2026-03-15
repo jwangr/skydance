@@ -23,6 +23,17 @@ const studiosForHire = [
       "A 50m² studio featuring professional dance flooring, full-height mirror on 1 wall and ballet barres.",
     image: "/studios/StudioSoloRoom.jpg",
   },
+  {
+    title: "Tutorial Room",
+    description:
+      "Spacious room with a large table for up to 12, whiteboard, and full-length mirror. Perfect for tutoring, art workshops, group classes, or solo practice.",
+    image: "/studios/TutorialRoom.jpg",
+  },
+  {
+    title: "Theatre Room - Coming Soon",
+    description: "Under Construction.",
+    image: "/studios/TheatreRoom.webp",
+  },
 ];
 
 export default studiosForHire;
