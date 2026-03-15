@@ -12,8 +12,8 @@ const contacts = [
   },
   {
     title: "Email",
-    description: "skydancestudio2020@gmail.com.au",
-    link: "mailto:skydancestudio2020@gmail.com.au",
+    description: "SkyDanceStudio2020@gmail.com",
+    link: "mailto:SkyDanceStudio2020@gmail.com",
   },
 ];
 

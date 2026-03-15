@@ -4,13 +4,13 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import socialLinks from "@/lib/data/socialLinks.js";
 import { Box, Button, IconButton, Modal, Stack } from "@mui/material";
 import { Chat } from "@mui/icons-material";
+import WeChatIcon from "@/components/WeChatIcon.js";
 import { useState } from "react";
 
 const iconMap = {
   Instagram: <InstagramIcon sx={{ color: "var(--bg6)" }} />,
   Facebook: <FacebookIcon sx={{ color: "var(--bg6)" }} />,
   Twitter: <TwitterIcon sx={{ color: "var(--bg6)" }} />,
-  Chat: <Chat sx={{ color: "var(--bg6)" }} />,
 };
 
 export default function SocialLinks() {
@@ -20,13 +20,18 @@ export default function SocialLinks() {
   return (
     <Stack direction={"row"} gap={3} justifyContent={"left"}>
       {socialLinks.map(({ title, link, icon }) => (
-        <IconButton key={title} href={link}>
+        <IconButton
+          key={title}
+          href={link}
+          target="_blank"
+          rel="noopener referrer"
+        >
           {iconMap[icon]}
         </IconButton>
       ))}
       {/* Wechat Modal */}
       <IconButton onClick={() => setOpen(true)} sx={{ cursor: "pointer" }}>
-        <Chat sx={{ color: "var(--bg6)" }} />
+        <WeChatIcon sx={{ color: "var(--bg6)" }} />
       </IconButton>
 
       <Modal open={open} onClose={() => setOpen(false)}>
