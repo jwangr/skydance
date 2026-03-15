@@ -2,7 +2,10 @@ import newestTimetable from "@/lib/data/timetable";
 import { Box } from "@mui/material";
 import React from "react";
 
-export default function Timetable({ timetable = newestTimetable }) {
+export default function Timetable({
+  timetable = newestTimetable,
+  showTitle = true,
+}) {
   return (
     <Box
       sx={{
@@ -13,7 +16,7 @@ export default function Timetable({ timetable = newestTimetable }) {
         marginY: 2,
       }}
     >
-      <h2>Class Timetable</h2>
+      <h2 style={{ display: showTitle ? "block" : "none" }}>Class Timetable</h2>
       <h5>{timetable.title}</h5>
       <Box
         sx={{

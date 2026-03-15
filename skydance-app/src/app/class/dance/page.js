@@ -11,6 +11,7 @@ import ScrollbarHeading from "@/components/SwiperHorizontalScollbar/ScrollbarHea
 import SwiperDanceEvents from "@/components/SwiperHorizontalScollbar/SwiperDanceEvents";
 import danceIntensives from "@/lib/data/danceIntensives";
 import danceEvents from "@/lib/data/danceEvents";
+import { timetables } from "@/lib/data/timetable";
 
 export const metadata = {
   title: "Dance Classes in Auburn, Sydney NSW",
@@ -80,6 +81,7 @@ export default function DancePage() {
 
       {/* Timetable */}
       <Timetable />
+      <Timetable timetable={timetables[2]} showTitle={false} />
 
       {/* Enrol for group or private classes */}
       <Stack
