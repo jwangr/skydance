@@ -19,13 +19,27 @@ const darkFieldSx = {
   },
 };
 
+const datePickerSx = {
+  "& .MuiPickersInputBase-root": {
+    color: "white",
+  },
+  "& .MuiPickersInputBase-section": {
+    color: "white",
+  },
+  "& .MuiSvgIcon-root": {
+    color: "white",
+  },
+  "& .MuiInputLabel-root": {
+    color: "white",
+  },
+};
 const formContainerSx = {
   background: "linear-gradient(135deg, #1c1f26, #121417)",
   borderRadius: "16px",
   p: 4,
   boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
   color: "white",
-  width: {xs: 1, md: 0.8},
+  width: { xs: 1, md: 0.8 },
   maxWidth: "lg",
   marginX: "auto",
 };
@@ -36,20 +50,9 @@ const contactsContainerSx = {
   p: 4,
   boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
   color: "white",
-  width: {xs: 1, md: 0.8},
+  width: { xs: 1, md: 0.8 },
   maxWidth: "lg",
   marginX: "auto",
 };
 
-const datePickerContainerSx = {
-  "& .MuiPickersInputBase-sectionsContainer": {
-    color: "#fff",
-  },
-  "& .MuiPickersSectionList-root": {
-    color: "#fff",
-  },
-  "& .MuiPickersSection-root": {
-    color: "#fff",
-  },
-};
-export { darkFieldSx, formContainerSx, datePickerContainerSx, contactsContainerSx };
+export { darkFieldSx, formContainerSx, datePickerSx, contactsContainerSx };

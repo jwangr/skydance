@@ -18,7 +18,11 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
-import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
+import {
+  darkFieldSx,
+  datePickerSx,
+  formContainerSx,
+} from "./FormComponentStyles";
 import ContactsContainer from "./ContactsContainer";
 
 const resetData = {
@@ -154,7 +158,8 @@ export default function StudioHireForm() {
                     onChange={(date) =>
                       setFormData({ ...formData, bookingDate: date })
                     }
-                    sx={darkFieldSx}
+                    sx={{ ...darkFieldSx, ...datePickerSx }}
+                    disablePast
                     variant="standard"
                     slotProps={{
                       openPickerIcon: {

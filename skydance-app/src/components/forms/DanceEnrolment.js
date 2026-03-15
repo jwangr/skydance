@@ -26,7 +26,11 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { GOOGLE_SCRIPT_URL } from "@/lib/googleScript";
-import { darkFieldSx, formContainerSx } from "./FormComponentStyles";
+import {
+  darkFieldSx,
+  datePickerSx,
+  formContainerSx,
+} from "./FormComponentStyles";
 import { CakeOutlined } from "@mui/icons-material";
 import ContactsContainer from "./ContactsContainer";
 import classes from "@/lib/data/classdescriptions";
@@ -103,9 +107,13 @@ export default function DanceEnrolment() {
     } catch (error) {
       console.error("Error:", error);
       setAlertType("error");
-      setSubmitMessage(
-        "There was an error submitting your form. Please try again or contact us directly.",
-      );
+      if (!formData.dob) {
+        setSubmitMessage("Date of birth is required");
+      } else {
+        setSubmitMessage(
+          "Your form could not be submitted. Please try again or contact us directly.",
+        );
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -196,9 +204,17 @@ export default function DanceEnrolment() {
                     format="DD/MM/YYYY"
                     value={formData.dob}
                     onChange={(dob) => setFormData({ ...formData, dob })}
-                    sx={darkFieldSx}
+                    sx={{
+                      ...darkFieldSx,
+                      ...datePickerSx,
+                    }}
+                    disableFuture
                     variant="standard"
                     slotProps={{
+                      textField: {
+                        required: true,
+                        variant: "standard",
+                      },
                       openPickerIcon: {
                         color: "primary",
                       },
