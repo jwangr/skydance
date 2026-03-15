@@ -51,8 +51,15 @@ const danceEvents = [
     ...defaultSettings,
   },
   {
-    title: "2026 School Concert",
-    date: "2026-10-26",
+    title: "2026 School Photo Day & Concert Dress Rehearsal ",
+    date: "2026-10-03",
+    location: "Sky Dance Studio",
+    img: "url('/acro/Acro3.jpg')",
+    ...defaultSettings,
+  },
+  {
+    title: "2026 Sky Showcase",
+    date: "2026-10-04",
     location: "The Theatre, Bankstown Sports Club",
     img: "url('/contemporary/contemporary10.jpg')",
     ...defaultSettings,

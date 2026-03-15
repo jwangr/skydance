@@ -62,7 +62,12 @@ export default function DanceEvents() {
                         day: "numeric",
                         month: "short",
                         year: "numeric",
+                      })}{" "}
+                      (
+                      {formatDate(item.date, {
+                        weekday: "short",
                       })}
+                      )
                     </h4>
                   </Stack>
                 </HeroGrows>
