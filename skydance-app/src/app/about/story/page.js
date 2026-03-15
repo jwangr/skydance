@@ -29,7 +29,7 @@ export default function AboutStory() {
             </div>
             <div>
               Originally dedicated to Royal Ballet, our studio has now evolved
-              into a comprehensive dance school with over 20 classes. We offer a
+              into a comprehensive dance school with over 60 classes. We offer a
               wide range of styles including jazz, modern, lyrical,
               contemporary, acrobatics, musical theatre, Chinese, and character
               dance. The studio also proudly supports students in preparing for
@@ -39,7 +39,7 @@ export default function AboutStory() {
               We offer daily classes, as well as intensive workshops and private
               classes.
             </div>
-            <ButtonLink1>Contact Us</ButtonLink1>
+            <ButtonLink1 href="/contact">Contact Us</ButtonLink1>
           </Stack>
         </Container>
       </Hero>
