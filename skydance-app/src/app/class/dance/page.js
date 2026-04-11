@@ -14,9 +14,21 @@ import danceEvents from "@/lib/data/danceEvents";
 import { timetables } from "@/lib/data/timetable";
 
 export const metadata = {
-  title: "Dance Classes in Auburn, Sydney NSW",
+  title: "Dance Classes in Auburn Sydney | Kids & Adults",
   description:
-    "Looking for dance classes in Auburn, Sydney? Sky Dance Studio offers ballet, jazz, hip hop and kids dance classes for all ages.",
+    "Sky Dance Studio offers ballet, jazz, hip hop, K-pop, and Chinese dance classes in Auburn, Sydney for kids, teens, and adults of all levels.",
+
+  alternates: {
+    canonical: "/class/dance",
+  },
+
+  openGraph: {
+    title: "Dance Classes in Auburn Sydney",
+    description:
+      "Explore dance classes for all ages including ballet, jazz, hip hop, K-pop, and acrobatics at Sky Dance Studio.",
+    url: "https://skydancestudio.com.au/class/dance",
+    type: "website",
+  },
 };
 
 export default function DancePage() {

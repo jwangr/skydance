@@ -6,12 +6,23 @@ import danceWorkshops from "@/lib/data/danceWorkshops";
 import SwiperDanceEvents from "@/components/SwiperHorizontalScollbar/SwiperDanceEvents";
 import danceIntensives from "@/lib/data/danceIntensives";
 import DanceProgramEnrolment from "@/components/forms/DanceProgramEnrolment";
-import SnapScrollSection from "@/components/SnapScrollSection";
 
 export const metadata = {
-  title: "Dance Programs in Auburn, Sydney",
+  title: "Dance Workshops & Intensives Sydney | Programs",
   description:
-    "Checkout a range of dance workshops and intensives in Auburn, Sydney. Sky Dance Studio offers dance programs year round, for all ages.",
+    "Join dance workshops and intensives at Sky Dance Studio in Auburn, Sydney. Programs for all ages led by guest and studio teachers.",
+
+  alternates: {
+    canonical: "/class/dance/programs",
+  },
+
+  openGraph: {
+    title: "Dance Programs | Workshops & Intensives Sydney",
+    description:
+      "Explore seasonal dance workshops and intensives in Auburn, Sydney for dancers of all levels.",
+    url: "https://skydancestudio.com.au/class/dance/programs",
+    type: "website",
+  },
 };
 
 export default function DancePrograms() {
