@@ -9,6 +9,24 @@ import formatDate from "@/lib/utils/formatDate";
 
 const events = danceEvents;
 
+export const metadata = {
+  title: "Dance Events in Sydney | Sky Dance Studio",
+  description:
+    "Explore upcoming dance events, performances and showcases at Sky Dance Studio in Auburn, Sydney.",
+
+  alternates: {
+    canonical: "/events",
+  },
+
+  openGraph: {
+    title: "Dance Events Sydney",
+    description:
+      "See upcoming dance events, performances and studio showcases at Sky Dance Studio.",
+    url: "https://skydancestudio.com.au/events",
+    type: "website",
+  },
+};
+
 export default function DanceEvents() {
   return (
     <>

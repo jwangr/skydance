@@ -5,9 +5,21 @@ import studiosForHire from "@/lib/data/studiosForHire";
 import { Box, Grid } from "@mui/material";
 
 export const metadata = {
-  title: "Dance Studio Venue Hire",
+  title: "Dance Studio Hire Auburn Sydney | Sky Dance Studio",
   description:
-    "Hire professional dance studio spaces at Sky Dance Studio in Auburn. Perfect for rehearsals, workshops, parties, tutoring and group classes.",
+    "Hire professional dance studio spaces in Auburn, Sydney. Ideal for rehearsals, workshops, events, parties and classes.",
+
+  alternates: {
+    canonical: "/studiohire",
+  },
+
+  openGraph: {
+    title: "Studio Hire Sydney",
+    description:
+      "Rent fully equipped dance studio spaces in Auburn, Sydney for events, rehearsals and workshops.",
+    url: "https://skydancestudio.com.au/studiohire",
+    type: "website",
+  },
 };
 
 export default function StudioHirePage() {

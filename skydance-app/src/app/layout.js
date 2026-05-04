@@ -12,6 +12,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar2 from "@/components/NavBar/NavBar2";
 import { Metadata } from "next";
+import { LocalBusinessSchema } from "../components/LocalBusinessSchema";
 
 const aboreto = Aboreto({
   weight: "400",
@@ -60,6 +61,7 @@ const montserrat = Montserrat({
 
 export const metadata = {
   metadataBase: new URL("https://skydancestudio.com.au"),
+
   verification: {
     google: "Ku8kZIazKbR8HrZVwUkVx3mi3Fum7wXmcZ_Nj1COThQ",
   },
@@ -115,6 +117,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${aboreto.variable} ${arimo.variable} ${bebas.variable} ${ebGaramond.variable} ${geistSans.variable} ${geistMono.variable} ${marcellus.variable} ${montserrat.variable}`}
     >
+      <head>
+        <LocalBusinessSchema />
+      </head>
+
       <body className="font-body" style={{ backgroundColor: "var(--bg2)" }}>
         <Navbar2 />
         {children}

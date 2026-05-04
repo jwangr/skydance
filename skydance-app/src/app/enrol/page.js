@@ -1,9 +1,25 @@
-"use client";
-
-import { Box, FormLabel, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 
 import Hero from "@/components/HeroImage";
 import DanceEnrolment from "@/components/forms/DanceEnrolment";
+
+export const metadata = {
+  title: "Enrol in Dance Classes | Sky Dance Studio Auburn",
+  description:
+    "Join Sky Dance Studio in Auburn, Sydney. Enrol in ballet, jazz, hip hop, K-pop and more for kids, teens and adults.",
+
+  alternates: {
+    canonical: "/enrol",
+  },
+
+  openGraph: {
+    title: "Enrol in Dance Classes",
+    description:
+      "Become part of Sky Dance Studio. Enrol in dance classes for all ages and levels in Auburn, Sydney.",
+    url: "https://skydancestudio.com.au/enrol",
+    type: "website",
+  },
+};
 
 export default function EnrolPage() {
   return (

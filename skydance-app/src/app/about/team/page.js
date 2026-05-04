@@ -5,6 +5,24 @@ import ButtonLink1 from "@/components/ButtonLink1";
 import Hero from "@/components/HeroImage";
 import staffData from "@/lib/data/staff.js";
 
+export const metadata = {
+  title: "Meet Our Team | Sky Dance Studio",
+  description:
+    "Meet the professional dance teachers at Sky Dance Studio in Auburn, Sydney. Our team includes experienced performers, choreographers, and industry professionals.",
+
+  alternates: {
+    canonical: "/about/team",
+  },
+
+  openGraph: {
+    title: "Meet Our Team | Sky Dance Studio",
+    description:
+      "Experienced dance teachers in Auburn, Sydney helping students build confidence, discipline, and passion for dance.",
+    url: "https://skydancestudio.com.au/about/team",
+    type: "website",
+  },
+};
+
 export default function AboutTeam() {
   return (
     <>

@@ -4,6 +4,24 @@ import HeroGrows from "@/components/HeroImageGrows";
 import { Box, Container, Stack } from "@mui/material";
 import React from "react";
 
+export const metadata = {
+  title: "About Our Story | Sky Dance Studio",
+  description:
+    "Learn about Sky Dance Studio’s journey from 2009 to today. We’ve grown from 4 students to a thriving dance community in Auburn, Sydney offering ballet, jazz, lyrical, contemporary, acrobatics and more.",
+
+  alternates: {
+    canonical: "/about/story",
+  },
+
+  openGraph: {
+    title: "About Sky Dance Studio",
+    description:
+      "Discover the story behind Sky Dance Studio, a growing dance community in Auburn, Sydney.",
+    url: "https://skydancestudio.com.au/about/story",
+    type: "article",
+  },
+};
+
 export default function AboutStory() {
   return (
     <>
