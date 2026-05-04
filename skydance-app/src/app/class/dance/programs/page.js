@@ -29,16 +29,10 @@ export default function DancePrograms() {
 
       <Box maxWidth={"xl"} margin={"auto"}>
         {/* Workshops */}
-        <SwiperDanceEvents
-          events={danceWorkshops}
-          heading={"Upcoming Workshops"}
-        />
+        <SwiperDanceEvents events={danceWorkshops} heading={"Workshops"} />
 
         {/* Intensives */}
-        <SwiperDanceEvents
-          events={danceIntensives}
-          heading={"Upcoming Intensives"}
-        />
+        <SwiperDanceEvents events={danceIntensives} heading={"Intensives"} />
       </Box>
 
       <DanceProgramEnrolment />

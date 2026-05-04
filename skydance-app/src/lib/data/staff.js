@@ -67,6 +67,10 @@ const staffData = [
     title: "Dinley",
     src: "/dinley.jpg",
   },
+  {
+    title: "Molly",
+    src: "/molly.jpg",
+  },
 ];
 
 export default staffData;

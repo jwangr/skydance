@@ -51,6 +51,27 @@ const danceEvents = [
     ...defaultSettings,
   },
   {
+    title: "Buddha's Birthday Multicultural Festival",
+    date: "2026-05-05",
+    location: "Darling Harbour",
+    img: "url('/chinesedance/Chinese1.jpg')",
+    ...defaultSettings,
+  },
+  {
+    title: "Bravery Buddies Song and Dance Challenge Troupe",
+    date: "2026-05-24",
+    location: "Mount St Joseph High School",
+    img: "url('/lyrical/Lyrical7.jpg')",
+    ...defaultSettings,
+  },
+  {
+    title: "World of Dance Sydney Qualifier",
+    date: "2026-05-31",
+    location: "Hurtsville Entertainment Centre",
+    img: "url('/contemporary/contemporary6.jpg')",
+    ...defaultSettings,
+  },
+  {
     title: "2026 School Photo Day & Concert Dress Rehearsal ",
     date: "2026-10-03",
     location: "Sky Dance Studio",

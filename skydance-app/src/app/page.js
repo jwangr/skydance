@@ -88,10 +88,10 @@ export default function Home() {
             </AnimateInView>
           </Hero>
 
-          {/* Link List */}
+          {/* Link List - 5 or 6 items*/}
           <Grid container spacing={0} sx={{ alignItems: "stretch" }}>
-            {/* Row 1 (2 items)*/}
-            {homeEvents.slice(0, 2).map((item) => (
+            {/* Row 1 to 3 (2 items each)*/}
+            {homeEvents.map((item) => (
               <Grid key={item.title} size={{ xs: 12, sm: 6 }}>
                 <HeroGrows
                   backgroundImage={item.img}
@@ -113,7 +113,7 @@ export default function Home() {
                 </HeroGrows>
               </Grid>
             ))}
-            {/* Row 2 (3 items) - can add more if wanted */}
+            {/* Row 2 (3 items) - can add more if wanted
             {homeEvents.slice(2, 8).map((item, index) => {
               const numberEvents = 3;
               // Sm + Medium screens: grid items in the last row automatically resize
@@ -152,7 +152,7 @@ export default function Home() {
                   </HeroGrows>
                 </Grid>
               );
-            })}
+            })} */}
           </Grid>
         </div>
       </main>

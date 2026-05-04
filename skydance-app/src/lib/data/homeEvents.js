@@ -1,18 +1,11 @@
-// import danceEvents from "./danceWorkshops";
-
 import danceEvents from "./danceEvents";
 import danceIntensives from "./danceIntensives";
 import danceWorkshops from "./danceWorkshops";
 
 const homeEvents = [
-  // // Add 3 events / workshops
-  // danceEvents[0],
-  // danceEvents[1],
-  // danceIntensives[0],
-
   // Home Cards
   {
-    title: "Dance Classes",
+    title: "Fun recreational classes",
     caption1: "Ballet, Hip Hop, And More",
     caption2: "For All Ages",
     button: "Explore",
@@ -20,22 +13,23 @@ const homeEvents = [
     img: "url('/lyrical/Lyrical11.jpg')",
   },
   {
-    title: "Adults Classes",
+    title: "Competition Teams & Training",
     caption1: "Learn to Dance",
     caption2: "Chinese Dance, Ballet, Jazz",
     button: "Explore",
     link: "/class/dance",
     img: "url('/chinesedance/Chinese8.jpg')",
   },
-  danceIntensives[0],
-  danceWorkshops[0],
+  danceIntensives[1],
+  danceWorkshops[2],
+  danceWorkshops[3],
   {
     title: "Venue Hire",
     caption1: "Studio spaces",
     caption2: "Perfect for parties, workshops and more",
     button: "Explore",
     link: "/studiohire",
-    img: "url('/studios/Studio1.jpg')",
+    img: "url('/studios/TheatreRoom.jpg')",
   },
 ];
 

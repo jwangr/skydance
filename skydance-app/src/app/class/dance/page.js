@@ -64,7 +64,7 @@ export default function DancePage() {
         <AnimateInView>
           <SwiperDanceEvents
             events={danceWorkshops}
-            heading={"Upcoming Workshops"}
+            heading={"Workshops"}
             link={"/class/dance/programs"}
           />
         </AnimateInView>
@@ -73,7 +73,7 @@ export default function DancePage() {
         <AnimateInView>
           <SwiperDanceEvents
             events={danceIntensives}
-            heading={"Upcoming Intensives"}
+            heading={"Intensives"}
             link={"/class/dance/programs"}
           />
         </AnimateInView>
