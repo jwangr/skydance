@@ -11,18 +11,18 @@ const studiosForHire = [
       "A 140m² studio featuring professional dance flooring, full-height mirrors across 2 walls, curtains, ballet barres, speakers, and air conditioning.",
     image: "/studios/Studio2.jpg",
   },
-  {
-    title: "Music Room",
-    description:
-      "A 15m² room featuring a piano, whiteboard, study desk and music stand. Available for hire: Wednesday to Friday.",
-    image: "/studios/StudioMusic.jpg",
-  },
-  {
-    title: "Tutorial Room",
-    description:
-      "Spacious room with a large table for up to 12, whiteboard, and full-length mirror. Perfect for tutoring, art workshops, group classes, or solo practice.",
-    image: "/studios/TutorialRoom.jpg",
-  },
+  // {
+  //   title: "Music Room",
+  //   description:
+  //     "A 15m² room featuring a piano, whiteboard, study desk and music stand. Available for hire: Wednesday to Friday.",
+  //   image: "/studios/StudioMusic.jpg",
+  // },
+  // {
+  //   title: "Tutorial Room",
+  //   description:
+  //     "Spacious room with a large table for up to 12, whiteboard, and full-length mirror. Perfect for tutoring, art workshops, group classes, or solo practice.",
+  //   image: "/studios/TutorialRoom.jpg",
+  // },
   {
     title: "Theatre Room - Newly Opened",
     description:

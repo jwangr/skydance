@@ -26,6 +26,14 @@ const danceWorkshops = [
     ...defaultSettings,
   },
   {
+    title: "Conditioning Masterclass with Keelia Hill",
+    // caption1:
+    caption2: "17th May 2026, 9am-12pm",
+    dateStart: "2026-04-07",
+    dateEnd: "2026-04-07",
+    ...defaultSettings,
+  },
+  {
     title: "Hip Hop Masterclass with Jacob Yarr",
     // caption1:
     caption2: "21st May 2026, 5:30-7pm",
@@ -33,14 +41,6 @@ const danceWorkshops = [
     dateEnd: "2026-04-07",
     ...defaultSettings,
     img: "url('/hiphop/Hiphop4.jpg')",
-  },
-  {
-    title: "Conditioning Masterclass with Keelia Hill",
-    // caption1:
-    caption2: "17th May 2026, 9am-12pm",
-    dateStart: "2026-04-07",
-    dateEnd: "2026-04-07",
-    ...defaultSettings,
   },
 ];
 

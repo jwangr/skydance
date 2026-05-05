@@ -51,7 +51,7 @@ export default function StudioHirePage() {
 
       <Grid container spacing={0} maxWidth={"xl"} sx={{ margin: "auto" }}>
         {studiosForHire.map((studio) => (
-          <Grid key={studio.title} size={{ xs: 12, sm: 6, lg: 4 }}>
+          <Grid key={studio.title} size={12} maxWidth="lg" margin="auto">
             <StudioCard key={studio.title} studio={studio} />
           </Grid>
         ))}

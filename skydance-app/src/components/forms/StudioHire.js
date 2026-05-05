@@ -139,12 +139,12 @@ export default function StudioHireForm() {
                   label="Pick a studio"
                 >
                   <MenuItem value="">
-                    <em>Select reason</em>
+                    <em>Select room</em>
                   </MenuItem>
                   <MenuItem value="Studio-1">Studio 1</MenuItem>
                   <MenuItem value="Studio-2">Studio 2</MenuItem>
-                  <MenuItem value="Music-Room">Music Room</MenuItem>
-                  <MenuItem value="Tutorial-Room">Tutorial Room</MenuItem>
+                  {/* <MenuItem value="Music-Room">Music Room</MenuItem> */}
+                  {/* <MenuItem value="Tutorial-Room">Tutorial Room</MenuItem> */}
                   <MenuItem value="Theatre-Room">Theatre Room</MenuItem>
                 </Select>
               </FormControl>

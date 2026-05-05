@@ -14,8 +14,8 @@ const homeEvents = [
   },
   {
     title: "Competition Teams & Training",
-    caption1: "Learn to Dance",
-    caption2: "Chinese Dance, Ballet, Jazz",
+    caption1: "Competition & Performance",
+    caption2: "Group & Private Classes",
     button: "Explore",
     link: "/class/dance",
     img: "url('/chinesedance/Chinese8.jpg')",

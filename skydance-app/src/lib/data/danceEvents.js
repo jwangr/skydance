@@ -54,7 +54,7 @@ const danceEvents = [
     title: "Buddha's Birthday Multicultural Festival",
     date: "2026-05-05",
     location: "Darling Harbour",
-    img: "url('/chinesedance/Chinese1.jpg')",
+    img: "url('/chinesedance/Chinese10.jpg')",
     ...defaultSettings,
   },
   {
@@ -68,7 +68,7 @@ const danceEvents = [
     title: "World of Dance Sydney Qualifier",
     date: "2026-05-31",
     location: "Hurtsville Entertainment Centre",
-    img: "url('/contemporary/contemporary6.jpg')",
+    img: "url('/contemporary/contemporary11.jpg')",
     ...defaultSettings,
   },
   {

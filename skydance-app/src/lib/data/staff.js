@@ -44,22 +44,6 @@ const staffData = [
     src: "/rylee.webp",
   },
   {
-    title: "Ruby",
-    src: "/ruby.jpg",
-  },
-  {
-    title: "Kai",
-    src: "/kai.jpg",
-  },
-  {
-    title: "Sahara",
-    src: "/sahara.jpg",
-  },
-  {
-    title: "Abbey",
-    src: "/abbey.jpg",
-  },
-  {
     title: "Bao Bao",
     src: "/baobao.jpg",
   },
@@ -70,6 +54,22 @@ const staffData = [
   {
     title: "Molly",
     src: "/molly.jpg",
+  },
+  {
+    title: "Abbey",
+    src: "/abbey.jpg",
+  },
+  {
+    title: "Ruby",
+    src: "/ruby.jpg",
+  },
+  {
+    title: "Kai",
+    src: "/kai.jpg",
+  },
+  {
+    title: "Sahara",
+    src: "/sahara.jpg",
   },
 ];
 
