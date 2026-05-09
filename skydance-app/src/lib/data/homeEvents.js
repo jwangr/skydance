@@ -18,11 +18,11 @@ const homeEvents = [
     caption2: "Group & Private Classes",
     button: "Explore",
     link: "/class/dance",
-    img: "url('/chinesedance/Chinese8.jpg')",
+    img: "url('/jazz/Jazz6.jpg')",
   },
-  danceIntensives[1],
   danceWorkshops[2],
   danceWorkshops[3],
+  danceIntensives[1],
   {
     title: "Venue Hire",
     caption1: "Studio spaces",
