@@ -16,6 +16,14 @@ const timetables = [
     title: "Term 2, 2026 (20/04/26 - 05/07/26)",
     url: "/timetables/2026Term2.jpg",
   },
+  {
+    title: "Winter Holiday Classes (06/07/26 - 10/07/26)",
+    url: "/timetables/2026WinterHolidays.jpg",
+  },
+  {
+    title: "Term 3, 2026 (20/07/26 - 27/09/26)",
+    url: "/timetables/2026Term3.jpg",
+  },
 ];
 
 const newestTimetable =
