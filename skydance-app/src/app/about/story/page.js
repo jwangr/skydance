@@ -43,19 +43,19 @@ export default function AboutStory() {
             <div>
               Since 2009, our studio has been committed to providing dance
               training in a positive and supportive environment. We nurture each
-              students talent while building confidence, discipline, creativity,
-              and a lifelong passion for dance. Our experienced mentors, who are
-              professionally trained and highly accomplished, guide dancers of
-              all levels to reach their full potential for personal growth,
-              enjoyment, and competition.
-            </div>
-            <div>
+              student's talent while building confidence, discipline,
+              creativity, and a lifelong passion for dance. Our experienced
+              mentors, who are professionally trained and highly accomplished,
+              guide dancers of all levels to reach their full potential for
+              personal growth, enjoyment, and competition.
+              <br />
+              <br />
               Over the years, our dancers have represented Sky Dance Performing
               Arts at major competitions across Sydney and internationally,
               achieving outstanding success and earning numerous trophies and
               awards.
-            </div>
-            <div>
+              <br />
+              <br />
               Our studio offers over 60 classes across a wide range of styles,
               including hip-hop, RAD ballet, jazz, tap, acrobatics, Chinese
               dance, K-pop, contemporary, musical theatre, and lyrical, and many
