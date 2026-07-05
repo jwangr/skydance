@@ -36,7 +36,7 @@ const staffData = [
   {
     title: "Icy",
     role: "Ballet Teacher",
-    src: "/icy.webp",
+    src: "/icy.jpg",
   },
   {
     title: "Rylee",
@@ -70,6 +70,10 @@ const staffData = [
   {
     title: "Sahara",
     src: "/sahara.jpg",
+  },
+  {
+    title: "Corey",
+    src: "/corey.jpg",
   },
 ];
 

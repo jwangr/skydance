@@ -22,7 +22,7 @@ const timetables = [
   },
   {
     title: "Term 3, 2026 (20/07/26 - 27/09/26)",
-    url: "/timetables/2026Term3.jpg",
+    url: "/timetables/2026Term3.png",
   },
 ];
 
