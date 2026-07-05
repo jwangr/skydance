@@ -13,6 +13,10 @@ const navLinks = [
     link: "/class/dance",
     children: [
       { title: "CLASS", link: "/class/dance" },
+      {
+        title: "COMPETITION TEAM",
+        link: "/class/dance/competition-team-training",
+      },
       { title: "PROGRAMS", link: "/class/dance/programs" },
     ],
   },

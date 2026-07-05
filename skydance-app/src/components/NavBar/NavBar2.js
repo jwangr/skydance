@@ -106,6 +106,8 @@ export default function Navbar2() {
                           sx={{
                             color: "white",
                             textDecoration: "none",
+                            whiteSpace: "nowrap !important",
+                            wordBreak: "normal !important",
                             "&:hover": {
                               color: "coral",
                             },

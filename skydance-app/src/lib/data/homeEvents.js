@@ -17,7 +17,7 @@ const homeEvents = [
     caption1: "Competition & Performance",
     caption2: "Group & Private Classes",
     button: "Explore",
-    link: "/class/dance",
+    link: "/class/dance/competition-team-training",
     img: "url('/jazz/Jazz6.jpg')",
   },
   danceWorkshops[2],
