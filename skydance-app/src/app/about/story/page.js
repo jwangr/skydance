@@ -68,7 +68,7 @@ export default function AboutStory() {
 
       {/* Link to Our Team */}
       <HeroGrows
-        backgroundImage="url('/ballet/Ballet7.jpg')"
+        backgroundImage="url('/generaldance/6.jpg')"
         minHeight={{ xs: 300, sm: 500 }}
       >
         <Box sx={{ maxWidth: "md", margin: "auto" }}>

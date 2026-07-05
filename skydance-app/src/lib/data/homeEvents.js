@@ -10,7 +10,7 @@ const homeEvents = [
     caption2: "For All Ages",
     button: "Explore",
     link: "/class/dance",
-    img: "url('/lyrical/Lyrical11.jpg')",
+    img: "url('/generaldance/2.jpg')",
   },
   {
     title: "Competition Teams & Training",
@@ -18,7 +18,7 @@ const homeEvents = [
     caption2: "Group & Private Classes",
     button: "Explore",
     link: "/class/dance/competition-team-training",
-    img: "url('/jazz/Jazz6.jpg')",
+    img: "url('/generaldance/3.jpg')",
   },
   danceWorkshops[2],
   danceWorkshops[3],

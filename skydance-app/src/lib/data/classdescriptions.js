@@ -28,29 +28,29 @@ const danceClasses = [
     title: "Contemporary",
     description:
       "Contemporary dance is an expressive, versatile style that blends ballet, modern, and jazz while embracing unconventional movements from around the world. Together with Lyrical, these classes inspire creativity, musicality, and emotional expression, helping dancers develop confidence and a deeper connection to the art of movement.",
-    images: ["/contemporary/Contemporary8.jpg"],
+    images: ["/contemporary/Contemporary12.jpg"],
   },
   {
     title: "Hip Hop",
     description:
       "Hip Hop is a free urban style of dance. This is not a technical class and students are encouraged to find their own groove and own style. Some break dancing is taught.",
-    images: ["/hiphop/Hiphop4.jpg"],
+    images: ["/hiphop/Hiphop5.jpg"],
   },
   {
     title: "Jazz",
     description:
       "Jazz is an exciting class with a funky feel, dancing to the latest music. Classes include a floor warm-up, stretch and limber session, followed by corner steps including kicks, leaps and turns, finishing with a routine. Technique is encouraged in this class and all steps are broken down and explained in detail.",
-    images: ["/jazz/Jazz5.jpg"],
+    images: ["/jazz/Jazz7.png"],
   },
   {
     title: "Lyrical",
     description:
       "Lyrical is a form of ballet without all the rules! Lyrical dance combines the grace of ballet with storytelling, encouraging students to feel the music and express emotions.",
-    images: ["/lyrical/Lyrical7.jpg"],
+    images: ["/lyrical/Lyrical12.jpg"],
   },
   {
     title: "Musical Theatre",
-    images: ["/musicaltheatre/Musical3.jpg"],
+    images: ["/musicaltheatre/Musical4.jpg"],
   },
   {
     title: "Tap",

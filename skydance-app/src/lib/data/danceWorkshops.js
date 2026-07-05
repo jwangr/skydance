@@ -5,7 +5,7 @@ const defaultSettings = {
   caption1: "Workshops",
   button: "More Workshops",
   link: "/class/dance/programs",
-  img: "url('/lyrical/Lyrical10.jpg')",
+  img: "url('/generaldance/4.jpg')",
 };
 
 const danceWorkshops = [
@@ -40,7 +40,7 @@ const danceWorkshops = [
     dateStart: "2026-04-07",
     dateEnd: "2026-04-07",
     ...defaultSettings,
-    img: "url('/hiphop/Hiphop4.jpg')",
+    img: "url('/generaldance/5.jpg')",
   },
 ];
 
