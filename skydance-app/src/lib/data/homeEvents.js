@@ -20,7 +20,14 @@ const homeEvents = [
     link: "/class/dance/competition-team-training",
     img: "url('/generaldance/3.jpg')",
   },
-  danceWorkshops[2],
+  {
+    title: "Master Classes",
+    caption1: "",
+    caption2: "",
+    button: "Explore",
+    link: "/class/dance/programs",
+    img: "url('/generaldance/4.jpg')",
+  },
   {
     title: "Workshops",
     caption1: "",

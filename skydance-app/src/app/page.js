@@ -40,7 +40,7 @@ export default function Home() {
             <h1
               style={{ marginX: "auto", textAlign: "center", color: "white" }}
             >
-              Sky Dance Studio
+              Sky Performing Arts
             </h1>
           </Box>
 
