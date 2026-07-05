@@ -42,6 +42,14 @@ const danceWorkshops = [
     ...defaultSettings,
     img: "url('/generaldance/5.jpg')",
   },
+  {
+    title: "Hip Hop Workshop with Corey Dohmen",
+    caption2: "8th–10th July 2026, 5:30–7:30pm",
+    dateStart: "2026-07-08",
+    dateEnd: "2026-07-10",
+    ...defaultSettings,
+    img: "url('/hiphop/Hiphop5.jpg')",
+  },
 ];
 
 export default danceWorkshops;

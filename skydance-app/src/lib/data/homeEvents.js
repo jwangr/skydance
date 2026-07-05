@@ -21,7 +21,14 @@ const homeEvents = [
     img: "url('/generaldance/3.jpg')",
   },
   danceWorkshops[2],
-  danceWorkshops[3],
+  {
+    title: "Workshops",
+    caption1: "",
+    caption2: "",
+    button: "Explore",
+    link: "/class/dance/programs",
+    img: "url('/hiphop/Hiphop5.jpg')",
+  },
   danceIntensives[1],
   {
     title: "Venue Hire",
