@@ -40,7 +40,7 @@ export default function Home() {
             <h1
               style={{ marginX: "auto", textAlign: "center", color: "white" }}
             >
-              Sky Dance Studio
+              Sky Performing Arts
             </h1>
           </Box>
 
@@ -48,7 +48,7 @@ export default function Home() {
           <Hero
             overlay="rgba(0, 0, 0, 0.5)"
             minHeight={700}
-            backgroundImage="url('/ballet/Ballet7.jpg')"
+            backgroundImage="url('/generaldance/1.jpg')"
           >
             <AnimateInView>
               <Box

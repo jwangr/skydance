@@ -4,7 +4,14 @@ import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
-import { Button, Link, ListItemButton, Menu, MenuItem } from "@mui/material";
+import {
+  Button,
+  Link,
+  ListItemButton,
+  Menu,
+  MenuItem,
+  Typography,
+} from "@mui/material";
 import NavBarMobile from "./NavBarMobile";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import ScrollToTop from "./ScrollToTop";
@@ -104,6 +111,8 @@ const Navbar = () => {
                           "&:hover": {
                             color: "coral",
                           },
+                          whiteSpace: "nowrap !important",
+                          wordBreak: "normal !important",
                         }}
                       >
                         {child.title}

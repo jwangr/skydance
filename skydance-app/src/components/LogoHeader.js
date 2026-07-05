@@ -32,7 +32,7 @@ export default function LogoHeader() {
           />
         </Box>
         <Box sx={{ display: { xs: "none", lg: "block" }, color: "white" }}>
-          <div className="logo">Sky Dance Studio</div>
+          <div className="logo">Sky Performing Arts</div>
         </Box>
       </Button>
     </Box>

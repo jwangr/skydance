@@ -1,5 +1,6 @@
 // on homepage, it will display the location (caption 1) and date (caption 2)
 // date: ISO date string (YYYY-MM-DD)
+// can add a second date
 
 const defaultSettings = {
   caption1: "Events",
@@ -68,7 +69,30 @@ const danceEvents = [
     title: "World of Dance Sydney Qualifier",
     date: "2026-05-31",
     location: "Hurtsville Entertainment Centre",
-    img: "url('/contemporary/contemporary11.jpg')",
+    ...defaultSettings,
+    img: "url('/hiphop/Hiphop5.jpg')",
+  },
+  {
+    title: "Sydney Eisteddford",
+    date: "2026-06-21",
+    date2: "2026-06-27",
+    location: "The Concourse - Concert Hall, Chastwood",
+    ...defaultSettings,
+    img: "url('/lyrical/Lyrical12.jpg')",
+  },
+  {
+    title: "Youth Showcase Community Events",
+    date: "2026-06-27",
+    location: "Harvey Lowe Pavillon, Castle Hill",
+    ...defaultSettings,
+    img: "url('/ballet/Ballet7.jpg')",
+  },
+  {
+    title: "Hills Dance Spectacular",
+    date: "2026-08-22",
+    date2: "2026-08-29",
+    location: "Greenhalgh Theatre, Lindfield",
+    img: "url('/hiphop/Hiphop4.jpg')",
     ...defaultSettings,
   },
   {

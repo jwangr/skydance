@@ -41,21 +41,25 @@ export default function AboutStory() {
           >
             <h2>Our story began over one decade ago...</h2>
             <div>
-              Since our establishment in 2009, Sky Dance has grown from 4
-              students to a thriving community of over 300 dancers, ranging in
-              ages from three to adult.
-            </div>
-            <div>
-              Originally dedicated to Royal Ballet, our studio has now evolved
-              into a comprehensive dance school with over 60 classes. We offer a
-              wide range of styles including jazz, modern, lyrical,
-              contemporary, acrobatics, musical theatre, Chinese, and character
-              dance. The studio also proudly supports students in preparing for
-              all levels of the Royal Academy of Dance (RAD) examinations.
-            </div>
-            <div>
-              We offer daily classes, as well as intensive workshops and private
-              classes.
+              Since 2009, our studio has been committed to providing dance
+              training in a positive and supportive environment. We nurture each
+              student's talent while building confidence, discipline,
+              creativity, and a lifelong passion for dance. Our experienced
+              mentors, who are professionally trained and highly accomplished,
+              guide dancers of all levels to reach their full potential for
+              personal growth, enjoyment, and competition.
+              <br />
+              <br />
+              Over the years, our dancers have represented Sky Dance Performing
+              Arts at major competitions across Sydney and internationally,
+              achieving outstanding success and earning numerous trophies and
+              awards.
+              <br />
+              <br />
+              Our studio offers over 60 classes across a wide range of styles,
+              including hip-hop, RAD ballet, jazz, tap, acrobatics, Chinese
+              dance, K-pop, contemporary, musical theatre, and lyrical, and many
+              more, fitting your style of dance!
             </div>
             <ButtonLink1 href="/contact">Contact Us</ButtonLink1>
           </Stack>
@@ -64,7 +68,7 @@ export default function AboutStory() {
 
       {/* Link to Our Team */}
       <HeroGrows
-        backgroundImage="url('/ballet/Ballet7.jpg')"
+        backgroundImage="url('/generaldance/6.jpg')"
         minHeight={{ xs: 300, sm: 500 }}
       >
         <Box sx={{ maxWidth: "md", margin: "auto" }}>
