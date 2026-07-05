@@ -78,7 +78,7 @@ const danceEvents = [
     date2: "2026-06-27",
     location: "The Concourse - Concert Hall, Chastwood",
     ...defaultSettings,
-    img: "url('/lyrical/Lyrical12.jpg')",
+    img: "url('/generaldance/7.jpg')",
   },
   {
     title: "Youth Showcase Community Events",
@@ -92,21 +92,21 @@ const danceEvents = [
     date: "2026-08-22",
     date2: "2026-08-29",
     location: "Greenhalgh Theatre, Lindfield",
-    img: "url('/hiphop/Hiphop4.jpg')",
+    img: null,
     ...defaultSettings,
   },
   {
     title: "2026 School Photo Day & Concert Dress Rehearsal ",
     date: "2026-10-03",
     location: "Sky Dance Studio",
-    img: "url('/acro/Acro3.jpg')",
+    img: null,
     ...defaultSettings,
   },
   {
     title: "2026 Sky Showcase",
     date: "2026-10-04",
     location: "The Theatre, Bankstown Sports Club",
-    img: "url('/contemporary/contemporary10.jpg')",
+    img: null,
     ...defaultSettings,
   },
 ];

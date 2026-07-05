@@ -24,6 +24,7 @@ const danceIntensives = [
     dateStart: "2026-07-06",
     dateEnd: "2026-07-10",
     ...defaultSettings,
+    img: "url('/generaldance/8.jpg')",
   },
   {
     title: "Spring Holiday Program 2026",
