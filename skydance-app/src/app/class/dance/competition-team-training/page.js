@@ -13,6 +13,7 @@ import danceIntensives from "@/lib/data/danceIntensives";
 import danceEvents from "@/lib/data/danceEvents";
 import { timetables } from "@/lib/data/timetable";
 import CompetitionTeamAuditionForm from "@/components/forms/CompetitionTeamAuditionForm";
+import competitionPictureSeries from "@/lib/data/competitionPictureSeries";
 
 export const metadata = {
   title: "Sky Competition Team and Training in Auburn Sydney | Kids & Adults",
@@ -44,8 +45,10 @@ export default function CompetitionTeamAndTrainingPage() {
 
       <Box maxWidth={"xl"} margin={"auto"}>
         {/* Dance Styles Info */}
-        <ScrollbarHeading title="Dance Styles" />
-        <SwiperDanceStyles />
+        <SwiperDanceStyles
+          pictureSeries={competitionPictureSeries}
+          showCaption={false}
+        />
         <Box
           sx={{
             marginY: 5,
@@ -54,14 +57,14 @@ export default function CompetitionTeamAndTrainingPage() {
           }}
         >
           <p>
-            Our Competition Teams proudly represent Sky Dance Performing Arts at
-            major competitions throughout NSW and internationally. Over the
-            years, our dancers have achieved outstanding success, earning
-            numerous titles, trophies, scholarships, and special awards. Through
-            dedicated training, teamwork, and passion, our competition program
-            provides dancers with valuable performance experience while
-            fostering confidence, discipline, and excellence both on and off the
-            stage.
+            Our Competition Teams proudly represent Sky Performing Arts
+            (Previously known as Sky Dance Studio) at major competitions and
+            performances throughout NSW and internationally. Over the years, our
+            dancers have achieved outstanding success, earning numerous titles,
+            trophies, scholarships, and special awards. Through dedicated
+            training, teamwork, and passion, our competition program provides
+            dancers with valuable performance experience while fostering
+            confidence, discipline, and excellence both on and off the stage.
           </p>
         </Box>
       </Box>

@@ -9,7 +9,10 @@ import { Box, Typography } from "@mui/material";
 import danceClasses from "@/lib/data/classdescriptions";
 import DanceCard from "../DanceCard";
 
-export default function SwiperDanceStyles() {
+export default function SwiperDanceStyles({
+  showCaption = true,
+  pictureSeries = danceClasses,
+}) {
   return (
     <Swiper
       modules={[Autoplay]}
@@ -37,9 +40,9 @@ export default function SwiperDanceStyles() {
         width: "100%",
       }}
     >
-      {danceClasses.map((style) => (
+      {pictureSeries.map((style) => (
         <SwiperSlide key={style.title}>
-          <DanceCard dance={style} />
+          <DanceCard dance={style} showCaption={showCaption} />
         </SwiperSlide>
       ))}
     </Swiper>

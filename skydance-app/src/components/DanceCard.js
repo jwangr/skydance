@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-export default function DanceCard({ dance }) {
+export default function DanceCard({ dance, showCaption = true }) {
   return (
     <Box
       sx={{
@@ -21,9 +21,11 @@ export default function DanceCard({ dance }) {
         loading="lazy"
       />
       <div className="swiper-lazy-preloader"></div>
-      <Box sx={{ position: "absolute", bottom: "0", right: 10 }}>
-        <h4>{dance.title}</h4>
-      </Box>
+      {showCaption && (
+        <Box sx={{ position: "absolute", bottom: "0", right: 10 }}>
+          <h4>{dance.title}</h4>
+        </Box>
+      )}
     </Box>
   );
 }
