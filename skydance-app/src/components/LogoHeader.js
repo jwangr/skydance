@@ -23,8 +23,7 @@ export default function LogoHeader() {
             alt="Logo"
             height={160}
             width={70}
-            objectFit="contain"
-            layout="responsive"
+            style={{ width: "100%", height: "auto", objectFit: "contain" }}
             // <Summary> Commented out to change logo from white to pink </Summary>
             // style={{
             //   filter: "brightness(1.5)", // 1 = normal, >1 brighter, <1 darker

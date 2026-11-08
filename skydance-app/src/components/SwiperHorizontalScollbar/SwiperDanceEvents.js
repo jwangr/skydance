@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Stack } from "@mui/material";
+import { PlaceOutlined } from "@mui/icons-material";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -109,7 +110,6 @@ export default function SwiperDanceEvents({
             >
               <h4>{event.title}</h4>
 
-              <p>{event.location ? event.location : ""}</p>
               <p>
                 {event.caption2
                   ? event.caption2
@@ -121,6 +121,18 @@ export default function SwiperDanceEvents({
                       })
                     : ""}
               </p>
+              {event.location && (
+                <>
+                  <PlaceOutlined
+                    sx={{
+                      color: "white",
+                      fontSize: "1.1em",
+                      verticalAlign: "middle",
+                    }}
+                  />
+                  <span>{event.location}</span>
+                </>
+              )}
             </Box>
           </SwiperSlide>
         ))}

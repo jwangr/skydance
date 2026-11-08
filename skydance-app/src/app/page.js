@@ -79,8 +79,10 @@ export default function Home() {
                     <span style={{ color: "var(--bg6)" }}>expression</span>
                   </h3>
                 </Box>
-
-                <h2>2026 CLASSES & TIMETABLE</h2>
+                <div>
+                  <h2>CLASSES & TIMETABLE</h2>
+                  <h3>2027 Timetable now out!!</h3>
+                </div>
                 <ButtonLink1 width="50%" href="/class/dance">
                   Explore Now
                 </ButtonLink1>

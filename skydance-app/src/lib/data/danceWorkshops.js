@@ -6,6 +6,7 @@ const defaultSettings = {
   button: "More Workshops",
   link: "/class/dance/programs",
   img: "url('/generaldance/4.jpg')",
+  location: "Sky Dance Studio",
 };
 
 const danceWorkshops = [
@@ -29,16 +30,16 @@ const danceWorkshops = [
     title: "Conditioning Masterclass with Keelia Hill",
     // caption1:
     caption2: "17th May 2026, 9am-12pm",
-    dateStart: "2026-04-07",
-    dateEnd: "2026-04-07",
+    dateStart: "2026-05-17",
+    dateEnd: "2026-05-17",
     ...defaultSettings,
   },
   {
     title: "Hip Hop Masterclass with Jacob Yarr",
     // caption1:
     caption2: "21st May 2026, 5:30-7pm",
-    dateStart: "2026-04-07",
-    dateEnd: "2026-04-07",
+    dateStart: "2026-05-21",
+    dateEnd: "2026-05-21",
     ...defaultSettings,
     img: "url('/generaldance/5.jpg')",
   },
@@ -49,6 +50,20 @@ const danceWorkshops = [
     dateEnd: "2026-07-10",
     ...defaultSettings,
     img: "url('/hiphop/Hiphop5.jpg')",
+  },
+  {
+    title: "Amy Park x Chloe – 71Dance Collaboration Workshop",
+    caption2: "Mon 26th – Tue 27th Oct 2026",
+    dateStart: "2026-10-26",
+    dateEnd: "2026-10-27",
+    ...defaultSettings,
+  },
+  {
+    title: "The Tech Lab with Bianca Erika",
+    caption2: "8th Nov – 21st Dec 2026",
+    dateStart: "2026-11-08",
+    dateEnd: "2026-12-21",
+    ...defaultSettings,
   },
 ];
 

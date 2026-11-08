@@ -36,7 +36,7 @@ const homeEvents = [
     link: "/class/dance/programs",
     img: "url('/hiphop/Hiphop5.jpg')",
   },
-  danceIntensives[1],
+  danceIntensives[3],
   {
     title: "Venue Hire",
     caption1: "Studio spaces",

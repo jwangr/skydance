@@ -35,6 +35,15 @@ const danceIntensives = [
     ...defaultSettings,
   },
   {
+    title: "Summer Holiday Program 2027",
+    caption1: "Intensives",
+    caption2: "18 - 29 Jan 2027",
+    dateStart: "2027-01-18",
+    dateEnd: "2027-01-29",
+    ...defaultSettings,
+    img: "url('/generaldance/7.jpg')",
+  },
+  {
     title: "Korea and China Exchange Program 2026",
     caption1: "Intensives",
     caption2: "Dec 2026 TBC",
