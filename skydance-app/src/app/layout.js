@@ -11,7 +11,6 @@ import {
 import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar2 from "@/components/NavBar/NavBar2";
-import { Metadata } from "next";
 import { LocalBusinessSchema } from "../components/LocalBusinessSchema";
 
 const aboreto = Aboreto({
