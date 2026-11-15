@@ -2,6 +2,7 @@ import AnimateInView from "@/components/AnimateInView";
 import Hero from "@/components/HeroImage";
 import { Box, Grid, Stack } from "@mui/material";
 import React from "react";
+import Image from "next/image";
 import danceWorkshops from "@/lib/data/danceWorkshops";
 import SwiperDanceEvents from "@/components/SwiperHorizontalScollbar/SwiperDanceEvents";
 import danceIntensives from "@/lib/data/danceIntensives";
@@ -37,6 +38,20 @@ export default function DancePrograms() {
           </em>
         </AnimateInView>
       </Hero>
+
+      {/* Featured program poster */}
+      <Box sx={{ width: "100%", maxWidth: "sm", mx: "auto", my: 4 }}>
+        <AnimateInView once>
+          <Image
+            src="/programs/2026-December-Intensive.jpg"
+            alt="December Dance Intensive 2026 with Jake Connell: 7–11 and 14–18 December, 10am–1pm daily"
+            width={640}
+            height={799}
+            sizes="(max-width: 600px) 100vw, 600px"
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </AnimateInView>
+      </Box>
 
       <Box maxWidth={"xl"} margin={"auto"}>
         {/* Workshops */}

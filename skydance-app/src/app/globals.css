@@ -36,13 +36,11 @@ h1 {
 h2 {
   font-family: "Bebas Neue", sans-serif;
   font-size: 50px;
-  /* line-height: 120px; */
   text-transform: uppercase;
 }
 
 h3 {
   font-family: "Bebas Neue", sans-serif;
-  /* text-transform: uppercase; */
   font-size: 32px;
   font-weight: 400;
   text-transform: uppercase;
@@ -52,7 +50,6 @@ h3 {
 h4 {
   font-family: "Bebas Neue", sans-serif;
   font-size: 32px;
-  /* line-height: 110px; */
   font-weight: 400;
 }
 
@@ -60,14 +57,13 @@ h4 {
 h5 {
   font-family: "Bebas Neue", sans-serif;
   font-size: 28px;
-  /* line-height: 110px; */
   font-weight: 600;
 }
 
 h6 {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
   font-size: 14px;
   font-weight: 500;
 }
@@ -88,8 +84,7 @@ li {
 
 /* Stylised Buttons */
 a {
-  color: "white";
-  letter-spacing: 10%;
+  letter-spacing: 0.1em;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   overflow-wrap: break-word;
