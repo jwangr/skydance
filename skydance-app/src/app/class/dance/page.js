@@ -92,8 +92,13 @@ export default function DancePage() {
       </Box>
 
       {/* Timetable */}
-      <Timetable />
-      <Timetable timetable={timetables[4]} showTitle={false} />
+      <Timetable timetable={timetables[6]} />
+      <Timetable
+        timetable={timetables[7]}
+        showTitle={false}
+        isLandscape={false}
+      />
+      <Timetable timetable={timetables[8]} showTitle={false} />
 
       {/* Enrol for group or private classes */}
       <Stack
